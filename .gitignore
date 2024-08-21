@@ -63,7 +63,9 @@ graphs/
 *.fbx
 !*_custom*
 .extracted-assets.json
-extracted/
+extracted/hackeroot-mq/assets/*
+extracted/hackeroot-mq/baserom/*
+extracted/hackeroot-mq/assets_extraction_times.json
 !mod_assets/*
 
 # Docs
