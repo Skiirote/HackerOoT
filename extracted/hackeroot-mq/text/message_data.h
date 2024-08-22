@@ -141,8 +141,9 @@ MSG(/* MISSING */)
 ,
 MSG(
 "I told you not to come back without\n"
-"that fish! An empty bottle isn't going\n"
-"to do me any good! Now get me that fish!"
+"that fish! An empty bottle isn't\n" 
+"going to do me any good!\n" 
+"Now get me that fish!"
 )
 ,
 MSG(

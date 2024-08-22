@@ -217,10 +217,12 @@ void EnDs_Wait(EnDs* this, PlayState* play) {
         } else {
             s16 pad;
 
-            if (INV_CONTENT(ITEM_ODD_MUSHROOM) == ITEM_ODD_MUSHROOM) {
-                player->actor.textId = 0x5049;
-            } else {
-                player->actor.textId = 0x5048;
+            if (Inventory_HasEmptyBottle()) {
+                player->actor.textId = 0x0008;
+            } else if (Inventory_HasSpecificBottle(ITEM_BOTTLE_FISH)){
+                player->actor.textId = 0x0009;
+            }else{
+                player->actor.textId = 0x0005;
             }
             this->actionFunc = EnDs_Talk;
         }
