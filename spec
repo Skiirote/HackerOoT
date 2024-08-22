@@ -12027,6 +12027,94 @@ beginseg
     number 3
 endseg
 
+beginseg
+    name "overworld_one_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/overworld_one/overworld_one_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "overworld_one_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/overworld_one/overworld_one_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "test_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/test/test_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "test_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/test/test_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "test_room_1"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/test/test_room_1.o"
+    number 3
+endseg
+
+beginseg
+    name "house_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/indoors/house/house_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "house_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/indoors/house/house_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "village_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/village/village_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "village_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/village/village_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "river_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/river/river_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "river_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/river/river_room_0.o"
+    number 3
+endseg
+
 #if CAN_INCLUDE_TEST_SCENES
 beginseg
     name "besitu_scene"

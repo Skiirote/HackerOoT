@@ -65,10 +65,10 @@ static SceneSelectEntry sScenes[] = {
 #if INCLUDE_EXAMPLE_SCENE
     { "Example", MapSelect_LoadGame, ENTR_EXAMPLE_0 },
 #endif
-    { "Hyrule Field", MapSelect_LoadGame, ENTR_HYRULE_FIELD_0 },
-    { "Kakariko Village", MapSelect_LoadGame, ENTR_KAKARIKO_VILLAGE_0 },
-    { "Graveyard", MapSelect_LoadGame, ENTR_GRAVEYARD_0 },
-    { "Zora's River", MapSelect_LoadGame, ENTR_ZORAS_RIVER_0 },
+    { "House", MapSelect_LoadGame, ENTR_HOUSE_0 },
+    { "Yard", MapSelect_LoadGame, ENTR_OVERWORLD_ONE_0 },
+    { "Village", MapSelect_LoadGame, ENTR_VILLAGE_0 },
+    { "River", MapSelect_LoadGame, ENTR_RIVER_0 },
     { "Kokiri Forest", MapSelect_LoadGame, ENTR_KOKIRI_FOREST_0 },
     { "Sacred Forest Meadow", MapSelect_LoadGame, ENTR_SACRED_FOREST_MEADOW_0 },
     { "Lake Hylia", MapSelect_LoadGame, ENTR_LAKE_HYLIA_0 },

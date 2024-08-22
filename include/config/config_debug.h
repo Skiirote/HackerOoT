@@ -28,7 +28,7 @@
 /**
  * Options for booting directly into a scene, the map select or the file select, instead of the title screen.
  */
-#define BOOT_TO_SCENE true
+#define BOOT_TO_SCENE false
 #define BOOT_TO_SCENE_NEW_GAME_ONLY false
 #define BOOT_TO_FILE_SELECT false
 #define BOOT_TO_MAP_SELECT false
@@ -40,7 +40,7 @@
 #define MAP_SELECT_ON_FILE_1 false
 
 // Change these if using `BOOT_TO_SCENE`, `BOOT_TO_SCENE_NEW_GAME_ONLY` or `BOOT_TO_MAP_SELECT`
-#define BOOT_ENTRANCE ENTR_EXAMPLE_0
+#define BOOT_ENTRANCE ENTR_HOUSE_0
 #define BOOT_AGE LINK_AGE_ADULT
 #define BOOT_CUTSCENE 0x0000
 
@@ -78,7 +78,7 @@
 /**
  * Include example scene
 */
-#define INCLUDE_EXAMPLE_SCENE true
+#define INCLUDE_EXAMPLE_SCENE false
 
 /**
  * Enable motion blur debug

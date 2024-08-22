@@ -5,12 +5,12 @@ MSG(
 UNSKIPPABLE NAME ", its time to wake up!\n" 
 "Can you help grandma out today?"      
 BOX_BREAK
-UNSKIPPABLE"Oh " TEXT_SPEED("\x04")"good..."
+UNSKIPPABLE "Oh " TEXT_SPEED(4) "good..."
 BOX_BREAK
 "I need you to help\n"
 "grandpa in the garden.\n"
 BOX_BREAK
-UNSKIPPABLE"Also, run and get me a "COLOR(BLUE)"fish\n"COLOR(DEFAULT)
+UNSKIPPABLE "Also, run and get me a " COLOR(BLUE) "fish\n" COLOR(DEFAULT)
 "from the " COLOR(PURPLE) "river " COLOR(DEFAULT) "past town."
 )
 ,
@@ -108,9 +108,9 @@ BOX_BREAK
 "been nagging me about all morning."
 BOX_BREAK
 "And don't you go near the\n"
-COLOR(PURPLE)"fingers!! You hear me?!"COLOR(DEFAULT)
-,
+COLOR(PURPLE) "fingers!! You hear me?!"
 )
+,
 MSG(
 ""
 )
@@ -124,7 +124,7 @@ DEFINE_MESSAGE(0x0007, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE COLOR(BLUE) NAME", look!"
+UNSKIPPABLE COLOR(BLUE) NAME ", look!"
 )
 ,
 MSG(
@@ -175,8 +175,8 @@ MSG(/* MISSING */)
 ,
 MSG(
 UNSKIPPABLE COLOR(BLUE) "The town looks abandoned..."
-BOX_BREAK_DELAYED("\x5A")
-UNSKIPPABLE COLOR(BLUE)"Where is everyone?"
+BOX_BREAK_DELAYED(90)
+UNSKIPPABLE COLOR(BLUE) "Where is everyone?"
 )
 ,
 MSG(
@@ -199,15 +199,15 @@ BOX_BREAK
 BOX_BREAK
 "Of course you can!\n"
 "They speak the truth!\n"
-TEXT_SPEED("\x03")"Such sultry voices..."
+TEXT_SPEED(3) "Such sultry voices..."
 BOX_BREAK
 "I can hardly contain myself...\n"
 "I feel... "
 BOX_BREAK
 "And... and...\n"
-"The neighbors have already "COLOR(PURPLE)"sprouted!"
+"The neighbors have already " COLOR(PURPLE) "sprouted!"
 BOX_BREAK
-TEXT_SPEED("\x03")"PLEASE!\n"
+TEXT_SPEED(3) "PLEASE!\n"
 "Let me sprout too!\n"
 "PLEASE, PLEASE, PLEASE!"
 )
@@ -242,7 +242,7 @@ MSG(/* MISSING */)
 ,
 MSG(
 UNSKIPPABLE "Don't go leaving without doing\n"
-"your chores now, "NAME"!\n"
+"your chores now, " NAME "!\n"
 BOX_BREAK
 "Get to killing these guays, boy!"
 )

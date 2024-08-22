@@ -220,7 +220,7 @@ void EnCrow_SetupRespawn(EnCrow* this) {
     this->actor.shape.yOffset = 2000;
     this->actor.targetArrowOffset = 2000.0f;
     this->actor.draw = NULL;
-    this->actionFunc = EnCrow_Respawn;
+    //this->actionFunc = EnCrow_Respawn;
 }
 
 // Action functions
@@ -353,12 +353,12 @@ void EnCrow_Die(EnCrow* this, PlayState* play) {
 
     if (Math_StepToF(&this->actor.scale.x, 0.0f, step)) {
         if (this->actor.params == 0) {
-            sDeathCount++;
-            Item_DropCollectibleRandom(play, &this->actor, &this->actor.world.pos, 0);
+            //sDeathCount++;
+            //Item_DropCollectibleRandom(play, &this->actor, &this->actor.world.pos, 0);
         } else {
-            Item_DropCollectible(play, &this->actor.world.pos, ITEM00_RUPEE_RED);
+            //Item_DropCollectible(play, &this->actor.world.pos, ITEM00_RUPEE_RED);
         }
-        EnCrow_SetupRespawn(this);
+        //EnCrow_SetupRespawn(this);
     }
 
     this->actor.scale.z = this->actor.scale.y = this->actor.scale.x;

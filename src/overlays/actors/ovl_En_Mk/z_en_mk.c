@@ -9,6 +9,8 @@
 
 #define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_3 | ACTOR_FLAG_4)
 
+#define MK_STATE_TALKING (1 << 0)
+
 void EnMk_Init(Actor* thisx, PlayState* play);
 void EnMk_Destroy(Actor* thisx, PlayState* play);
 void EnMk_Update(Actor* thisx, PlayState* play);
@@ -200,6 +202,37 @@ void func_80AACFA0(EnMk* this, PlayState* play) {
     }
 }
 
+void EnMk_KickPlayer(EnMk* this, PlayState* play) {
+    this->flags |= MK_STATE_TALKING;
+
+    if (this->timer > 0) {
+        this->timer--;
+    } else {
+        play->nextEntranceIndex = ENTR_OVERWORLD_ONE_3;
+
+        play->transitionType = TRANS_TYPE_CIRCLE(TCA_STARBURST, TCC_BLACK, TCS_FAST);
+        play->transitionTrigger = TRANS_TRIGGER_START;
+    }
+}
+
+
+void EnMk_SpotPlayer(EnMk* this, PlayState* play){
+    this->timer = 30;
+    this->actionFunc = EnMk_KickPlayer;
+    Player_SetCsActionWithHaltedActors(play, &this->actor, PLAYER_CSACTION_95);
+    Sfx_PlaySfxCentered(NA_SE_SY_FOUND);
+    Message_StartTextbox(play, 0x000C, &this->actor);
+}
+
+// THIS ONE THIS ONE THIS ONE THIS ONE THIS ONE ------------------------------------------------------------------------------------------------->
+void EnMk_CheckDistance(EnMk* this, PlayState* play){
+    Player* player = GET_PLAYER(play);
+    //f32 xyzDistanceFromLink = sqrtf(SQ(this->actor.xzDistToPlayer) + SQ(this->actor.yDistToPlayer));
+    if (this->actor.xzDistToPlayer > 1750.0f){
+        this->actionFunc = EnMk_SpotPlayer;
+    }
+}
+
 void func_80AAD014(EnMk* this, PlayState* play) {
     if (Actor_TextboxIsClosing(&this->actor, play)) {
         this->actionFunc = func_80AACFA0;
@@ -207,6 +240,12 @@ void func_80AAD014(EnMk* this, PlayState* play) {
     }
 
     this->flags |= 1;
+}
+
+void EnMk_GiveBottle(EnMk* this, PlayState* play){
+    if (Actor_TextboxIsClosing(&this->actor, play)) {
+        Actor_OfferGetItem(&this->actor, play, GI_BOTTLE_EMPTY, 10000.0f, 50.0f);
+    }
 }
 
 void EnMk_Wait(EnMk* this, PlayState* play) {
@@ -227,7 +266,7 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
                 this->actionFunc = func_80AACA40;
             } else {
                 switch (playerExchangeItem) {
-                    case EXCH_ITEM_NONE:
+                    /*case EXCH_ITEM_NONE:
                         if (this->swimFlag >= 8) {
                             if (GET_ITEMGETINF(ITEMGETINF_10)) {
                                 player->actor.textId = 0x4075;
@@ -255,11 +294,17 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
                         this->flags &= ~2;
                         gSaveContext.subTimerState = SUBTIMER_STATE_OFF;
                         Sfx_PlaySfxCentered(NA_SE_SY_TRE_BOX_APPEAR);
-                        break;
+                        break;*/
                     default:
-                        player->actor.textId = 0x4018;
-                        this->actionFunc = func_80AACA40;
+                        if (Flags_GetClear(play, this->actor.room) || Flags_GetTempClear(play, this->actor.room)){
+                            player->actor.textId = 0x0006;
+                            this->actionFunc = EnMk_GiveBottle;
                         break;
+                        }
+                        else{
+                            player->actor.textId = 0x0004;
+                            break;
+                        }
                 }
             }
         }
