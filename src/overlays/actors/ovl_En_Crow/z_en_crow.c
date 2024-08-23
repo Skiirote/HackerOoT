@@ -362,6 +362,7 @@ void EnCrow_Die(EnCrow* this, PlayState* play) {
     }
 
     this->actor.scale.z = this->actor.scale.y = this->actor.scale.x;
+    Actor_Kill(&this->actor);
 }
 
 void EnCrow_TurnAway(EnCrow* this, PlayState* play) {

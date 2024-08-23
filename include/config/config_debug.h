@@ -31,7 +31,7 @@
 #define BOOT_TO_SCENE false
 #define BOOT_TO_SCENE_NEW_GAME_ONLY false
 #define BOOT_TO_FILE_SELECT false
-#define BOOT_TO_MAP_SELECT false
+#define BOOT_TO_MAP_SELECT true
 
 /**
  * Use file 1 to load the map select from the file select
@@ -41,7 +41,7 @@
 
 // Change these if using `BOOT_TO_SCENE`, `BOOT_TO_SCENE_NEW_GAME_ONLY` or `BOOT_TO_MAP_SELECT`
 #define BOOT_ENTRANCE ENTR_HOUSE_0
-#define BOOT_AGE LINK_AGE_ADULT
+#define BOOT_AGE LINK_AGE_CHILD
 #define BOOT_CUTSCENE 0x0000
 
 // Change these if using `BOOT_TO_SCENE` or `BOOT_TO_SCENE_NEW_GAME_ONLY`

@@ -16,7 +16,9 @@ void EnMk_Destroy(Actor* thisx, PlayState* play);
 void EnMk_Update(Actor* thisx, PlayState* play);
 void EnMk_Draw(Actor* thisx, PlayState* play);
 
+
 void EnMk_Wait(EnMk* this, PlayState* play);
+void EnMk_CheckDistance(EnMk* this, PlayState* play);
 
 ActorInit En_Mk_InitVars = {
     /**/ ACTOR_EN_MK,
@@ -69,7 +71,7 @@ void EnMk_Init(Actor* thisx, PlayState* play) {
     this->flags = 0;
     this->swimFlag = 0;
     this->actor.targetMode = 6;
-
+        this->actionFunc = EnMk_CheckDistance;
     if (GET_ITEMGETINF(ITEMGETINF_10)) {
         this->flags |= 4;
     }
@@ -228,7 +230,7 @@ void EnMk_SpotPlayer(EnMk* this, PlayState* play){
 void EnMk_CheckDistance(EnMk* this, PlayState* play){
     Player* player = GET_PLAYER(play);
     //f32 xyzDistanceFromLink = sqrtf(SQ(this->actor.xzDistToPlayer) + SQ(this->actor.yDistToPlayer));
-    if (this->actor.xzDistToPlayer > 1750.0f){
+    if (this->actor.xzDistToPlayer > 1750.0f && Inventory_HasEmptyBottle() == 0){
         this->actionFunc = EnMk_SpotPlayer;
     }
 }
@@ -253,10 +255,12 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
     s32 swimFlag;
     Player* player = GET_PLAYER(play);
     s32 playerExchangeItem;
-
+    
     if (Actor_TalkOfferAccepted(&this->actor, play)) {
-        playerExchangeItem = func_8002F368(play);
-
+       // playerExchangeItem = func_8002F368(play);
+        if (Flags_GetClear(play, this->actor.room) || Flags_GetTempClear(play, this->actor.room){
+            player->actor.textId = 0x0006;
+        }
         if (this->actor.textId != 0x4018) {
             player->actor.textId = this->actor.textId;
             this->actionFunc = func_80AACA40;
@@ -322,6 +326,7 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
             this->flags |= 1;
         }
     }
+    
 }
 
 void EnMk_Update(Actor* thisx, PlayState* play) {

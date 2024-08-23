@@ -12115,6 +12115,22 @@ beginseg
     number 3
 endseg
 
+beginseg
+    name "cave_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/cave/cave_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "cave_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/cave/cave_room_0.o"
+    number 3
+endseg
+
 #if CAN_INCLUDE_TEST_SCENES
 beginseg
     name "besitu_scene"

@@ -115,6 +115,8 @@
 /* 0x67 */ DEFINE_SCENE(house_scene, none, SCENE_HOUSE, SDC_DEFAULT, 0, 0)
 /* 0x68 */ DEFINE_SCENE(village_scene, none, SCENE_VILLAGE, SDC_KAKARIKO_VILLAGE, 0, 0)
 /* 0x69 */ DEFINE_SCENE(river_scene, none, SCENE_RIVER, SDC_ZORAS_RIVER, 0, 0)
+/* 0x6A */ DEFINE_SCENE(cave_scene, none, SCENE_CAVE, SDC_ZORAS_RIVER, 0, 0)
+
 
 #if CAN_INCLUDE_TEST_SCENES
 /* 0x65 */ DEFINE_SCENE(test01_scene, none, SCENE_TEST01, SDC_CALM_WATER, 0, 0)

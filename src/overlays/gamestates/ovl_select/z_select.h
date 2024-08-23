@@ -69,7 +69,7 @@ static SceneSelectEntry sScenes[] = {
     { "Yard", MapSelect_LoadGame, ENTR_OVERWORLD_ONE_0 },
     { "Village", MapSelect_LoadGame, ENTR_VILLAGE_0 },
     { "River", MapSelect_LoadGame, ENTR_RIVER_0 },
-    { "Kokiri Forest", MapSelect_LoadGame, ENTR_KOKIRI_FOREST_0 },
+    { "Cave", MapSelect_LoadGame, ENTR_CAVE_0 },
     { "Sacred Forest Meadow", MapSelect_LoadGame, ENTR_SACRED_FOREST_MEADOW_0 },
     { "Lake Hylia", MapSelect_LoadGame, ENTR_LAKE_HYLIA_0 },
     { "Zora's Domain", MapSelect_LoadGame, ENTR_ZORAS_DOMAIN_0 },
