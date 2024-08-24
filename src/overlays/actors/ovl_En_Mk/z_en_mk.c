@@ -71,7 +71,7 @@ void EnMk_Init(Actor* thisx, PlayState* play) {
     this->flags = 0;
     this->swimFlag = 0;
     this->actor.targetMode = 6;
-        this->actionFunc = EnMk_CheckDistance;
+        //this->actionFunc = EnMk_CheckDistance;
     if (GET_ITEMGETINF(ITEMGETINF_10)) {
         this->flags |= 4;
     }
@@ -255,13 +255,13 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
     s32 swimFlag;
     Player* player = GET_PLAYER(play);
     s32 playerExchangeItem;
-    
+    if (Inventory_HasEmptyBottle() == 0 && this->actor.xzDistToPlayer > 1300.0f){
+         this->actionFunc = EnMk_SpotPlayer;
+    }
     if (Actor_TalkOfferAccepted(&this->actor, play)) {
-       // playerExchangeItem = func_8002F368(play);
-        if (Flags_GetClear(play, this->actor.room) || Flags_GetTempClear(play, this->actor.room){
-            player->actor.textId = 0x0006;
-        }
-        if (this->actor.textId != 0x4018) {
+        playerExchangeItem = func_8002F368(play);
+
+        if (this->actor.textId != 0x0004) {
             player->actor.textId = this->actor.textId;
             this->actionFunc = func_80AACA40;
         } else {
@@ -282,7 +282,7 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
                             }
                         } else {
                             if (this->swimFlag == 0) {
-                                player->actor.textId = 0x4018;
+                                player->actor.textId = 0x0004;
                                 this->actionFunc = func_80AACA40;
                             } else {
                                 player->actor.textId = 0x406C + this->swimFlag;
@@ -301,9 +301,10 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
                         break;*/
                     default:
                         if (Flags_GetClear(play, this->actor.room) || Flags_GetTempClear(play, this->actor.room)){
+                            Flags_SetClear(play, this->actor.room);
                             player->actor.textId = 0x0006;
                             this->actionFunc = EnMk_GiveBottle;
-                        break;
+                            break;
                         }
                         else{
                             player->actor.textId = 0x0004;
@@ -316,7 +317,7 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
         this->actor.textId = MaskReaction_GetTextId(play, MASK_REACTION_SET_LAKESIDE_PROFESSOR);
 
         if (this->actor.textId == 0) {
-            this->actor.textId = 0x4018;
+            this->actor.textId = 0x0004;
         }
 
         angle = this->actor.yawTowardsPlayer - this->actor.shape.rot.y;
@@ -326,7 +327,6 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
             this->flags |= 1;
         }
     }
-    
 }
 
 void EnMk_Update(Actor* thisx, PlayState* play) {
