@@ -48,7 +48,8 @@ static s16 sObjectIds[] = {
     OBJECT_GI_RUPY,          // ITEM_ETC_RUPEE_RED_CHEST_GAME
     OBJECT_GI_RUPY,          // ITEM_ETC_RUPEE_PURPLE_CHEST_GAME
     OBJECT_GI_HEARTS,        // ITEM_ETC_HEART_PIECE_CHEST_GAME
-    OBJECT_GI_KEY,           // ITEM_ETC_KEY_SMALL_CHEST_GAME
+    //OBJECT_GI_KEY,           // ITEM_ETC_KEY_SMALL_CHEST_GAME
+    OBJECT_GI_SWORD_1,
 };
 
 // Indices passed to the item table in z_draw.c
@@ -66,7 +67,8 @@ static s16 sDrawItemIndices[] = {
     GID_RUPEE_RED,           // ITEM_ETC_RUPEE_RED_CHEST_GAME
     GID_RUPEE_PURPLE,        // ITEM_ETC_RUPEE_PURPLE_CHEST_GAME
     GID_HEART_PIECE,         // ITEM_ETC_HEART_PIECE_CHEST_GAME
-    GID_SMALL_KEY,           // ITEM_ETC_KEY_SMALL_CHEST_GAME
+    //GID_SMALL_KEY,           // ITEM_ETC_KEY_SMALL_CHEST_GAME
+    GID_SWORD_KOKIRI,
 };
 
 static s16 sGetItemIds[] = {
@@ -83,7 +85,8 @@ static s16 sGetItemIds[] = {
     GI_NONE,                // ITEM_ETC_RUPEE_RED_CHEST_GAME
     GI_NONE,                // ITEM_ETC_RUPEE_PURPLE_CHEST_GAME
     GI_NONE,                // ITEM_ETC_HEART_PIECE_CHEST_GAME
-    GI_NONE,                // ITEM_ETC_KEY_SMALL_CHEST_GAME
+   // GI_NONE,                // ITEM_ETC_KEY_SMALL_CHEST_GAME
+    GI_SWORD_KOKIRI,
 };
 
 void ItemEtcetera_SetupAction(ItemEtcetera* this, ItemEtceteraActionFunc actionFunc) {
@@ -130,11 +133,11 @@ void ItemEtcetera_Init(Actor* thisx, PlayState* play) {
         case ITEM_ETC_RUPEE_RED_CHEST_GAME:
         case ITEM_ETC_RUPEE_PURPLE_CHEST_GAME:
         case ITEM_ETC_HEART_PIECE_CHEST_GAME:
-        case ITEM_ETC_KEY_SMALL_CHEST_GAME:
+        /*case ITEM_ETC_KEY_SMALL_CHEST_GAME:
             Actor_SetScale(&this->actor, 0.5f);
             this->futureActionFunc = func_80B85B28;
             this->drawFunc = ItemEtcetera_DrawThroughLens;
-            this->actor.world.pos.y += 15.0f;
+            this->actor.world.pos.y += 15.0f;*/
             break;
     }
 }

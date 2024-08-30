@@ -483,12 +483,12 @@ void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxP) {
 #if !OOT_MQ
     gDPSetEnvColor(gfx++, 100, 0, 100, 255);
 #else
-    gDPSetEnvColor(gfx++, 0, 0, 100, 255);
+    gDPSetEnvColor(gfx++, 100, 0, 100, 255);
 #endif
 
     if ((s16)this->mainAlpha != 0) {
         EnMag_DrawTextureI8(&gfx, gTitleTheLegendOfTextTex, 72, 8, 154 + LOGO_X_SHIFT, 73, 72, 8, 1024, 1024);
-        EnMag_DrawTextureI8(&gfx, gTitleOcarinaOfTimeTMTextTex, 96, 8, 152 + LOGO_X_SHIFT, 127, 96, 8, 1024, 1024);
+        //EnMag_DrawTextureI8(&gfx, gTitleOcarinaOfTimeTMTextTex, 96, 8, 152 + LOGO_X_SHIFT, 127, 96, 8, 1024, 1024);
 
         gDPPipeSync(gfx++);
 
@@ -496,18 +496,19 @@ void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxP) {
         gDPSetPrimColor(gfx++, 0, 0, 200, 200, 150, (s16)this->mainAlpha);
         gDPSetEnvColor(gfx++, 100, 100, 50, 255);
 #else
-        gDPSetPrimColor(gfx++, 0, 0, 100, 150, 255, (s16)this->mainAlpha);
-        gDPSetEnvColor(gfx++, 20, 80, 160, 255);
+        gDPSetPrimColor(gfx++, 0, 0, 200, 200, 150, (s16)this->mainAlpha);
+        gDPSetEnvColor(gfx++, 100, 100, 50, 255);
 #endif
 
         EnMag_DrawTextureI8(&gfx, gTitleTheLegendOfTextTex, 72, 8, 153 + LOGO_X_SHIFT, 72, 72, 8, 1024, 1024);
-        EnMag_DrawTextureI8(&gfx, gTitleOcarinaOfTimeTMTextTex, 96, 8, 151 + LOGO_X_SHIFT, 126, 96, 8, 1024, 1024);
+        //EnMag_DrawTextureI8(&gfx, gTitleOcarinaOfTimeTMTextTex, 96, 8, 152 + LOGO_X_SHIFT, 127, 96, 8, 1024, 1024);
+                
 
 #if OOT_MQ
         gDPPipeSync(gfx++);
         gDPSetPrimColor(gfx++, 0, 0, 255, 255, 255, (s16)this->subAlpha);
 
-        EnMag_DrawImageRGBA32(&gfx, WIDE_INCR(174, 10), 145, (u8*)gTitleMasterQuestSubtitleTex, 128, 32);
+        EnMag_DrawImageRGBA32(&gfx, WIDE_INCR(174, 10), 149, (u8*)gTitleMasterQuestSubtitleTex, 128, 32);
 #endif
     }
 

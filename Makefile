@@ -278,7 +278,7 @@ DMA_CONFIG_FILE := dma_config.txt
 SPEC := spec
 
 # Baserom to use when creating BPS patches
-BASEROM_PATCH ?= baseroms/$(VERSION)/baserom.z64
+BASEROM_PATCH ?= baseroms/$(VERSION)/patchbase.z64
 
 ifeq ($(COMPILER),gcc)
 SRC_DIRS := $(shell find src -type d)

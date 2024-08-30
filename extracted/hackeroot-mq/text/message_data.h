@@ -1274,57 +1274,18 @@ DEFINE_MESSAGE(0x0030, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) QUICKTEXT_ENABLE "You found the " COLOR(RED) "Fairy Slingshot" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
-"On the " COLOR(YELLOW) "Select Item Subscreen" COLOR(DEFAULT) ",\n"
-"you can set it to " COLOR(YELLOW) "[C-Left]" COLOR(DEFAULT) ", " COLOR(YELLOW) "[C-Down]" COLOR(DEFAULT) " or" COLOR(YELLOW) " [C-Right]" COLOR(DEFAULT) "."
+UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) QUICKTEXT_ENABLE "You got " COLOR(RED) "Grandpas's slingshot" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
+"It looks pretty old, but it's better\n"
+"than nothing."
 BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) "Press " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "to take it out and hold\n"
-"it. As you hold " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "you can aim \n"
-"with " COLOR(LIGHTBLUE) "[Control-Pad]" COLOR(DEFAULT) ". Release " COLOR(YELLOW) "[C]" COLOR(DEFAULT) " to unleash \n"
-"a " COLOR(RED) "Deku Seed" COLOR(DEFAULT) "."
-BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) "If you want to shoot right \n"
-"away, when you first press " COLOR(YELLOW) "[C]" COLOR(DEFAULT) ", \n"
-"hold down " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "a little longer to \n"
-"get a seed ready."
 )
 ,
 MSG(
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) QUICKTEXT_ENABLE "Die " COLOR(RED) "Feen-Schleuder" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
-"Im " COLOR(YELLOW) "Gegenstands-Menü " COLOR(DEFAULT) "kannst\n"
-"Du sie auf " COLOR(YELLOW) "[C-Left]" COLOR(DEFAULT) ", " COLOR(YELLOW) "[C-Down]" COLOR(DEFAULT) " oder" COLOR(YELLOW) " [C-Right]\n"
-COLOR(DEFAULT) "plazieren."
-BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) "Drücke " COLOR(YELLOW) "[C]" COLOR(DEFAULT) ", um die Schleuder\n"
-"zu benutzen. Halte " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "und\n"
-"ziele mit " COLOR(LIGHTBLUE) "[Control-Pad]" COLOR(DEFAULT) ". Laß " COLOR(YELLOW) "[C]" COLOR(DEFAULT) " los,\n"
-"um " COLOR(RED) "Deku-Kerne " COLOR(DEFAULT) "abzuschießen!"
-BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) "Wenn Du sofort schießen\n"
-"willst, halte " COLOR(YELLOW) "[C]" COLOR(DEFAULT) " etwas länger\n"
-"gedrückt und laß dann los."
+""
 )
 ,
 MSG(
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) QUICKTEXT_ENABLE "Vous trouvez le " COLOR(RED) "Lance-Pierre\n"
-"des Fées" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE " Assignez-le à " COLOR(YELLOW) "[C-Left]" COLOR(DEFAULT) ", " COLOR(YELLOW) "[C-Down]" COLOR(DEFAULT) "\n"
-"ou" COLOR(YELLOW) " [C-Right] " COLOR(DEFAULT) "dans l'" COLOR(YELLOW) "Inventaire" COLOR(DEFAULT) "."
-BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) "Utilisez " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "pour le\n"
-"brandir. Maintenez " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "dans la\n"
-"direction choisie et visez avec " COLOR(LIGHTBLUE) "[Control-Pad]" COLOR(DEFAULT) ".\n"
-"Relâchez " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "pour tirer."
-BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SLINGSHOT) "Si vous désirez tirer très\n"
-"vite, maintenez " COLOR(YELLOW) "[C] " COLOR(DEFAULT) "dans la\n"
-"direction choisie plus longtemps\n"
-"pour préparer une graine."
+""
 )
 )
 
@@ -7081,18 +7042,17 @@ DEFINE_MESSAGE(0x0106, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE COLOR(LIGHTBLUE) "It looks like that torch was\n"
-"burning not too long ago..." COLOR(DEFAULT)
+COLOR(LIGHTBLUE) "I don't know why you collect\n"
+"these ''rocks''. I've told you the "COLOR(PURPLE) "fingers\n"
+"are dangerous..."
 )
 ,
 MSG(
-UNSKIPPABLE COLOR(LIGHTBLUE) "Sieht so aus, als habe diese\n"
-"Fackel vor kurzem noch gebrannt..." COLOR(DEFAULT)
+""
 )
 ,
 MSG(
-UNSKIPPABLE COLOR(LIGHTBLUE) "Cette torche semble être éteinte\n"
-"depuis peu..." COLOR(DEFAULT)
+""
 )
 )
 
@@ -10387,16 +10347,16 @@ DEFINE_MESSAGE(0x0200, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 MSG(/* MISSING */)
 ,
 MSG(
-SHIFT(15) "Hi! I'm a talking door!"
+"You can hear someone clambering\n"
+"around, but no response."
 )
 ,
 MSG(
-SHIFT(15) "Hi! Ich bin die sprechende Tür!"
+""
 )
 ,
 MSG(
-SHIFT(14) "Bonjour! Je suis une porte \n"
-SHIFT(70) "qui parle!"
+""
 )
 )
 
@@ -10404,17 +10364,33 @@ DEFINE_MESSAGE(0x0201, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-SHIFT(6) COLOR(LIGHTBLUE) "Strange...this door doesn't open..." COLOR(DEFAULT)
+COLOR(PURPLE)"The fingers!!" COLOR(DEFAULT)
+BOX_BREAK
+"Hahaha! They've grown voices!\n"
+"Can't you hear them?"
+BOX_BREAK
+"Of course you can!\n"
+"They speak the truth!\n"
+TEXT_SPEED(3)"Such sultry voices..."
+BOX_BREAK
+"I can hardly contain myself...\n"
+"I feel... "
+BOX_BREAK
+"And... and...\n"
+"The neighbors have already "COLOR(PURPLE)"sprouted!"
+BOX_BREAK
+TEXT_SPEED(3)"PLEASE!\n"
+BOX_BREAK
+"Let me sprout too!\n"
+"PLEASE, PLEASE, PLEASE!"
 )
 ,
 MSG(
-SHIFT(25) COLOR(LIGHTBLUE) "Komisch... Diese Tür läßt sich\n"
-COLOR(DEFAULT) SHIFT(65) COLOR(LIGHTBLUE) "nicht öffnen!" COLOR(DEFAULT)
+""
 )
 ,
 MSG(
-SHIFT(25) COLOR(LIGHTBLUE) "Etrange... Cette porte ne \n"
-COLOR(DEFAULT) SHIFT(65) COLOR(LIGHTBLUE) "s'ouvre pas" COLOR(DEFAULT)
+""
 )
 )
 

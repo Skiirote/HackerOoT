@@ -129,7 +129,7 @@ void EnChanger_Init(Actor* thisx, PlayState* play2) {
     rightChestParams = minigameRoomNum | 0x4E21;
     this->rightChestNum = minigameRoomNum | 1;
     this->rightChestGetItemId = GI_DOOR_KEY;
-    rightChestItem = ITEM_ETC_KEY_SMALL_CHEST_GAME;
+    //rightChestItem = ITEM_ETC_KEY_SMALL_CHEST_GAME;
 
     if (Rand_ZeroFloat(1.99f) < 1.0f) {
         rightChestParams = (sLoserGetItemIds[play->roomCtx.curRoom.num] << 5) | 0x4000;
@@ -140,7 +140,7 @@ void EnChanger_Init(Actor* thisx, PlayState* play2) {
         rightChestParams |= minigameRoomNum;
         this->leftChestNum = minigameRoomNum | 1;
         this->leftChestGetItemId = GI_DOOR_KEY;
-        leftChestItem = ITEM_ETC_KEY_SMALL_CHEST_GAME;
+        //leftChestItem = ITEM_ETC_KEY_SMALL_CHEST_GAME;
     }
 
     this->leftChest = (EnBox*)Actor_SpawnAsChild(

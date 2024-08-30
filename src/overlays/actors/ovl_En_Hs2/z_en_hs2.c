@@ -72,9 +72,18 @@ void EnHs2_Destroy(Actor* thisx, PlayState* play) {
     Collider_DestroyCylinder(play, &this->collider);
 }
 
+void EnHs2_GiveSword(EnHs2* this, PlayState* play){
+    if (Actor_TextboxIsClosing(&this->actor, play)) {
+        Actor_OfferGetItem(&this->actor, play, GI_SWORD_KOKIRI, 10000.0f, 50.0f);
+    }
+}
+
 s32 func_80A6F0B4(EnHs2* this, PlayState* play, u16 textId, EnHs2ActionFunc actionFunc) {
     if (Actor_TalkOfferAccepted(&this->actor, play)) {
         this->actionFunc = actionFunc;
+        if (!(CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI)){
+            this->actionFunc = EnHs2_GiveSword;
+        }
         return 1;
     }
 
