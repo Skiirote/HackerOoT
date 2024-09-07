@@ -4086,6 +4086,13 @@ beginseg
 endseg
 
 beginseg
+    name "ovl_Meat_Elevator"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Meat_Elevator/z_meat_elevator.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Meat_Elevator/ovl_Meat_Elevator_reloc.o"
+endseg
+
+beginseg
     name "gameplay_keep"
     compress
     romalign 0x1000
