@@ -7148,6 +7148,15 @@ beginseg
 endseg
 
 beginseg
+    name "object_meat_elevator"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/objects/object_meat_elevator/gMeatElevatorDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_meat_elevator/gMeatElevatorDL_collision.o"
+    number 6
+endseg
+
+beginseg
     name "g_pn_01"
     compress
     romalign 0x1000

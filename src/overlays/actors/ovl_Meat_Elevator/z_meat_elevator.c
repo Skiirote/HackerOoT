@@ -5,7 +5,8 @@
  */
 
 #include "z_meat_elevator.h"
-#include "assets/objects/gameplay_keep/gameplay_keep.h"
+#include "assets/objects/object_meat_elevator/gMeatElevatorDL.h"
+#include "assets/objects/object_meat_elevator/gMeatElevatorDL_collision.h"
 
 #define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
 
@@ -18,7 +19,7 @@ ActorInit Meat_Elevator_InitVars = {
     ACTOR_MEAT_ELEVATOR,
     ACTORCAT_BG,
     FLAGS,
-    OBJECT_GAMEPLAY_KEEP,
+    OBJECT_MEAT_ELEVATOR,
     sizeof(MeatElevator),
     (ActorFunc)MeatElevator_Init,
     (ActorFunc)MeatElevator_Destroy,
@@ -27,14 +28,19 @@ ActorInit Meat_Elevator_InitVars = {
 };
 
 void MeatElevator_Init(Actor* thisx, PlayState* play){
+    MeatElevator* this = (MeatElevator*)thisx;
 
+    this->actor.scale.x += 0.1f;
+    this->actor.scale.y += 0.1f;
+    this->actor.scale.z += 0.1f;
 }
 void MeatElevator_Destroy(Actor* thisx, PlayState* play){
-
+    MeatElevator* this = (MeatElevator*)thisx;
 }
 void MeatElevator_Update(Actor* thisx, PlayState* play){
-
+    MeatElevator* this = (MeatElevator*)thisx;
 }
 void MeatElevator_Draw(Actor* thisx, PlayState* play){
-    Gfx_DrawDListOpa(play, gBombchuDL);
+    MeatElevator* this = (MeatElevator*)thisx;
+    Gfx_DrawDListOpa(play, gMeatElevatorDL);
 }
