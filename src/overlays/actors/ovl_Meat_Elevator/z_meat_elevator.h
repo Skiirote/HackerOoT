@@ -4,7 +4,11 @@
 #include "ultra64.h"
 #include "global.h"
 
+struct MeatElevator;
+typedef void (*MeatElevatorActionFunc)(struct MeatElevator*, PlayState*);
+
 typedef struct MeatElevator {
     DynaPolyActor dyna;
+    MeatElevatorActionFunc actionFunc;
 } MeatElevator;
 #endif

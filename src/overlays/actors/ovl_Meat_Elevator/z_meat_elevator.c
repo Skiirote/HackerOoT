@@ -15,6 +15,12 @@ void MeatElevator_Destroy(Actor* thisx, PlayState* play);
 void MeatElevator_Update(Actor* thisx, PlayState* play);
 void MeatElevator_Draw(Actor* thisx, PlayState* play);
 
+void MeatElevator_SetupWaitForSwitch(MeatElevator* this, PlayState* play);
+void MeatElevator_WaitForSwitch(MeatElevator* this, PlayState* play);
+
+//Wait for switch
+//Raise 40 units
+
 ActorInit Meat_Elevator_InitVars = {
     ACTOR_MEAT_ELEVATOR,
     ACTORCAT_BG,
@@ -34,6 +40,8 @@ void MeatElevator_Init(Actor* thisx, PlayState* play){
     CollisionHeader_GetVirtual(&gMeatElevatorDL_collisionHeader, &colHeader);
 
     this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
+
+    MeatElevator_SetupWaitForSwitch(this, play);
 }
 void MeatElevator_Destroy(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
@@ -41,8 +49,17 @@ void MeatElevator_Destroy(Actor* thisx, PlayState* play){
 }
 void MeatElevator_Update(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
+
+    this->actionFunc(this, play);
 }
 void MeatElevator_Draw(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
     Gfx_DrawDListOpa(play, gMeatElevatorDL);
+}
+
+void MeatElevator_SetupWaitForSwitch(MeatElevator* this, PlayState* play){
+    this->actionFunc = MeatElevator_WaitForSwitch;
+}
+void MeatElevator_WaitForSwitch(MeatElevator* this, PlayState* play){
+
 }
