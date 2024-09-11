@@ -5,6 +5,6 @@
 #include "global.h"
 
 typedef struct MeatElevator {
-    Actor actor;
+    DynaPolyActor dyna;
 } MeatElevator;
 #endif

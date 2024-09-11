@@ -30,12 +30,14 @@ ActorInit Meat_Elevator_InitVars = {
 void MeatElevator_Init(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
 
-    this->actor.scale.x += 0.1f;
-    this->actor.scale.y += 0.1f;
-    this->actor.scale.z += 0.1f;
+    CollisionHeader* colHeader = NULL;
+    CollisionHeader_GetVirtual(&gMeatElevatorDL_collisionHeader, &colHeader);
+
+    this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
 }
 void MeatElevator_Destroy(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
+    DynaPoly_DeleteBgActor(play, &play->colCtx.dyna, this->dyna.bgId);
 }
 void MeatElevator_Update(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
