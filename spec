@@ -655,6 +655,7 @@ beginseg
     include "$(BUILD_DIR)/data/f3dzex2.rodata.o"
 #endif
     include "$(BUILD_DIR)/src/code/rainbow.o"
+    include "$(BUILD_DIR)/src/code/debug_util.o"
 endseg
 
 #if ENABLE_HACKER_DEBUG

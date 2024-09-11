@@ -43,15 +43,18 @@ void MeatElevator_Init(Actor* thisx, PlayState* play){
 
     MeatElevator_SetupWaitForSwitch(this, play);
 }
+
 void MeatElevator_Destroy(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
     DynaPoly_DeleteBgActor(play, &play->colCtx.dyna, this->dyna.bgId);
 }
+
 void MeatElevator_Update(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
 
     this->actionFunc(this, play);
 }
+
 void MeatElevator_Draw(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
     Gfx_DrawDListOpa(play, gMeatElevatorDL);
@@ -60,6 +63,7 @@ void MeatElevator_Draw(Actor* thisx, PlayState* play){
 void MeatElevator_SetupWaitForSwitch(MeatElevator* this, PlayState* play){
     this->actionFunc = MeatElevator_WaitForSwitch;
 }
+
 void MeatElevator_WaitForSwitch(MeatElevator* this, PlayState* play){
 
 }
