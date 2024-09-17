@@ -10,5 +10,6 @@ typedef void (*MeatElevatorActionFunc)(struct MeatElevator*, PlayState*);
 typedef struct MeatElevator {
     DynaPolyActor dyna;
     MeatElevatorActionFunc actionFunc;
+    s16 timer;
 } MeatElevator;
 #endif

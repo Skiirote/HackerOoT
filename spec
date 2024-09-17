@@ -12061,30 +12061,6 @@ beginseg
 endseg
 
 beginseg
-    name "test_scene"
-    compress
-    romalign 0x1000
-    include "$(BUILD_DIR)/assets/scenes/dungeons/test/test_scene.o"
-    number 2
-endseg
-
-beginseg
-    name "test_room_0"
-    compress
-    romalign 0x1000
-    include "$(BUILD_DIR)/assets/scenes/dungeons/test/test_room_0.o"
-    number 3
-endseg
-
-beginseg
-    name "test_room_1"
-    compress
-    romalign 0x1000
-    include "$(BUILD_DIR)/assets/scenes/dungeons/test/test_room_1.o"
-    number 3
-endseg
-
-beginseg
     name "house_scene"
     compress
     romalign 0x1000
@@ -12145,6 +12121,22 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/overworld/cave/cave_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "meatdungeon_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "meatdungeon_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_0.o"
     number 3
 endseg
 

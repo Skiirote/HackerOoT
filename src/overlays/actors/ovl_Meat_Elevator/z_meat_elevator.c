@@ -1,7 +1,7 @@
 /*
  * File: z_meat_elevator.c
  * Overlay: ovl_Meat_Elevator
- * Description: Switch controlled elevator with climbable sides that moves upward 40 units when triggered.
+ * Description: Switch controlled elevator with climbable sides that moves upward 1600 units when triggered.
  */
 
 #include "z_meat_elevator.h"
@@ -10,6 +10,8 @@
 
 #define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
 
+#define SWITCH_FLAG(this) (this->dyna.actor.params & 0x3F)
+
 void MeatElevator_Init(Actor* thisx, PlayState* play);
 void MeatElevator_Destroy(Actor* thisx, PlayState* play);
 void MeatElevator_Update(Actor* thisx, PlayState* play);
@@ -17,6 +19,11 @@ void MeatElevator_Draw(Actor* thisx, PlayState* play);
 
 void MeatElevator_SetupWaitForSwitch(MeatElevator* this, PlayState* play);
 void MeatElevator_WaitForSwitch(MeatElevator* this, PlayState* play);
+void MeatElevator_SetupRaise(MeatElevator* this, PlayState* play);
+void MeatElevator_Raise(MeatElevator* this, PlayState* play);
+void MeatElevator_SetupDoNothing(MeatElevator* this, PlayState* play);
+void MeatElevator_DoNothing(MeatElevator* this, PlayState* play);
+
 
 //Wait for switch
 //Raise 40 units
@@ -34,13 +41,13 @@ ActorInit Meat_Elevator_InitVars = {
 };
 
 void MeatElevator_Init(Actor* thisx, PlayState* play){
+    
+    
     MeatElevator* this = (MeatElevator*)thisx;
-
     CollisionHeader* colHeader = NULL;
     CollisionHeader_GetVirtual(&gMeatElevatorDL_collisionHeader, &colHeader);
-
     this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
-
+   
     MeatElevator_SetupWaitForSwitch(this, play);
 }
 
@@ -58,6 +65,9 @@ void MeatElevator_Update(Actor* thisx, PlayState* play){
 void MeatElevator_Draw(Actor* thisx, PlayState* play){
     MeatElevator* this = (MeatElevator*)thisx;
     Gfx_DrawDListOpa(play, gMeatElevatorDL);
+    this->dyna.actor.scale.x = .2;
+    this->dyna.actor.scale.y = .2;
+    this->dyna.actor.scale.z = .2;
 }
 
 void MeatElevator_SetupWaitForSwitch(MeatElevator* this, PlayState* play){
@@ -66,4 +76,31 @@ void MeatElevator_SetupWaitForSwitch(MeatElevator* this, PlayState* play){
 
 void MeatElevator_WaitForSwitch(MeatElevator* this, PlayState* play){
 
+    if(Flags_GetSwitch(play, SWITCH_FLAG(this))) {
+        MeatElevator_SetupRaise(this, play);
+    } 
+
+}
+
+void MeatElevator_SetupRaise(MeatElevator* this, PlayState* play){
+    this->timer = 133;
+    this->actionFunc = MeatElevator_Raise;
+    //Flags_UnsetSwitch(play, SWITCH_FLAG(this));
+}
+
+void MeatElevator_Raise(MeatElevator* this, PlayState* play){
+    if (DECR(this->timer) == 0) {
+        MeatElevator_SetupDoNothing(this, play);
+    } else {
+        this->dyna.actor.world.pos.y += 9.00f;
+    }
+    Debug_Print(1, "In raise");
+}
+
+void MeatElevator_SetupDoNothing(MeatElevator* this, PlayState* play){
+    this->actionFunc = MeatElevator_DoNothing;
+}
+
+void MeatElevator_DoNothing(MeatElevator* this, PlayState* play){
+    Debug_Print(1, "Doing nothing...");
 }
