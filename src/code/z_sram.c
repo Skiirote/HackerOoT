@@ -40,8 +40,8 @@ static SavePlayerData sNewSavePlayerData = {
         FILENAME_SPACE,
     },                  // playerName
     0,                  // n64ddFlag
-    0x30,               // healthCapacity
-    0x30,               // defense
+    0x50,               // healthCapacity
+    0x50,               // defense
     0,                  // magicLevel
     MAGIC_NORMAL_METER, // magic
     0,                  // rupees

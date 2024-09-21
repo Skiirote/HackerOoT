@@ -4094,6 +4094,14 @@ beginseg
 endseg
 
 beginseg
+    name "ovl_deatheye"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_deatheye/z_deatheye.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_deatheye/ovl_deatheye_reloc.o"
+endseg
+
+
+beginseg
     name "gameplay_keep"
     compress
     romalign 0x1000
@@ -4137,6 +4145,13 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_link_child/object_link_child.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildDekuShieldAndSheathNearDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildDekuShieldSwordAndSheathNearDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildLeftFistAndKokiriSwordNearDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildSheathNearDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildSwordAndSheathNearDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildRightArmStretchedSlingshotDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_link_child/gLinkChildRightHandHoldingSlingshotNearDL.o"
     number 6
 endseg
 
@@ -4345,6 +4360,16 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_st/object_st.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_001C30.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_001A40.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_001FD0.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_0022C8.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_0023F8.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_002068.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_002100.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_002198.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_002230.o"
+    include "$(BUILD_DIR)/assets/objects/object_st/object_st_DL_002360.o"
     number 6
 endseg
 
@@ -5785,6 +5810,7 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_gi_pachinko/object_gi_pachinko.o"
+    include "$(BUILD_DIR)/assets/objects/object_gi_pachinko/gGiSlingshotDL.o"
     number 6
 endseg
 
@@ -7113,6 +7139,7 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_gi_sword_1/object_gi_sword_1.o"
+    include "$(BUILD_DIR)/assets/objects/object_gi_sword_1/gGiKokiriSwordDL.o"
     number 6
 endseg
 
@@ -7154,6 +7181,15 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_meat_elevator/gMeatElevatorDL.o"
     include "$(BUILD_DIR)/assets/objects/object_meat_elevator/gMeatElevatorDL_collision.o"
+    number 6
+endseg
+
+beginseg
+    name "object_deatheye"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/objects/object_deatheye/gDeatheyeDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_deatheye/gDeatheyeDL_collision.o"
     number 6
 endseg
 
@@ -12137,6 +12173,22 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_0.o"
+    number 3
+endseg
+
+beginseg
+    name "meatdungeon_room_1"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_1.o"
+    number 3
+endseg
+
+beginseg
+    name "meatdungeon_room_2"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_2.o"
     number 3
 endseg
 

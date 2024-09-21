@@ -459,7 +459,7 @@ s32 EnSt_CheckHitBackside(EnSt* this, PlayState* play) {
     this->swayTimer = this->stunTimer = 0;
     this->gaveDamageSpinTimer = 1;
     Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ENST_ANIM_3);
-    this->takeDamageSpinTimer = this->skelAnime.animLength;
+    this->takeDamageSpinTimer = this->skelAnime.animLength + 20;
     Actor_SetColorFilter(&this->actor, COLORFILTER_COLORFLAG_RED, 200, COLORFILTER_BUFFLAG_OPA,
                          this->takeDamageSpinTimer);
     if (Actor_ApplyDamage(&this->actor)) {
@@ -600,7 +600,7 @@ void EnSt_UpdateYaw(EnSt* this, PlayState* play) {
 
         if (this->actionFunc != EnSt_WaitOnGround) {
             // set the timers to turn away or turn towards the player
-            this->rotAwayTimer = 30;
+            this->rotAwayTimer = 60;
             this->rotTowardsTimer = 0;
         }
 
@@ -609,16 +609,18 @@ void EnSt_UpdateYaw(EnSt* this, PlayState* play) {
             this->rotAwayTimer--;
             if (this->rotAwayTimer == 0) {
                 Actor_PlaySfx(&this->actor, NA_SE_EN_STALTU_ROLL);
-                this->rotTowardsTimer = 30;
+                this->rotTowardsTimer = 60;
             }
+            this->isFacingAway = true;
         } else if (this->rotTowardsTimer != 0) {
             // turn towards the player
             this->rotTowardsTimer--;
             if (this->rotTowardsTimer == 0) {
                 Actor_PlaySfx(&this->actor, NA_SE_EN_STALTU_ROLL);
-                this->rotAwayTimer = 30;
+                this->rotAwayTimer = 60;
             }
             yawDir = 0x8000;
+            this->isFacingAway = false;
         }
 
         // calculate the new yaw to or away from the player.
@@ -783,7 +785,8 @@ void EnSt_Sway(EnSt* this) {
 void EnSt_Init(Actor* thisx, PlayState* play) {
     EnSt* this = (EnSt*)thisx;
     s32 pad;
-
+    this->isBouncing = false;
+    this->facingTimer = 20;
     ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawCircle, 14.0f);
     SkelAnime_Init(play, &this->skelAnime, &object_st_Skel_005298, NULL, this->jointTable, this->morphTable, 30);
     Animation_ChangeByInfo(&this->skelAnime, sAnimationInfo, ENST_ANIM_0);
@@ -886,6 +889,7 @@ void EnSt_LandOnGround(EnSt* this, PlayState* play) {
     if ((this->actor.floorHeight + this->floorHeightOffset) < this->actor.world.pos.y) {
         // the Skulltula has hit the ground.
         this->sfxTimer = 0;
+        this->isOnGround = true;
         EnSt_SetupAction(this, EnSt_WaitOnGround);
     } else {
         Math_SmoothStepToF(&this->actor.velocity.y, 2.0f, 0.3f, 1.0f, 0.0f);
@@ -920,6 +924,7 @@ void EnSt_ReturnToCeiling(EnSt* this, PlayState* play) {
 
     if (animPctDone == 1.0f) {
         EnSt_SetReturnToCeilingAnimation(this);
+        this->isOnGround = false;
     }
 
     if (EnSt_IsCloseToPlayer(this, play)) {
@@ -940,6 +945,7 @@ void EnSt_ReturnToCeiling(EnSt* this, PlayState* play) {
  * The Skulltula has been killed, bounce around
  */
 void EnSt_BounceAround(EnSt* this, PlayState* play) {
+    this->isBouncing = true;
     this->actor.colorFilterTimer = this->deathTimer;
     Actor_UpdateVelocityXZGravity(&this->actor);
     this->actor.world.rot.x += 0x800;
@@ -993,6 +999,7 @@ void EnSt_Die(EnSt* this, PlayState* play) {
     } else {
         Item_DropCollectibleRandom(play, NULL, &this->actor.world.pos, 0xE0);
         Actor_Kill(&this->actor);
+        this->isBouncing = false;
     }
 }
 
@@ -1010,6 +1017,7 @@ void EnSt_StartOnCeilingOrGround(EnSt* this, PlayState* play) {
 
 void EnSt_Update(Actor* thisx, PlayState* play) {
     EnSt* this = (EnSt*)thisx;
+    Player* player = GET_PLAYER(play);
     s32 pad;
     Color_RGBA8 color = { 0, 0, 0, 0 };
 
@@ -1047,10 +1055,27 @@ void EnSt_Update(Actor* thisx, PlayState* play) {
                 color.r = 255;
             }
         }
-
         EnSt_SetTeethColor(this, color.r, color.g, color.b, 8);
         EnSt_UpdateCylinders(this, play);
         Actor_SetFocus(&this->actor, 0.0f);
+        //Debug_Print(3, "is on ground: %d", this->isOnGround);
+        //Debug_Print(4, "Is facing away: %d", this->isFacingAway);
+        //Debug_Print(5, "Timer: %d", this->facingTimer);
+        //Debug_Print(6, "is bouncing: %d", this->isBouncing);
+        if (!this->isFacingAway && this->isOnGround && !this->isBouncing){
+            this->facingTimer -= 1;
+            if (this->facingTimer == 1){
+                play->damagePlayer(play, -8);
+                Player_PlaySfx(player, NA_SE_VO_LI_DAMAGE_S_KID);
+                this->colSph.base.ocFlags1 &= ~OC1_TYPE_PLAYER;
+            } else if (this->facingTimer == 6){
+                Player_PlaySfx(player, NA_SE_EN_BUBLEWALK_DAMAGE);
+            }
+            if (this->facingTimer <= 0){
+                this->facingTimer = 20;
+            }
+        }else{
+        }
     }
 }
 

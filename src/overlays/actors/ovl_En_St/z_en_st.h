@@ -45,6 +45,10 @@ typedef struct EnSt {
     /* 0x0410 */ s16 swayAngle;
     /* 0x0412 */ Vec3s jointTable[30];
     /* 0x04C6 */ Vec3s morphTable[30];
+    s32 isFacingAway;
+    s32 isOnGround;
+    s16 facingTimer;
+    s32 isBouncing;
 } EnSt; // size = 0x057C
 
 #endif

@@ -410,3 +410,4 @@
 /* 0x0190 */ DEFINE_OBJECT(object_timeblock, OBJECT_TIMEBLOCK)
 /* 0x0191 */ DEFINE_OBJECT(object_zl4, OBJECT_ZL4)
 /* 0x0191 */ DEFINE_OBJECT(object_meat_elevator, OBJECT_MEAT_ELEVATOR)
+             DEFINE_OBJECT(object_deatheye, OBJECT_DEATHEYE)

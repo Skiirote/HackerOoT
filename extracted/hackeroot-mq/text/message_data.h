@@ -4577,16 +4577,10 @@ DEFINE_MESSAGE(0x00A4, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE ITEM_ICON(ITEM_SWORD_KOKIRI) QUICKTEXT_ENABLE "You got the " COLOR(ADJUSTABLE) "Kokiri Sword" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
-"On the " COLOR(BLUE) "Equipment Subscreen" COLOR(DEFAULT) ",\n"
-"select it with the cursor and\n"
-"equip it with " COLOR(BLUE) "[A]" COLOR(DEFAULT) "."
-BOX_BREAK
-
-UNSKIPPABLE ITEM_ICON(ITEM_SWORD_KOKIRI) "This is a hidden treasure of\n"
-"the Kokiri, but you can borrow it\n"
-"for a while. Be sure to practice \n"
-"with it before you really fight!"
+UNSKIPPABLE ITEM_ICON(ITEM_SWORD_KOKIRI) QUICKTEXT_ENABLE "You got " COLOR(ADJUSTABLE) "the strange man's sword" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
+"He tried to find what was wrong\n"
+"with the water, but now he is\n"
+"trusting you to."
 )
 ,
 MSG(
@@ -14311,8 +14305,11 @@ DEFINE_MESSAGE(0x0604, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_VARIABLE,
 MSG(/* MISSING */)
 ,
 MSG(
-QUICKTEXT_ENABLE "Skulltula\n"
-COLOR(LIGHTBLUE) "Its soft " COLOR(DEFAULT) "belly" COLOR(LIGHTBLUE) " is its weak point!" COLOR(DEFAULT) QUICKTEXT_DISABLE
+QUICKTEXT_ENABLE COLOR(LIGHTBLUE) "Watch out " NAME "!\n"
+COLOR(LIGHTBLUE) "The eye on the back of that\n"
+"Skulltula seems to have some\n"
+"strange power!"
+ QUICKTEXT_DISABLE
 )
 ,
 MSG(
@@ -44942,10 +44939,24 @@ DEFINE_MESSAGE(0x5069, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 MSG(/* MISSING */)
 ,
 MSG(
-"People are disgusting. \n"
-"My own father and mother are\n"
-"disgusting.\n"
-"You must be disgusting, too!"
+"You come here for fish too?. \n"
+"There's no use. They're all dead.\n"
+"The water's turned red and\n"
+"the fish have turned dead.\n"
+BOX_BREAK
+TEXT_SPEED(6)"The water's turned " COLOR(RED) "red " COLOR(DEFAULT) "and\n"
+"the " COLOR(BLUE) "fish " COLOR(DEFAULT) "have turned " COLOR(PURPLE) "dead" COLOR(DEFAULT) ".\n"
+BOX_BREAK
+"Anyways... the "COLOR(RED) "red " COLOR(DEFAULT) "is coming\n"
+"from that cave upstream.\n"
+BOX_BREAK
+"I tried to find the source\n"
+"of the "COLOR(RED) "red " COLOR(DEFAULT) "but I got startled\n"
+"and ran back..."
+BOX_BREAK
+"If you want to take a look\n"
+"for yourself, I'll give you\n"
+"my sword. Here, take it."
 )
 ,
 MSG(
