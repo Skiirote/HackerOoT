@@ -600,7 +600,7 @@ void EnSt_UpdateYaw(EnSt* this, PlayState* play) {
 
         if (this->actionFunc != EnSt_WaitOnGround) {
             // set the timers to turn away or turn towards the player
-            this->rotAwayTimer = 60;
+            this->rotAwayTimer = 30;
             this->rotTowardsTimer = 0;
         }
 
@@ -697,19 +697,19 @@ s32 EnSt_IsCloseToPlayer(EnSt* this, PlayState* play) {
     if (this->takeDamageSpinTimer != 0) {
         // skull is spinning from damage.
         return false;
-    } else if (this->actor.xzDistToPlayer > 160.0f) {
+    } else if (this->actor.xzDistToPlayer > 600.0f) {//was 160.0f
         // player is more than 160 xz units from the Skulltula
         return false;
     }
 
     yDist = this->actor.world.pos.y - player->actor.world.pos.y;
-    if (yDist < 0.0f || yDist > 400.0f) {
+    if (yDist < 0.0f || yDist > 600.0f) {
         // player is above the Skulltula or more than 400 units below
         // the Skulltula
         return false;
     }
 
-    if (player->actor.world.pos.y < this->actor.floorHeight) {
+    if (player->actor.world.pos.y < this->actor.floorHeight - 100) {
         // player is below the Skulltula's ground position
         return false;
     }
