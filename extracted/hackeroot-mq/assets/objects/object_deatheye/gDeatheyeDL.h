@@ -1,0 +1,12 @@
+extern u64 gDeatheyeDL_png_clipart_eye_balls_red_eyeball_art_ci4[];
+extern u64 gDeatheyeDL_png_clipart_eye_balls_red_eyeball_art_pal_rgba16[];
+extern u64 gDeatheyeDL__360_F_427649019_QHKilZhOij4g3TKtgpLcqrFitpxFdV4u_ci4[];
+extern u64 gDeatheyeDL__360_F_427649019_QHKilZhOij4g3TKtgpLcqrFitpxFdV4u_pal_rgba16[];
+extern Vtx gDeatheyeDL_gDeatheyeDL_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx gDeatheyeDL_gDeatheyeDL_mesh_layer_Opaque_vtx_0[94];
+extern Gfx gDeatheyeDL_gDeatheyeDL_mesh_layer_Opaque_tri_0[];
+extern Vtx gDeatheyeDL_gDeatheyeDL_mesh_layer_Opaque_vtx_1[56];
+extern Gfx gDeatheyeDL_gDeatheyeDL_mesh_layer_Opaque_tri_1[];
+extern Gfx mat_gDeatheyeDL_eye1_layerOpaque[];
+extern Gfx mat_gDeatheyeDL_f3dlite_material_001_layerOpaque[];
+extern Gfx gDeatheyeDL[];

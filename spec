@@ -4100,6 +4100,12 @@ beginseg
     include "$(BUILD_DIR)/src/overlays/actors/ovl_deatheye/ovl_deatheye_reloc.o"
 endseg
 
+beginseg
+    name "ovl_Meat_Platform"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Meat_Platform/z_meat_platform.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_Meat_Platform/ovl_Meat_Platform_reloc.o"
+endseg
 
 beginseg
     name "gameplay_keep"
@@ -7190,6 +7196,15 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_deatheye/gDeatheyeDL.o"
     include "$(BUILD_DIR)/assets/objects/object_deatheye/gDeatheyeDL_collision.o"
+    number 6
+endseg
+
+beginseg
+    name "object_meat_platform"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/objects/object_meat_platform/gMeatPlatformDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_meat_platform/gMeatPlatformDL_collision.o"
     number 6
 endseg
 

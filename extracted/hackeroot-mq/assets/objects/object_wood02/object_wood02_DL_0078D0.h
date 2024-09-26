@@ -1,0 +1,7 @@
+extern u64 object_wood02_DL_0078D0_Forest_Wood01_ci4[];
+extern u64 object_wood02_DL_0078D0_Forest_Wood01_pal_rgba16[];
+extern Vtx object_wood02_DL_0078D0_object_wood02_DL_0078D0_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx object_wood02_DL_0078D0_object_wood02_DL_0078D0_mesh_layer_Opaque_vtx_0[12];
+extern Gfx object_wood02_DL_0078D0_object_wood02_DL_0078D0_mesh_layer_Opaque_tri_0[];
+extern Gfx mat_object_wood02_DL_0078D0_f3dlite_material_003_layerOpaque[];
+extern Gfx object_wood02_DL_0078D0[];

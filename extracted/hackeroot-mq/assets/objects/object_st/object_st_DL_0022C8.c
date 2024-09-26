@@ -1,0 +1,67 @@
+#include "ultra64.h"
+#include "global.h"
+
+u64 object_st_DL_0022C8_tex_00000320_i4_png_002_i4[] = {
+	0x0000000000000000, 0x0000012333100000, 0x888888abcb988888, 0xeeeeeeeeeeeeeeee, 0xddddddddddeeeedd, 0x568acdb988acca87, 0x0013665211344310, 0x0000000000000000, 
+	
+};
+
+Vtx object_st_DL_0022C8_object_st_DL_0022C8_mesh_layer_Opaque_vtx_cull[8] = {
+	{{ {-18, -16, -147}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-18, -16, 84}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-18, 1204, 84}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-18, 1204, -147}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {539, -16, -147}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {539, -16, 84}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {539, 1204, 84}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {539, 1204, -147}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx object_st_DL_0022C8_object_st_DL_0022C8_mesh_layer_Opaque_vtx_0[12] = {
+	{{ {476, 990, -52}, 0, {449, 4}, {0, 52, 116, 255} }},
+	{{ {419, 1204, -147}, 0, {135, 256}, {0, 52, 116, 255} }},
+	{{ {394, 1153, -124}, 0, {341, 256}, {0, 52, 116, 255} }},
+	{{ {-18, -16, -43}, 0, {330, -130}, {218, 2, 121, 255} }},
+	{{ {336, 79, 68}, 0, {0, 256}, {218, 2, 121, 255} }},
+	{{ {313, 133, 60}, 0, {301, 256}, {218, 2, 121, 255} }},
+	{{ {286, 83, 84}, 0, {380, -10}, {3, 5, 127, 255} }},
+	{{ {539, 360, 67}, 0, {205, 224}, {3, 5, 127, 255} }},
+	{{ {488, 389, 67}, 0, {325, 224}, {3, 5, 127, 255} }},
+	{{ {499, 323, 68}, 0, {323, -39}, {0, 26, 124, 255} }},
+	{{ {505, 1009, -74}, 0, {212, 237}, {0, 26, 124, 255} }},
+	{{ {447, 1001, -73}, 0, {333, 233}, {0, 26, 124, 255} }},
+};
+
+Gfx object_st_DL_0022C8_object_st_DL_0022C8_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(object_st_DL_0022C8_object_st_DL_0022C8_mesh_layer_Opaque_vtx_0 + 0, 12, 0),
+	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
+	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_object_st_DL_0022C8_f3dlite_material_014_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 0, 5, 255),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_16b, 1, object_st_DL_0022C8_tex_00000320_i4_png_002_i4),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 31, 2048),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_4b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0),
+	gsDPSetTileSize(0, 0, 0, 60, 28),
+	gsSPEndDisplayList(),
+};
+
+Gfx object_st_DL_0022C8[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(object_st_DL_0022C8_object_st_DL_0022C8_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_object_st_DL_0022C8_f3dlite_material_014_layerOpaque),
+	gsSPDisplayList(object_st_DL_0022C8_object_st_DL_0022C8_mesh_layer_Opaque_tri_0),
+	gsSPEndDisplayList(),
+};
+

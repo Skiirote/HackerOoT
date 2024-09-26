@@ -95,7 +95,7 @@ void MeatElevator_Raise(MeatElevator* this, PlayState* play){
         this->dyna.actor.world.pos.y += 9.00f;
         Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_ELEVATOR_MOVE3 - SFX_FLAG);
     }
-    Debug_Print(1, "In raise");
+    //Debug_Print(1, "In raise");
 }
 
 void MeatElevator_SetupDoNothing(MeatElevator* this, PlayState* play){
@@ -104,5 +104,5 @@ void MeatElevator_SetupDoNothing(MeatElevator* this, PlayState* play){
 }
 
 void MeatElevator_DoNothing(MeatElevator* this, PlayState* play){
-    Debug_Print(1, "Doing nothing...");
+    //Debug_Print(1, "Doing nothing...");
 }

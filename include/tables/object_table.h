@@ -411,3 +411,4 @@
 /* 0x0191 */ DEFINE_OBJECT(object_zl4, OBJECT_ZL4)
 /* 0x0191 */ DEFINE_OBJECT(object_meat_elevator, OBJECT_MEAT_ELEVATOR)
              DEFINE_OBJECT(object_deatheye, OBJECT_DEATHEYE)
+             DEFINE_OBJECT(object_meat_platform, OBJECT_MEAT_PLATFORM)

@@ -10,6 +10,7 @@ typedef void (*deatheyeActionFunc)(struct deatheye*, PlayState*);
 typedef struct deatheye {
     DynaPolyActor dyna;
     deatheyeActionFunc actionFunc;
-    Vec3s headRot;
+    s16 eyeRotX;
+    ColliderCylinder colliders[2];
 } deatheye;
 #endif

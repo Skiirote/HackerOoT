@@ -44939,12 +44939,12 @@ DEFINE_MESSAGE(0x5069, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 MSG(/* MISSING */)
 ,
 MSG(
-"You come here for fish too?. \n"
+"You come here for fish too? \n"
 "There's no use. They're all dead.\n"
 "The water's turned red and\n"
 "the fish have turned dead.\n"
 BOX_BREAK
-TEXT_SPEED(6)"The water's turned " COLOR(RED) "red " COLOR(DEFAULT) "and\n"
+TEXT_SPEED(10)"The water's turned " COLOR(RED) "red " COLOR(DEFAULT) "and\n"
 "the " COLOR(BLUE) "fish " COLOR(DEFAULT) "have turned " COLOR(PURPLE) "dead" COLOR(DEFAULT) ".\n"
 BOX_BREAK
 "Anyways... the "COLOR(RED) "red " COLOR(DEFAULT) "is coming\n"

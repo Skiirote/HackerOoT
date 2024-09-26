@@ -1,0 +1,10 @@
+extern u64 gMeatPlatformDL_Meat0017_350_i8[];
+extern u64 gMeatPlatformDL_bek_wht1_w12_1_i4[];
+extern Vtx gMeatPlatformDL_gMeatPlatformDL_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx gMeatPlatformDL_gMeatPlatformDL_mesh_layer_Opaque_vtx_0[5];
+extern Gfx gMeatPlatformDL_gMeatPlatformDL_mesh_layer_Opaque_tri_0[];
+extern Vtx gMeatPlatformDL_gMeatPlatformDL_mesh_layer_Opaque_vtx_1[18];
+extern Gfx gMeatPlatformDL_gMeatPlatformDL_mesh_layer_Opaque_tri_1[];
+extern Gfx mat_gMeatPlatformDL_MeatFloor_layerOpaque[];
+extern Gfx mat_gMeatPlatformDL_Wall_layerOpaque[];
+extern Gfx gMeatPlatformDL[];
