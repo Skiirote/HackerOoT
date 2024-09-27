@@ -21,7 +21,7 @@ static Gfx sScreenFillSetupDL[] = {
 static s16 sFileInfoBoxPartWidths[] = { 36, 36, 36, 36, 24 };
 
 static s16 sWindowContentColors[2][3] = {
-    { 100, 150, 255 }, // blue
+    { 163, 255, 153 }, // blue
     { 100, 100, 100 }, // gray
 };
 
@@ -1832,9 +1832,9 @@ void FileSelect_InitContext(GameState* thisx) {
     this->kbdX = this->kbdY = this->charIndex = 0;
     this->kbdButton = FS_KBD_BTN_NONE;
 
-    this->windowColor[0] = 100;
-    this->windowColor[1] = 150;
-    this->windowColor[2] = 255;
+    this->windowColor[0] = 163;//100
+    this->windowColor[1] = 255;//150
+    this->windowColor[2] = 153;//255
 
     this->windowAlpha = this->titleAlpha[0] = this->titleAlpha[1] = this->fileButtonAlpha[0] =
         this->fileButtonAlpha[1] = this->fileButtonAlpha[2] = this->nameBoxAlpha[0] = this->nameBoxAlpha[1] =

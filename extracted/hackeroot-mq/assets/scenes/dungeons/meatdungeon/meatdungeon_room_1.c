@@ -4,13 +4,31 @@
 /**
  * Header Child Day (Default)
 */
+#define LENGTH_MEATDUNGEON_ROOM_1_HEADER00_OBJECTLIST 1
+#define LENGTH_MEATDUNGEON_ROOM_1_HEADER00_ACTORLIST 1
 SceneCmd meatdungeon_room_1_header00[] = {
     SCENE_CMD_ROOM_SHAPE(&meatdungeon_room_1_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(0x00),
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
     SCENE_CMD_SKYBOX_DISABLES(true, true),
     SCENE_CMD_TIME_SETTINGS(255, 255, 0),
+    SCENE_CMD_OBJECT_LIST(LENGTH_MEATDUNGEON_ROOM_1_HEADER00_OBJECTLIST, meatdungeon_room_1_header00_objectList),
+    SCENE_CMD_ACTOR_LIST(LENGTH_MEATDUNGEON_ROOM_1_HEADER00_ACTORLIST, meatdungeon_room_1_header00_actorList),
     SCENE_CMD_END(),
+};
+
+s16 meatdungeon_room_1_header00_objectList[LENGTH_MEATDUNGEON_ROOM_1_HEADER00_OBJECTLIST] = {
+    OBJECT_ST,
+};
+
+ActorEntry meatdungeon_room_1_header00_actorList[LENGTH_MEATDUNGEON_ROOM_1_HEADER00_ACTORLIST] = {
+    // Skulltula
+    {
+        /* Actor ID   */ ACTOR_EN_ST,
+        /* Position   */ { -1, 397, 1180 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.005), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0000
+    },
 };
 
 RoomShapeNormal meatdungeon_room_1_shapeHeader = {
@@ -91,10 +109,10 @@ Vtx meatdungeon_room_1_dl_Hall1_mesh_layer_Opaque_vtx_0[124] = {
 	{{ {314, 76, 682}, 0, {6485, 4126}, {0, 0, 0, 255} }},
 	{{ {202, -51, 982}, 0, {4348, -2543}, {30, 30, 30, 255} }},
 	{{ {29, -120, 660}, 0, {1486, 2936}, {29, 17, 16, 255} }},
-	{{ {29, -120, 631}, 0, {1486, 2697}, {29, 17, 16, 255} }},
+	{{ {29, -120, 631}, 0, {1486, 2697}, {0, 0, 0, 255} }},
 	{{ {-1, -120, 631}, 0, {1007, 2697}, {26, 16, 15, 255} }},
 	{{ {-1, -120, 660}, 0, {1001, 2935}, {26, 16, 15, 255} }},
-	{{ {-31, -120, 631}, 0, {528, 2697}, {23, 14, 13, 255} }},
+	{{ {-31, -120, 631}, 0, {528, 2697}, {0, 0, 0, 255} }},
 	{{ {-31, -120, 660}, 0, {522, 2935}, {23, 14, 13, 255} }},
 	{{ {-34, -120, 682}, 0, {469, 3283}, {23, 14, 13, 255} }},
 	{{ {33, -120, 682}, 0, {1539, 3285}, {29, 17, 16, 255} }},
@@ -532,15 +550,15 @@ Vtx meatdungeon_room_1_dl_Hall1_mesh_layer_Opaque_vtx_6[50] = {
 	{{ {-34, -120, 682}, 0, {1478, 2025}, {23, 14, 13, 255} }},
 	{{ {-31, -20, 660}, 0, {1573, 1106}, {31, 19, 18, 255} }},
 	{{ {-31, -120, 660}, 0, {1672, 2025}, {23, 14, 13, 255} }},
-	{{ {-31, -20, 631}, 0, {1662, 1104}, {31, 19, 18, 255} }},
-	{{ {-31, -120, 631}, 0, {1761, 2023}, {23, 14, 13, 255} }},
+	{{ {-31, -20, 631}, 0, {1662, 1104}, {0, 0, 0, 255} }},
+	{{ {-31, -120, 631}, 0, {1761, 2023}, {0, 0, 0, 255} }},
 	{{ {29, -20, 660}, 0, {2128, 1092}, {33, 20, 19, 255} }},
-	{{ {29, -20, 631}, 0, {2142, 1225}, {33, 20, 19, 255} }},
-	{{ {-31, -20, 631}, 0, {1586, 1240}, {31, 19, 18, 255} }},
+	{{ {29, -20, 631}, 0, {2142, 1225}, {0, 0, 0, 255} }},
+	{{ {-31, -20, 631}, 0, {1586, 1240}, {0, 0, 0, 255} }},
 	{{ {33, -120, 682}, 0, {2227, 2025}, {29, 17, 16, 255} }},
 	{{ {29, -120, 660}, 0, {2033, 2025}, {29, 17, 16, 255} }},
-	{{ {29, -120, 631}, 0, {1901, 2022}, {29, 17, 16, 255} }},
-	{{ {29, -20, 631}, 0, {1997, 1088}, {33, 20, 19, 255} }},
+	{{ {29, -120, 631}, 0, {1901, 2022}, {0, 0, 0, 255} }},
+	{{ {29, -20, 631}, 0, {1997, 1088}, {0, 0, 0, 255} }},
 	{{ {99, -102, 682}, 0, {3022, 1712}, {23, 14, 13, 255} }},
 	{{ {-239, -67, 1282}, 0, {-470, 1139}, {0, 0, 0, 255} }},
 	{{ {-352, 76, 1282}, 0, {-1302, -8}, {0, 0, 0, 255} }},
@@ -596,22 +614,6 @@ Gfx meatdungeon_room_1_dl_Hall1_mesh_layer_Opaque_tri_6[] = {
 	gsSP2Triangles(10, 12, 1, 0, 12, 13, 1, 0),
 	gsSP2Triangles(12, 14, 13, 0, 15, 1, 13, 0),
 	gsSP2Triangles(15, 16, 1, 0, 16, 15, 17, 0),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_meatdungeon_room_1_dl_MeatTrim1_layerOpaque[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_TEX_EDGE2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 1, meatdungeon_room_1_dl_MeatTrim1_ia8),
-	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadBlock(7, 0, 0, 255, 512),
-	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_WRAP | G_TX_MIRROR, 4, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
-	gsDPSetTileSize(0, 0, 0, 124, 60),
 	gsSPEndDisplayList(),
 };
 

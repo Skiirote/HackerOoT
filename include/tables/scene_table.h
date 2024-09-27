@@ -116,6 +116,7 @@
 /* 0x68 */ DEFINE_SCENE(river_scene, none, SCENE_RIVER, SDC_ZORAS_RIVER, 0, 0)
 /* 0x69 */ DEFINE_SCENE(cave_scene, none, SCENE_CAVE, SDC_ZORAS_RIVER, 0, 0)
 /* 0x6A */ DEFINE_SCENE(meatdungeon_scene, none, SCENE_MEATDUNGEON, SDC_JABU_JABU, 0, 0)
+/* 0x6B */ DEFINE_SCENE(overworld_intro_scene, none, SCENE_OVERWORLD_INTRO, SDC_JABU_JABU, 0, 0)
 
 
 #if CAN_INCLUDE_TEST_SCENES

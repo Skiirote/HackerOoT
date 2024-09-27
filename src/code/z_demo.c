@@ -33,6 +33,7 @@
 #include "assets/scenes/misc/hakaana_ouke/hakaana_ouke_scene.h"
 
 #include "assets/scenes/overworld/overworld_one/overworld_one_scene.h"
+//#include "assets/scenes/overworld/overworld_one/overworld_intro_scene.h"
 #include "assets/scenes/overworld/village/village_scene.h"
 #include "assets/scenes/indoors/house/house_scene.h"
 
@@ -114,7 +115,7 @@ EntranceCutscene sEntranceCutsceneTable[] = {
     { ENTR_GERUDOS_FORTRESS_17, 0, EVENTCHKINF_C7, gGerudoFortressFirstCaptureCs },
     { ENTR_DEATH_MOUNTAIN_CRATER_1, 2, EVENTCHKINF_B9, gDeathMountainCraterIntroCs },
     { ENTR_KOKIRI_FOREST_12, 2, EVENTCHKINF_C6, gKokiriForestDekuSproutCs },
-    { ENTR_OVERWORLD_ONE_5, 2, EVENTCHKINF_A0, GameIntro},
+    { ENTR_OVERWORLD_INTRO_0, 2, EVENTCHKINF_A0, GameIntro},
     { ENTR_VILLAGE_0, 2, EVENTCHKINF_A0, Vilintro},
     { ENTR_HOUSE_0, 2, EVENTCHKINF_A0, Something},
 
@@ -569,7 +570,7 @@ void CutsceneCmd_Destination(PlayState* play, CutsceneContext* csCtx, CsCmdDesti
     s32 titleDemoSkipped = false;
 
     if ((gSaveContext.gameMode != GAMEMODE_NORMAL) && (gSaveContext.gameMode != GAMEMODE_END_CREDITS) &&
-        (play->sceneId != SCENE_HYRULE_FIELD) && (csCtx->curFrame > 20) &&
+        (play->sceneId != SCENE_OVERWORLD_ONE) && (csCtx->curFrame > 20) &&
         (CHECK_BTN_ALL(play->state.input[0].press.button, BTN_A) ||
          CHECK_BTN_ALL(play->state.input[0].press.button, BTN_B) ||
          CHECK_BTN_ALL(play->state.input[0].press.button, BTN_START)) &&

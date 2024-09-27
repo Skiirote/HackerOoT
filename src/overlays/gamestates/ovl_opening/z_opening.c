@@ -51,9 +51,10 @@ void TitleSetup_SetupTitleScreen(TitleSetupState* this) {
         }
     } else {
         gSaveContext.gameMode = GAMEMODE_TITLE_SCREEN;
-        gSaveContext.save.linkAge = LINK_AGE_ADULT;
+        gSaveContext.save.linkAge = LINK_AGE_CHILD;
         Sram_InitDebugSave();
-        gSaveContext.save.cutsceneIndex = 0xFFF3;
+        gSaveContext.save.entranceIndex = ENTR_OVERWORLD_INTRO_0;
+        //gSaveContext.save.cutsceneIndex = 0xFFF0;//FFF3
         gSaveContext.sceneLayer = 7;
     }
 

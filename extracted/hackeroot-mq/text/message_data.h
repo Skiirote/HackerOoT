@@ -6,12 +6,6 @@ UNSKIPPABLE NAME ", its time to wake up!\n"
 "Can you help grandma out today?"      
 BOX_BREAK
 UNSKIPPABLE "Oh " TEXT_SPEED(4) "good..."
-BOX_BREAK
-"I need you to help\n"
-"grandpa in the garden.\n"
-BOX_BREAK
-UNSKIPPABLE "Also, run and get me a " COLOR(BLUE) "fish\n" COLOR(DEFAULT)
-"from the " COLOR(PURPLE) "river " COLOR(DEFAULT) "past town."
 )
 ,
 MSG(
@@ -79,7 +73,7 @@ UNSKIPPABLE ""
 )
 )
 
-DEFINE_MESSAGE(0x0005, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
+DEFINE_MESSAGE(0x0005, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
@@ -257,14 +251,16 @@ MSG(
 )
 )
 
-DEFINE_MESSAGE(0x000E, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
+DEFINE_MESSAGE(0x000E, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE ITEM_ICON(ITEM_EYE_DROPS) QUICKTEXT_ENABLE "You traded the Eyeball Frog \n"
-"for the " COLOR(RED) "World's Finest Eye Drops" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
-"Hurry! Take them to Biggoron\n"
-"before they go bad!"
+UNSKIPPABLE
+"I need you to help\n"
+"grandpa in the garden.\n"
+BOX_BREAK
+UNSKIPPABLE "Also, run and get me a " COLOR(BLUE) "fish\n" COLOR(DEFAULT)
+"from the " COLOR(PURPLE) "river " COLOR(DEFAULT) "past town."
 )
 ,
 MSG(
@@ -2049,7 +2045,7 @@ ITEM_ICON(ITEM_BOTTLE_FAIRY) "En revanche, après l'avoir \n"
 )
 )
 
-DEFINE_MESSAGE(0x0047, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
+DEFINE_MESSAGE(0x0047, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(

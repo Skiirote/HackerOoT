@@ -145,7 +145,8 @@ void FileSelect_SetNameEntryVtx(GameState* thisx) {
 
     phi_s0 = 0x10;
     for (phi_t1 = 0; phi_t1 < 2; phi_t1++, phi_s0 += 4) {
-        gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, this->windowColor[0], this->windowColor[1], this->windowColor[2], 255);
+        gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, 163, 255, 153
+    , 255);
         gDPSetEnvColor(POLY_OPA_DISP++, 0, 0, 0, 0);
 #if OOT_NTSC
         // TODO: implement NTSC version
@@ -214,7 +215,7 @@ void FileSelect_SetNameEntryVtx(GameState* thisx) {
     gDPPipeSync(POLY_OPA_DISP++);
     gDPSetCombineLERP(POLY_OPA_DISP++, PRIMITIVE, ENVIRONMENT, TEXEL0, ENVIRONMENT, TEXEL0, 0, PRIMITIVE, 0, PRIMITIVE,
                       ENVIRONMENT, TEXEL0, ENVIRONMENT, TEXEL0, 0, PRIMITIVE, 0);
-    gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, this->windowColor[0], this->windowColor[1], this->windowColor[2],
+    gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, 163, 255, 153,
                     this->nameEntryBoxAlpha);
     gSPVertex(POLY_OPA_DISP++, this->nameEntryVtx, 4, 0);
     gDPLoadTextureBlock(POLY_OPA_DISP++, gFileSelNameBoxTex, G_IM_FMT_IA, G_IM_SIZ_16b, 108, 16, 0,

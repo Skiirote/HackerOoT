@@ -12207,6 +12207,38 @@ beginseg
     number 3
 endseg
 
+beginseg
+    name "meatdungeon_room_3"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_3.o"
+    number 3
+endseg
+
+beginseg
+    name "meatdungeon_room_4"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_4.o"
+    number 3
+endseg
+
+beginseg
+    name "overworld_intro_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/overworld_intro/overworld_intro_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "overworld_intro_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/overworld/overworld_intro/overworld_intro_room_0.o"
+    number 3
+endseg
+
 #if CAN_INCLUDE_TEST_SCENES
 beginseg
     name "besitu_scene"

@@ -1,75 +1,36 @@
-#include "overworld_one_scene.h"
+#include "overworld_intro_scene.h"
 
 
 /**
  * Header Child Day (Default)
 */
-#define LENGTH_OVERWORLD_ONE_ROOM_0_HEADER00_OBJECTLIST 4
-#define LENGTH_OVERWORLD_ONE_ROOM_0_HEADER00_ACTORLIST 20
-SceneCmd overworld_one_room_0_header00[] = {
-    SCENE_CMD_ROOM_SHAPE(&overworld_one_room_0_shapeHeader),
+#define LENGTH_OVERWORLD_INTRO_ROOM_0_HEADER00_OBJECTLIST 5
+#define LENGTH_OVERWORLD_INTRO_ROOM_0_HEADER00_ACTORLIST 15
+SceneCmd overworld_intro_room_0_header00[] = {
+    SCENE_CMD_ROOM_SHAPE(&overworld_intro_room_0_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(7),
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
     SCENE_CMD_SKYBOX_DISABLES(false, true),
     SCENE_CMD_TIME_SETTINGS(7, 30, 0),
-    SCENE_CMD_OBJECT_LIST(LENGTH_OVERWORLD_ONE_ROOM_0_HEADER00_OBJECTLIST, overworld_one_room_0_header00_objectList),
-    SCENE_CMD_ACTOR_LIST(LENGTH_OVERWORLD_ONE_ROOM_0_HEADER00_ACTORLIST, overworld_one_room_0_header00_actorList),
+    SCENE_CMD_OBJECT_LIST(LENGTH_OVERWORLD_INTRO_ROOM_0_HEADER00_OBJECTLIST, overworld_intro_room_0_header00_objectList),
+    SCENE_CMD_ACTOR_LIST(LENGTH_OVERWORLD_INTRO_ROOM_0_HEADER00_ACTORLIST, overworld_intro_room_0_header00_actorList),
     SCENE_CMD_END(),
 };
 
-s16 overworld_one_room_0_header00_objectList[LENGTH_OVERWORLD_ONE_ROOM_0_HEADER00_OBJECTLIST] = {
+s16 overworld_intro_room_0_header00_objectList[LENGTH_OVERWORLD_INTRO_ROOM_0_HEADER00_OBJECTLIST] = {
     OBJECT_WOOD02,
     OBJECT_KUSA,
     OBJECT_CROW,
     OBJECT_MK,
+    OBJECT_MAG,
 };
 
-ActorEntry overworld_one_room_0_header00_actorList[LENGTH_OVERWORLD_ONE_ROOM_0_HEADER00_ACTORLIST] = {
-    // Guay
+ActorEntry overworld_intro_room_0_header00_actorList[LENGTH_OVERWORLD_INTRO_ROOM_0_HEADER00_ACTORLIST] = {
+    // Title Screen Actor
     {
-        /* Actor ID   */ ACTOR_EN_CROW,
-        /* Position   */ { -88, 157, -470 },
+        /* Actor ID   */ ACTOR_EN_MAG,
+        /* Position   */ { 333, -6, -831 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Guay
-    {
-        /* Actor ID   */ ACTOR_EN_CROW,
-        /* Position   */ { 17, 152, 602 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Guay
-    {
-        /* Actor ID   */ ACTOR_EN_CROW,
-        /* Position   */ { 442, 206, 332 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Guay
-    {
-        /* Actor ID   */ ACTOR_EN_CROW,
-        /* Position   */ { -468, 160, 442 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Guay
-    {
-        /* Actor ID   */ ACTOR_EN_CROW,
-        /* Position   */ { -552, 193, -143 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0000
-    },
-
-    // Lake Hylia Doctor
-    {
-        /* Actor ID   */ ACTOR_EN_MK,
-        /* Position   */ { -207, -120, 558 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x0000
     },
 
@@ -186,34 +147,34 @@ ActorEntry overworld_one_room_0_header00_actorList[LENGTH_OVERWORLD_ONE_ROOM_0_H
     },
 };
 
-RoomShapeNormal overworld_one_room_0_shapeHeader = {
+RoomShapeNormal overworld_intro_room_0_shapeHeader = {
     ROOM_SHAPE_TYPE_NORMAL,
-    ARRAY_COUNT(overworld_one_room_0_shapeDListsEntry),
-    overworld_one_room_0_shapeDListsEntry,
-    overworld_one_room_0_shapeDListsEntry + ARRAY_COUNT(overworld_one_room_0_shapeDListsEntry)
+    ARRAY_COUNT(overworld_intro_room_0_shapeDListsEntry),
+    overworld_intro_room_0_shapeDListsEntry,
+    overworld_intro_room_0_shapeDListsEntry + ARRAY_COUNT(overworld_intro_room_0_shapeDListsEntry)
 };
 
-RoomShapeDListsEntry overworld_one_room_0_shapeDListsEntry[1] = {
-    { overworld_one_room_0_shapeHeader_entry_0_opaque, overworld_one_room_0_shapeHeader_entry_0_transparent }
+RoomShapeDListsEntry overworld_intro_room_0_shapeDListsEntry[1] = {
+    { overworld_intro_room_0_shapeHeader_entry_0_opaque, overworld_intro_room_0_shapeHeader_entry_0_transparent }
 };
 
-Gfx overworld_one_room_0_shapeHeader_entry_0_opaque[] = {
-	gsSPDisplayList(overworld_one_room_0_dl_Fence_mesh_layer_Opaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Fene_mesh_layer_Opaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_mesh_layer_Opaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque),
+Gfx overworld_intro_room_0_shapeHeader_entry_0_opaque[] = {
+	gsSPDisplayList(overworld_intro_room_0_dl_Fence_mesh_layer_Opaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Fene_mesh_layer_Opaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_shapeHeader_entry_0_transparent[] = {
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent),
+Gfx overworld_intro_room_0_shapeHeader_entry_0_transparent[] = {
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent),
 	gsSPEndDisplayList(),
 };
 
-u64 overworld_one_room_0_dl_wood_fence_ClampY_ci4[] = {
+u64 overworld_intro_room_0_dl_wood_fence_ClampY_ci4[] = {
 	0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000001123, 0x4312524000000000, 0x0000000000000000, 0x0000000000000000, 
 	0x0000000000013265, 0x4734445000000000, 0x0000000000000066, 0x89133a3300000000, 0x0000000000019145, 0x3a5b553000000000, 0x0000000000000888, 0x189212c3d0000000, 
 	0x000000000001316a, 0x67a6533700000000, 0x0000000000000922, 0x296112c3ec88a000, 0x0000000000bc4264, 0x4ba552c500000000, 0x0000000000006184, 0x88151114bc483900, 
@@ -249,11 +210,11 @@ u64 overworld_one_room_0_dl_wood_fence_ClampY_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_wood_fence_ClampY_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_wood_fence_ClampY_pal_rgba16[] = {
 	0x20c48b957ad1628f, 0x5a0b49c95a4d3105, 0xb4dd9c1949cb3989, 0x7313188320c53147, 
 };
 
-u64 overworld_one_room_0_dl_stone_floor_smooth_11_ci4[] = {
+u64 overworld_intro_room_0_dl_stone_floor_smooth_11_ci4[] = {
 	0x0110122234531100, 0x2554254222522265, 0x3424145252444262, 0x6666666542541788, 0x3155220134455440, 0x4262255222552225, 0x0422653522221362, 0x6225225251373331, 
 	0x0111513313314102, 0x6962625522225221, 0x1666620110462770, 0x1142422401372666, 0x4411107013133731, 0x52ab966546962953, 0x356b204103667c88, 0x7775253377366426, 
 	0x4454114013337733, 0x3344454155266225, 0x336643003427c88c, 0x3777442654422156, 0x0525226333700730, 0x0313733331455452, 0x43037013453c8c04, 0x0523369666244411, 
@@ -289,11 +250,11 @@ u64 overworld_one_room_0_dl_stone_floor_smooth_11_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_stone_floor_smooth_11_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_stone_floor_smooth_11_pal_rgba16[] = {
 	0x62d56b177b9b5a93, 0x6b57735983dd5251, 0x318b8c1f9ca38c21, 0x420f000000000000
 };
 
-u64 overworld_one_room_0_dl_stone_floor_smooth_11_ci4_copy[] = {
+u64 overworld_intro_room_0_dl_stone_floor_smooth_11_ci4_copy[] = {
 	0x0110122234531100, 0x2554254222522265, 0x3424145252444262, 0x6666666542541788, 0x3155220134455440, 0x4262255222552225, 0x0422653522221362, 0x6225225251373331, 
 	0x0111513313314102, 0x6962625522225221, 0x1666620110462770, 0x1142422401372666, 0x4411107013133731, 0x52ab966546962953, 0x356b204103667c88, 0x7775253377366426, 
 	0x4454114013337733, 0x3344454155266225, 0x336643003427c88c, 0x3777442654422156, 0x0525226333700730, 0x0313733331455452, 0x43037013453c8c04, 0x0523369666244411, 
@@ -329,11 +290,11 @@ u64 overworld_one_room_0_dl_stone_floor_smooth_11_ci4_copy[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_stone_floor_smooth_11_pal_rgba16_copy[] = {
+u64 overworld_intro_room_0_dl_stone_floor_smooth_11_pal_rgba16_copy[] = {
 	0x62d56b177b9b5a93, 0x6b57735983dd5251, 0x318b8c1f9ca38c21, 0x420f000000000000
 };
 
-u64 overworld_one_room_0_dl_stone_slate_2_ci8[] = {
+u64 overworld_intro_room_0_dl_stone_slate_2_ci8[] = {
 	0x0001010102030204, 0x0506060606060605, 0x0505010507080609, 0x01010a0b05050a05, 0x0501010b0105050c, 0x0801010b0b050605, 0x0505060c05050601, 0x01050505050d0d0c, 
 	0x0a09010106060909, 0x06060e0809090901, 0x050105010c080109, 0x0601050505010601, 0x010f0c0f10050508, 0x0811111111050505, 0x050101010c050106, 0x0b101111120d130c, 
 	0x050901010e09060e, 0x0e0b010106060901, 0x050106050f0f0f01, 0x010b050a0b060605, 0x050c14111105050c, 0x0f10121111050505, 0x0901150109011601, 0x0110101010131711, 
@@ -369,7 +330,7 @@ u64 overworld_one_room_0_dl_stone_slate_2_ci8[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_stone_slate_2_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_stone_slate_2_pal_rgba16[] = {
 	0x18c1318931852945, 0x39c7294739cb1083, 0x39cd420d18c32105, 0x210719474a4f2949, 0x2109294b18c52989, 0x18c7318b31493a0d, 0x41cd290720c55291, 0x420f420b320d418d, 
 	0x524f41895ad34a0f, 0x4a11739952935a4f, 0x73157bdd841d318d, 0x314b21474a53524b, 0x520b41cb4a0d29cb, 0x52d3394b2909424d, 0x32094a8f3a4b5a8f, 0x429139c96b15424f, 
 	0x531573d952d131c9, 0x398d10c16b55841b, 0x5ad5528f6b576315, 0x739b8c5f5a514acf, 0x7b9b4a5194a19ce5, 0x53116ad36ad54a4b, 0x63135ad173136b13, 0x6b534ad14a4d4209, 
@@ -378,7 +339,7 @@ u64 overworld_one_room_0_dl_stone_slate_2_pal_rgba16[] = {
 	0x1907294d31cb2987, 0x210b0003520d424b, 0x1885100120c92149, 0x210139c529430001, 0x1085084508850841, 0x1883108110430843, 
 };
 
-u64 overworld_one_room_0_dl_ext_grass_dark_ci4[] = {
+u64 overworld_intro_room_0_dl_ext_grass_dark_ci4[] = {
 	0x0123304560789100, 0x98a40b3326936535, 0x34a9361a73b8c907, 0xc012430620449528, 0x9933284437dd03b7, 0x9db13b8459741932, 0x13a66795365ab9d7, 0xd214249384e94c39, 
 	0x4314064eda054013, 0x84f4823430d79dff, 0xff30aa1713969913, 0x97aa3330388399c4, 0x294939807774d7bd, 0x60ff1421eda49355, 0x51333696ff139746, 0x2aa3030532e193b2, 
 	0x9030324124de10cc, 0x133d196736643f12, 0xf110531937769f41, 0xf6ca226099991039, 0xc090f9cf26dd99b7, 0x3760a0736391f4f0, 0x913123ca46036977, 0xcd79664333829234, 
@@ -414,11 +375,11 @@ u64 overworld_one_room_0_dl_ext_grass_dark_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_ext_grass_dark_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_ext_grass_dark_pal_rgba16[] = {
 	0x31c5110119412143, 0x298521c319012141, 0x4247194329814a89, 0x31c131813a0308c1, 
 };
 
-u64 overworld_one_room_0_dl_ext_rock_wall_grassy_dark_ci4[] = {
+u64 overworld_intro_room_0_dl_ext_rock_wall_grassy_dark_ci4[] = {
 	0x0011201110312021, 0x1110020210011001, 0x0100011120101011, 0x1101111111011101, 0x3123000001211110, 0x0001000221220020, 0x1222201101001000, 0x2112010112111001, 
 	0x0000010001112010, 0x0000003220222120, 0x1001000001211000, 0x0214211001010011, 0x1300300310110010, 0x0013202222010101, 0x0000010021011021, 0x2021220220011001, 
 	0x0010002000330000, 0x0003303001020101, 0x0100101200000030, 0x3300205002011120, 0x1000331202003100, 0x0000200001122022, 0x1001011100020033, 0x3433302020220221, 
@@ -454,11 +415,11 @@ u64 overworld_one_room_0_dl_ext_rock_wall_grassy_dark_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_ext_rock_wall_grassy_dark_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_ext_rock_wall_grassy_dark_pal_rgba16[] = {
 	0x298331c132032905, 0x398741c749c95a09, 0x5a4b624b6acd730f, 0x534793d383510000
 };
 
-u64 overworld_one_room_0_dl_stonewall_red1_ci4[] = {
+u64 overworld_intro_room_0_dl_stonewall_red1_ci4[] = {
 	0x0111211113133112, 0x2220330001000110, 0x1001311113331100, 0x0001000010131002, 0x2214443334334533, 0x1113333131331111, 0x0111111111443311, 0x1011131313343022, 
 	0x1111321211215333, 0x4313111013646443, 0x3331333313443333, 0x3344333434454411, 0x3333311331333022, 0x2102113344553433, 0x3636333335313331, 0x3101311111313743, 
 	0x3333111354754113, 0x3333445455434436, 0x3666465475543333, 0x3113111133134843, 0x1133331335433313, 0x4344457955577777, 0x7a79a55555555455, 0x4445554445459663, 
@@ -494,11 +455,11 @@ u64 overworld_one_room_0_dl_stonewall_red1_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_stonewall_red1_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_stonewall_red1_pal_rgba16[] = {
 	0x2107290920c7398b, 0x49cd4a0f49cb5a91, 0x624f524f62d351cb, 0x6b177359418983db, 
 };
 
-u64 overworld_one_room_0_dl_Stone_WallHouse03_ci4[] = {
+u64 overworld_intro_room_0_dl_Stone_WallHouse03_ci4[] = {
 	0x0112020322204567, 0x789a8b8b8b9c8888, 0xc89c88887cbb8988, 0x8899bb99cccc6b99, 0x0210000300200357, 0xaabbb989b988b8bb, 0x8ccc9898bc6b98b8, 0x8b99bcdd9cc8b9bb, 
 	0xe22000040202e035, 0xac6fbb8b989788bb, 0x88cc8bbc89b8c988, 0x8998b9b8dd8888bd, 0xe1200e0402000003, 0xf776778c9879b88b, 0x8a98898bbbb8c9bb, 0x889b9db8d9d88bd8, 
 	0x0120e204220200e0, 0x4fa76b6c99bb8688, 0xb98998cc888f8b88, 0xb898899bd8bddd88, 0x0120020402e0000e, 0x045f766bbb98868b, 0x9868bb8a6886bb88, 0x68b99888ddbdd999, 
@@ -534,11 +495,11 @@ u64 overworld_one_room_0_dl_Stone_WallHouse03_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_Stone_WallHouse03_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_Stone_WallHouse03_pal_rgba16[] = {
 	0x31054189390749cb, 0x5a4f6a919c9d945b, 0xc5e5ce2983d9b563, 0x9c9fdead20837355, 
 };
 
-u64 overworld_one_room_0_dl_window_1_ci4[] = {
+u64 overworld_intro_room_0_dl_window_1_ci4[] = {
 	0x0011222222222222, 0x2222222222223333, 0x3333333322222222, 0x2222222222221110, 0x4000000000005555, 0x1111111111111111, 0x1111111111111155, 0x5500000055550004, 
 	0x4466000000000555, 0x5555111111111111, 0x1111555555151155, 0x5500000000004677, 0x4466000000005555, 0x1111111111111111, 0x1111115511111155, 0x5500000000006647, 
 	0x7744444444664444, 0x6666666666666666, 0x6666666666666666, 0x4444664444444448, 0x7466000066005555, 0x5555111111111111, 0x1111111111115555, 0x5555005500006644, 
@@ -574,11 +535,11 @@ u64 overworld_one_room_0_dl_window_1_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_window_1_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_window_1_pal_rgba16[] = {
 	0x7315941dc5ebffff, 0x41cb8399624f3147, 0x28c5184118c359cb, 0x0843000121091085, 
 };
 
-u64 overworld_one_room_0_dl_stone_roof_old_ci8[] = {
+u64 overworld_intro_room_0_dl_stone_roof_old_ci8[] = {
 	0x0001020301040506, 0x0708090a0b0c0d0e, 0x0f07101112131415, 0x1616171817171717, 0x191a1b1c1d1e1f20, 0x2121221323242526, 0x2725230a28292418, 0x2a1a2a2a2a2a2b26, 
 	0x2c2d292e29292a2f, 0x292e29302f2c2c2c, 0x2c242929292c292d, 0x312d2e2e2d2d2d31, 0x322d2d2424241a23, 0x1a1a2930292c2c29, 0x2c24292e292c2922, 0x33132d2d2d342d2d, 
 	0x351a2a1a232d1a14, 0x121229312e2e362e, 0x1a31312d242c2a14, 0x140a22222222292e, 0x37141a1426262627, 0x17382922141a2222, 0x143314140a292726, 0x25250a1426260a39, 
@@ -614,7 +575,7 @@ u64 overworld_one_room_0_dl_stone_roof_old_ci8[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_stone_roof_old_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_stone_roof_old_pal_rgba16[] = {
 	0x518583116a4d620b, 0x8b539b918b4f7b11, 0x6a8d210349cb728d, 0x6a4b830d7acb624b, 0x6acd628d498928c5, 0x4189624d620d51c9, 0x414728c339474145, 0x498759c959cb5189, 
 	0x494751c731473949, 0x3107520b49c94187, 0x30c320c531053103, 0x1883290529072083, 0x108320c310413989, 0x41cb2043210528c7, 0x5a0b414918c372cf, 0x52095a496acf3149, 
 	0x5a4d5a4b29476a4f, 0x7acf7acd6a8f7311, 0x628b730f83938bd3, 0x8b91830fa41593d1, 0x520d4a0b72cd8b97, 0x8355a45ba49d8b93, 0x83919bd3934f9351, 0x8b519393a457628f, 
@@ -625,7 +586,7 @@ u64 overworld_one_room_0_dl_stone_roof_old_pal_rgba16[] = {
 	0xac539bd1bd5da411, 0xa413000000000000
 };
 
-u64 overworld_one_room_0_dl_stone_floor_dirty_crackled_2_ci4[] = {
+u64 overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_ci4[] = {
 	0x0121322433533333, 0x3233333366775755, 0x3577566411111447, 0x7877117008777118, 0x3511534423351135, 0x5333333311117111, 0x1771635181417477, 0x7077887777707770, 
 	0x3553334433534111, 0x1133333611111713, 0x3395336a65511117, 0x7777887071777170, 0x5553334455354477, 0x7111336612113533, 0x333333a323551771, 0x7777117711107101, 
 	0x3554469493636336, 0x7711163311413343, 0x333333a396331771, 0x1777787714333371, 0x6934664499939399, 0x4477111466279633, 0x335953999aa37777, 0x7187711744333305, 
@@ -661,11 +622,11 @@ u64 overworld_one_room_0_dl_stone_floor_dirty_crackled_2_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16[] = {
 	0x4a0f41cb3149398b, 0x398941cd39cb4a0d, 0x524f318921076291, 0x7b97000000000000
 };
 
-u64 overworld_one_room_0_dl_Stone_Stairs02_MirrorX_i4[] = {
+u64 overworld_intro_room_0_dl_Stone_Stairs02_MirrorX_i4[] = {
 	0x1221212014246312, 0x204727774699958b, 0x6779663338666748, 0x7612532101211022, 0x1121432112251123, 0x5944557466767466, 0x6759a91333667668, 0x6621252011214121, 
 	0x3321241152053342, 0x544445655653667a, 0x3457646499868668, 0x6542150050241123, 0x4322222422353643, 0x5565755555576689, 0x6957684649654687, 0x7745353025222333, 
 	0x4313211321343342, 0x6544525533326466, 0x6a55567668767856, 0x5533343233222321, 0x4411312421564648, 0x8788456366662668, 0x5758767899966888, 0x8855455234212124, 
@@ -733,7 +694,7 @@ u64 overworld_one_room_0_dl_Stone_Stairs02_MirrorX_i4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl__00006390_32x64_rgba16_ci8[] = {
+u64 overworld_intro_room_0_dl__00006390_32x64_rgba16_ci8[] = {
 	0x0001010203040506, 0x00040708090a0b08, 0x0c0d090e0f101112, 0x091314150b160817, 0x111811191a08171b, 0x1b1c1117071d1e1f, 0x201a210d09111122, 0x0709232414252627, 
 	0x1717112829222a25, 0x072b2c07072d1d2e, 0x22072f0b22101725, 0x252511300c072f07, 0x1b25223111101632, 0x0733341735250711, 0x11080b361a171337, 0x2e261c1717251119, 
 	0x38251a2211162739, 0x1f132c1c1c351110, 0x113a3b0705363c3d, 0x3e113a3f22194011, 0x4113090710093705, 0x42261c1c351c4343, 0x06373b1044454647, 0x3f48493a111c1922, 
@@ -769,7 +730,7 @@ u64 overworld_one_room_0_dl__00006390_32x64_rgba16_ci8[] = {
 	
 };
 
-u64 overworld_one_room_0_dl__00006390_32x64_rgba16_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl__00006390_32x64_rgba16_pal_rgba16[] = {
 	0x114411452a4819c7, 0x19c52ac9008111c5, 0x1a0511c4330822c7, 0x1a44120411c62289, 0x0943090309452247, 0x43cb2b081a041185, 0x08c3090211821143, 0x004122463b8a2287, 
 	0x3348094409423b8b, 0x334b118411421a06, 0x00c0220611832249, 0x2a892ac619c41a46, 0x32c800803b481a07, 0x3b0b00402b091a47, 0x22054bcb120522c9, 0x4c0f6d5b2b4d2309, 
 	0x08c232c92ac73309, 0x4c4d3c4d440d4491, 0x2b8b2b4b1a872a87, 0x33493b8d1a89334a, 0x3c0d08c13bcd0984, 0x120700c13b891a86, 0x5d0f3b493b4b338d, 0x3bcb338b12853b4a, 
@@ -780,7 +741,7 @@ u64 overworld_one_room_0_dl__00006390_32x64_rgba16_pal_rgba16[] = {
 	0x3b8e9ee1330d8ddd, 0x2a8811c74c912aca, 0x2b0b338a19860000
 };
 
-u64 overworld_one_room_0_dl__00016CB8_16x32_rgba16_nograss_ci4[] = {
+u64 overworld_intro_room_0_dl__00016CB8_16x32_rgba16_nograss_ci4[] = {
 	0x0112032456728107, 0x9a51771456761273, 0x02b177288c705277, 0x7a81076b8002b237, 0x0a85006d1092b270, 0x6adb999820c28107, 0x65b500281c068107, 0x651a702b10028b90, 
 	0x06a109656c02db67, 0x0151906b2c91d120, 0x0a51992b16618160, 0x715a99a856614129, 0x6b8a66281c954520, 0x284a661816654500, 0xabd16918569aba70, 0x61d5902d1c62b100, 
 	0x6adb999b20c28a07, 0x95b1079b1c068a03, 0x911a7765a772ba07, 0x72110065200adb67, 0xe1b190652c91d127, 0x3251992b1c6a527e, 0x71ba9c251c06ba90, 0x95819095a0028167, 
@@ -788,11 +749,11 @@ u64 overworld_one_room_0_dl__00016CB8_16x32_rgba16_nograss_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl__00016CB8_16x32_rgba16_nograss_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl__00016CB8_16x32_rgba16_nograss_pal_rgba16[] = {
 	0x730dac999c156287, 0xe6a7bd1d8b936acb, 0xcda1838fa497c59f, 0x7b51de255a4749c3, 
 };
 
-u64 overworld_one_room_0_dl_Stone_Bricks15_ci4[] = {
+u64 overworld_intro_room_0_dl_Stone_Bricks15_ci4[] = {
 	0x0110234444456676, 0x8888444499977aaa, 0xbb66444466669929, 0x011caa7000000000, 0x4490d4c566dd6d04, 0x4d666b66888e7e48, 0x85cccccc25553733, 0x1cccaaca2a22b346, 
 	0x553035756167a604, 0xb7a2bbb3bbb2094c, 0x2c2ccccc8c55cc34, 0x1cccababa2a84343, 0xd430454566a76d74, 0xbb2655b3334a0e88, 0x85bbc588c214cc34, 0x1ccc3abb366a3434, 
 	0x229f454cc6ad7704, 0x4baacaab3aa209cc, 0x888bc255c8223a34, 0x1c2cb333aa3a8b3e, 0x4d8f442d6a6a4424, 0xb88b6666556514a4, 0x3233333cc3c3c344, 0x1c33555a64486e54, 
@@ -828,11 +789,11 @@ u64 overworld_one_room_0_dl_Stone_Bricks15_ci4[] = {
 	
 };
 
-u64 overworld_one_room_0_dl_Stone_Bricks15_pal_rgba16[] = {
+u64 overworld_intro_room_0_dl_Stone_Bricks15_pal_rgba16[] = {
 	0x31474a0b7355ad23, 0xd66ba4dfc5e762d1, 0xb5a59ce1945b9c9d, 0x8c19ffb7e6ef1081, 
 };
 
-u64 overworld_one_room_0_dl_ext_dust_path_ClampX_ia8[] = {
+u64 overworld_intro_room_0_dl_ext_dust_path_ClampX_ia8[] = {
 	0x50585c4c6d595a5f, 0x6f7f7f6f6f7f7f9f, 0x9f8f8f8f9f7f8f8f, 0x7f8f9f9f8f8f9f9f, 0x9f8f8f9f9f9f7f7f, 0x7f7f8f8f8f8f9f9f, 0x9f7f6f6f7f7f6f5f, 0x4f4f6f5c54505050, 
 	0x50575c5e5f5f6f6f, 0x7f6f7f8f8f7f8f9f, 0x9f8f9f9f9f8f9f9f, 0x9f8f8f9f9f9f9f9f, 0x9f8f8f9f9f9f9f8f, 0x8f9f9f9f8f7f8f9f, 0x8f7f6f6f6f5f5f4f, 0x4f5f5f5f5b515050, 
 	0x505459596f6f7f7f, 0x8f8f9f9f9f8f8f8f, 0x9f9f8f7f8f9f9f9f, 0x9f9f8f9f9f9f9f9f, 0x9f9f9f9f9f9f9f8f, 0x8f8f9f9f7f8f8f6f, 0x5f5f6f7f6f6f6f6f, 0x5f5f5e5957535050, 
@@ -900,7 +861,7 @@ u64 overworld_one_room_0_dl_ext_dust_path_ClampX_ia8[] = {
 	
 };
 
-Vtx overworld_one_room_0_dl_Fence_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Fence_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-835, 198, -1116}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-835, 513, -1116}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-835, 513, -1434}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -911,7 +872,7 @@ Vtx overworld_one_room_0_dl_Fence_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {344, 198, -1434}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Fence_mesh_layer_Opaque_vtx_0[20] = {
+Vtx overworld_intro_room_0_dl_Fence_mesh_layer_Opaque_vtx_0[20] = {
 	{{ {139, 248, -1368}, 0, {-17973, 2026}, {244, 244, 244, 255} }},
 	{{ {139, 291, -1368}, 0, {-17973, -9}, {244, 244, 244, 255} }},
 	{{ {344, 240, -1288}, 0, {-28386, -9}, {255, 255, 255, 255} }},
@@ -934,8 +895,8 @@ Vtx overworld_one_room_0_dl_Fence_mesh_layer_Opaque_vtx_0[20] = {
 	{{ {-529, 433, -1247}, 0, {13062, -9}, {244, 244, 244, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Fence_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Fence_mesh_layer_Opaque_vtx_0 + 0, 20, 0),
+Gfx overworld_intro_room_0_dl_Fence_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Fence_mesh_layer_Opaque_vtx_0 + 0, 20, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 7, 5, 0),
 	gsSP2Triangles(8, 7, 4, 0, 8, 9, 7, 0),
@@ -946,7 +907,7 @@ Gfx overworld_one_room_0_dl_Fence_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Fene_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Fene_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-438, -120, 604}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-438, -77, 604}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-438, -77, 115}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -957,7 +918,7 @@ Vtx overworld_one_room_0_dl_Fene_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {228, -120, 115}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Fene_mesh_layer_Opaque_vtx_0[22] = {
+Vtx overworld_intro_room_0_dl_Fene_mesh_layer_Opaque_vtx_0[22] = {
 	{{ {-349, -120, 115}, 0, {-27843, 2021}, {255, 255, 255, 255} }},
 	{{ {-436, -77, 115}, 0, {-23768, -5}, {254, 254, 254, 255} }},
 	{{ {-349, -77, 115}, 0, {-27843, -5}, {155, 155, 155, 255} }},
@@ -982,8 +943,8 @@ Vtx overworld_one_room_0_dl_Fene_mesh_layer_Opaque_vtx_0[22] = {
 	{{ {225, -77, 469}, 0, {25872, -5}, {255, 255, 255, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Fene_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Fene_mesh_layer_Opaque_vtx_0 + 0, 22, 0),
+Gfx overworld_intro_room_0_dl_Fene_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Fene_mesh_layer_Opaque_vtx_0 + 0, 22, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(3, 4, 1, 0, 3, 5, 4, 0),
 	gsSP2Triangles(5, 6, 4, 0, 5, 7, 6, 0),
@@ -994,7 +955,7 @@ Gfx overworld_one_room_0_dl_Fene_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-1421, 538, -313}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-1421, 1769, -313}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-1421, 1769, -3773}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1005,7 +966,7 @@ Vtx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {3172, 538, -3773}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0[187] = {
+Vtx overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0[187] = {
 	{{ {2157, 636, -751}, 0, {-1862, -180}, {184, 184, 184, 255} }},
 	{{ {2126, 550, -679}, 0, {-222, -69}, {255, 255, 255, 255} }},
 	{{ {1992, 623, -514}, 0, {-792, 3009}, {255, 255, 255, 255} }},
@@ -1195,8 +1156,8 @@ Vtx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0[187] = {
 	{{ {2893, 1514, -976}, 0, {4653, -2858}, {133, 133, 133, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 3, 2, 0, 5, 3, 4, 0),
 	gsSP2Triangles(5, 6, 3, 0, 5, 7, 6, 0),
@@ -1216,7 +1177,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(24, 25, 26, 0, 24, 27, 25, 0),
 	gsSP2Triangles(28, 27, 24, 0, 28, 24, 29, 0),
 	gsSP2Triangles(30, 28, 29, 0, 30, 29, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 32, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 2, 1, 3, 0),
 	gsSP2Triangles(2, 3, 4, 0, 3, 5, 4, 0),
 	gsSP2Triangles(3, 6, 5, 0, 6, 7, 5, 0),
@@ -1234,7 +1195,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(25, 26, 24, 0, 26, 25, 27, 0),
 	gsSP2Triangles(26, 27, 28, 0, 28, 27, 29, 0),
 	gsSP2Triangles(28, 29, 30, 0, 30, 29, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 64, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 64, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 2, 1, 0),
 	gsSP2Triangles(3, 1, 4, 0, 5, 3, 4, 0),
 	gsSP2Triangles(5, 4, 6, 0, 5, 6, 7, 0),
@@ -1254,7 +1215,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(24, 25, 26, 0, 27, 26, 25, 0),
 	gsSP2Triangles(27, 28, 26, 0, 27, 29, 28, 0),
 	gsSP2Triangles(27, 30, 29, 0, 29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 96, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 96, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
 	gsSP2Triangles(1, 4, 3, 0, 5, 3, 4, 0),
 	gsSP2Triangles(5, 6, 3, 0, 7, 6, 5, 0),
@@ -1275,7 +1236,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(25, 26, 27, 0, 25, 28, 26, 0),
 	gsSP2Triangles(25, 29, 28, 0, 25, 30, 29, 0),
 	gsSP1Triangle(29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 128, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 128, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
 	gsSP2Triangles(1, 4, 3, 0, 5, 3, 4, 0),
 	gsSP2Triangles(5, 4, 6, 0, 7, 5, 6, 0),
@@ -1296,7 +1257,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(19, 16, 17, 0, 26, 27, 28, 0),
 	gsSP2Triangles(26, 29, 27, 0, 29, 26, 30, 0),
 	gsSP1Triangle(29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 160, 27, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_0 + 160, 27, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(3, 2, 4, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 5, 4, 0, 6, 4, 7, 0),
@@ -1318,7 +1279,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1[187] = {
+Vtx overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1[187] = {
 	{{ {311, 775, -3197}, 0, {218, 1324}, {184, 184, 184, 255} }},
 	{{ {-14, 881, -3331}, 0, {1288, 4513}, {255, 255, 255, 255} }},
 	{{ {196, 703, -3253}, 0, {1858, 1435}, {255, 255, 255, 255} }},
@@ -1508,8 +1469,8 @@ Vtx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1[187] = {
 	{{ {1092, 1701, -3584}, 0, {4653, -2858}, {133, 133, 133, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 3, 0, 0, 4, 0, 5, 0),
 	gsSP2Triangles(6, 4, 5, 0, 6, 5, 7, 0),
@@ -1529,7 +1490,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(24, 25, 26, 0, 24, 27, 25, 0),
 	gsSP2Triangles(27, 28, 25, 0, 27, 29, 28, 0),
 	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 32, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(2, 4, 3, 0, 2, 5, 4, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
@@ -1547,7 +1508,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(26, 25, 24, 0, 26, 24, 27, 0),
 	gsSP2Triangles(28, 26, 27, 0, 28, 27, 29, 0),
 	gsSP2Triangles(30, 28, 29, 0, 30, 29, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 64, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 64, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(3, 2, 4, 0, 3, 4, 5, 0),
 	gsSP2Triangles(5, 4, 6, 0, 5, 6, 7, 0),
@@ -1565,7 +1526,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(25, 22, 26, 0, 25, 26, 27, 0),
 	gsSP2Triangles(27, 26, 28, 0, 27, 28, 29, 0),
 	gsSP2Triangles(29, 28, 30, 0, 29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 96, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 96, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 0, 3, 0, 4, 3, 5, 0),
 	gsSP2Triangles(6, 4, 5, 0, 6, 5, 7, 0),
@@ -1585,7 +1546,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(25, 26, 27, 0, 25, 28, 26, 0),
 	gsSP2Triangles(25, 29, 28, 0, 25, 30, 29, 0),
 	gsSP1Triangle(29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 128, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 128, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
 	gsSP2Triangles(1, 4, 3, 0, 5, 3, 4, 0),
 	gsSP2Triangles(5, 4, 6, 0, 7, 5, 6, 0),
@@ -1606,7 +1567,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(19, 16, 17, 0, 26, 27, 28, 0),
 	gsSP2Triangles(26, 29, 27, 0, 29, 26, 30, 0),
 	gsSP1Triangle(29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 160, 27, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_1 + 160, 27, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(3, 2, 4, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 5, 4, 0, 6, 4, 7, 0),
@@ -1628,7 +1589,7 @@ Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-2604, -120, 1789}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2604, 995, 1789}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2604, 995, -3385}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -1639,19 +1600,19 @@ Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {2018, -120, -3385}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_0[3] = {
+Vtx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_0[3] = {
 	{{ {100, -120, -50}, 0, {-5815, -13}, {127, 127, 127, 255} }},
 	{{ {100, -77, -50}, 0, {-5815, 1005}, {154, 154, 154, 255} }},
 	{{ {100, -77, 0}, 0, {-4987, 1005}, {152, 152, 152, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_0 + 0, 3, 0),
+Gfx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_0 + 0, 3, 0),
 	gsSP1Triangle(0, 1, 2, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1[254] = {
+Vtx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1[254] = {
 	{{ {0, -120, 161}, 0, {3574, -16337}, {0, 0, 0, 255} }},
 	{{ {228, -120, 405}, 0, {1788, -20265}, {255, 255, 255, 255} }},
 	{{ {308, -120, -146}, 0, {-1399, -14879}, {255, 255, 255, 255} }},
@@ -1908,8 +1869,8 @@ Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1[254] = {
 	{{ {-856, 419, -2501}, 0, {2784, 22992}, {156, 156, 156, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 3, 2, 0, 4, 2, 5, 0),
 	gsSP2Triangles(2, 6, 5, 0, 6, 2, 7, 0),
@@ -1927,7 +1888,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(27, 4, 28, 0, 28, 4, 5, 0),
 	gsSP2Triangles(28, 5, 29, 0, 30, 29, 5, 0),
 	gsSP1Triangle(30, 5, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 32, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(2, 4, 3, 0, 4, 2, 5, 0),
 	gsSP2Triangles(2, 6, 5, 0, 2, 7, 6, 0),
@@ -1941,7 +1902,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(12, 25, 26, 0, 27, 28, 20, 0),
 	gsSP2Triangles(27, 29, 28, 0, 27, 30, 29, 0),
 	gsSP1Triangle(27, 31, 30, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 64, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 64, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 1, 3, 0, 4, 5, 1, 0),
 	gsSP2Triangles(6, 5, 4, 0, 6, 7, 5, 0),
@@ -1957,7 +1918,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(9, 25, 7, 0, 26, 27, 28, 0),
 	gsSP2Triangles(29, 28, 27, 0, 29, 30, 28, 0),
 	gsSP1Triangle(29, 31, 30, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 96, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 96, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 3, 0, 0, 4, 5, 3, 0),
 	gsSP2Triangles(4, 6, 5, 0, 6, 7, 5, 0),
@@ -1973,7 +1934,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(25, 27, 28, 0, 22, 25, 28, 0),
 	gsSP2Triangles(28, 29, 22, 0, 29, 30, 22, 0),
 	gsSP1Triangle(30, 29, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 128, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 128, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 2, 1, 3, 0),
 	gsSP2Triangles(2, 3, 4, 0, 4, 3, 5, 0),
 	gsSP2Triangles(4, 5, 6, 0, 6, 5, 7, 0),
@@ -1989,7 +1950,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(25, 26, 24, 0, 25, 27, 26, 0),
 	gsSP2Triangles(27, 28, 26, 0, 28, 27, 29, 0),
 	gsSP2Triangles(28, 29, 30, 0, 30, 29, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 160, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 160, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(2, 4, 3, 0, 2, 5, 4, 0),
 	gsSP2Triangles(6, 3, 4, 0, 0, 3, 6, 0),
@@ -2008,7 +1969,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(22, 29, 20, 0, 29, 18, 20, 0),
 	gsSP2Triangles(29, 30, 18, 0, 30, 16, 18, 0),
 	gsSP2Triangles(30, 31, 16, 0, 31, 14, 16, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 192, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 192, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 2, 1, 3, 0),
 	gsSP2Triangles(2, 3, 4, 0, 4, 3, 5, 0),
 	gsSP2Triangles(4, 5, 6, 0, 7, 8, 9, 0),
@@ -2023,7 +1984,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(18, 26, 27, 0, 26, 28, 27, 0),
 	gsSP2Triangles(26, 29, 28, 0, 30, 29, 26, 0),
 	gsSP1Triangle(30, 31, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 224, 30, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_1 + 224, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
 	gsSP2Triangles(4, 3, 1, 0, 0, 2, 5, 0),
 	gsSP2Triangles(0, 5, 6, 0, 7, 6, 8, 0),
@@ -2042,7 +2003,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2[131] = {
+Vtx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_2[131] = {
 	{{ {465, 174, -1215}, 0, {6613, -7}, {253, 253, 253, 255} }},
 	{{ {344, 52, -1131}, 0, {8704, 2024}, {253, 253, 253, 255} }},
 	{{ {403, 198, -1339}, 0, {8932, -7}, {253, 253, 253, 255} }},
@@ -2176,8 +2137,8 @@ Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2[131] = {
 	{{ {-960, 645, -2367}, 0, {-27370, -12}, {255, 255, 255, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_2[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_2[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 3, 0, 0, 4, 5, 3, 0),
 	gsSP2Triangles(6, 5, 4, 0, 6, 7, 5, 0),
@@ -2191,7 +2152,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_2[] = {
 	gsSP2Triangles(22, 24, 23, 0, 25, 26, 27, 0),
 	gsSP2Triangles(25, 28, 26, 0, 29, 28, 25, 0),
 	gsSP2Triangles(29, 25, 30, 0, 30, 31, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 32, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
 	gsSP2Triangles(1, 4, 3, 0, 4, 5, 3, 0),
 	gsSP2Triangles(4, 6, 5, 0, 7, 5, 6, 0),
@@ -2206,7 +2167,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_2[] = {
 	gsSP2Triangles(24, 26, 25, 0, 24, 27, 26, 0),
 	gsSP2Triangles(27, 28, 26, 0, 27, 29, 28, 0),
 	gsSP2Triangles(29, 30, 28, 0, 29, 31, 30, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 64, 31, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 64, 31, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 1, 0, 0),
 	gsSP2Triangles(4, 3, 0, 0, 4, 0, 5, 0),
 	gsSP2Triangles(6, 4, 5, 0, 6, 5, 7, 0),
@@ -2222,7 +2183,7 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_2[] = {
 	gsSP2Triangles(25, 24, 26, 0, 25, 26, 27, 0),
 	gsSP2Triangles(27, 26, 28, 0, 27, 28, 29, 0),
 	gsSP1Triangle(3, 30, 1, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 95, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 95, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
 	gsSP2Triangles(1, 4, 3, 0, 4, 5, 3, 0),
 	gsSP2Triangles(4, 6, 5, 0, 5, 6, 7, 0),
@@ -2238,12 +2199,12 @@ Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_2[] = {
 	gsSP2Triangles(25, 27, 26, 0, 26, 27, 28, 0),
 	gsSP2Triangles(26, 28, 29, 0, 28, 30, 29, 0),
 	gsSP1Triangle(28, 31, 30, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 127, 4, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_2 + 127, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_3[8] = {
+Vtx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_3[8] = {
 	{{ {-1174, 466, -2012}, 0, {9459, 17982}, {244, 244, 244, 255} }},
 	{{ {-1283, 455, -2397}, 0, {9023, 23661}, {128, 128, 128, 255} }},
 	{{ {-1282, 499, -1971}, 0, {11161, 17960}, {128, 128, 128, 255} }},
@@ -2254,15 +2215,15 @@ Vtx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_3[8] = {
 	{{ {-1027, 422, -2329}, 0, {5895, 21512}, {156, 156, 156, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_3[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_3 + 0, 8, 0),
+Gfx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_3[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_3 + 0, 8, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(0, 4, 3, 0, 0, 5, 4, 0),
 	gsSP2Triangles(6, 4, 5, 0, 6, 7, 4, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-438, -120, 604}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-438, 230, 604}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-438, 230, -130}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -2273,7 +2234,7 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {269, -120, -130}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0[80] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0[80] = {
 	{{ {-60, 23, 102}, 0, {667, 1008}, {0, 0, 0, 255} }},
 	{{ {0, -77, 102}, 0, {1349, 1008}, {0, 0, 0, 255} }},
 	{{ {-60, -77, 102}, 0, {667, 1008}, {0, 0, 0, 255} }},
@@ -2356,8 +2317,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0[80] = {
 	{{ {23, -77, 375}, 0, {-14176, 1984}, {0, 0, 0, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 7, 6, 0, 8, 6, 9, 0),
@@ -2373,7 +2334,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(26, 24, 27, 0, 28, 27, 24, 0),
 	gsSP2Triangles(24, 29, 28, 0, 30, 28, 29, 0),
 	gsSP1Triangle(31, 30, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0 + 32, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 0, 2, 0),
 	gsSP2Triangles(3, 2, 4, 0, 5, 4, 2, 0),
 	gsSP2Triangles(5, 2, 6, 0, 7, 3, 4, 0),
@@ -2385,7 +2346,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(22, 23, 20, 0, 23, 24, 20, 0),
 	gsSP2Triangles(25, 26, 27, 0, 27, 28, 25, 0),
 	gsSP2Triangles(28, 15, 25, 0, 29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0 + 64, 16, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_0 + 64, 16, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 0, 3, 0),
 	gsSP2Triangles(1, 3, 4, 0, 3, 5, 4, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
@@ -2396,7 +2357,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1[124] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1[124] = {
 	{{ {75, 28, -5}, 0, {2130, 1905}, {255, 255, 255, 255} }},
 	{{ {75, 28, 0}, 0, {2130, 2016}, {207, 207, 207, 255} }},
 	{{ {75, -37, 0}, 0, {-114, 2016}, {207, 207, 207, 255} }},
@@ -2523,8 +2484,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1[124] = {
 	{{ {186, -37, 115}, 0, {2275, 2009}, {207, 207, 207, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 0, 3, 0, 4, 3, 5, 0),
 	gsSP2Triangles(5, 6, 4, 0, 5, 7, 6, 0),
@@ -2537,7 +2498,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
 	gsSP2Triangles(27, 28, 24, 0, 27, 29, 28, 0),
 	gsSP2Triangles(29, 30, 28, 0, 29, 31, 30, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 32, 30, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 32, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(3, 2, 4, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 2, 0, 6, 8, 7, 0),
@@ -2551,7 +2512,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(23, 26, 24, 0, 27, 26, 23, 0),
 	gsSP2Triangles(27, 28, 26, 0, 28, 24, 26, 0),
 	gsSP1Triangle(28, 29, 24, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 62, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 62, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(1, 3, 4, 0, 1, 4, 5, 0),
 	gsSP2Triangles(6, 5, 4, 0, 6, 4, 7, 0),
@@ -2564,7 +2525,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(23, 24, 25, 0, 25, 26, 23, 0),
 	gsSP2Triangles(25, 27, 26, 0, 25, 0, 27, 0),
 	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 94, 30, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_1 + 94, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(3, 4, 0, 0, 3, 5, 4, 0),
 	gsSP2Triangles(6, 7, 8, 0, 6, 8, 9, 0),
@@ -2579,7 +2540,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_2[14] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_2[14] = {
 	{{ {50, -5, 8}, 0, {1008, 1008}, {255, 255, 255, 255} }},
 	{{ {70, 23, 8}, 0, {-16, -16}, {125, 125, 125, 255} }},
 	{{ {70, -32, 8}, 0, {-16, 2032}, {125, 125, 125, 255} }},
@@ -2596,8 +2557,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_2[14] = {
 	{{ {142, 23, 123}, 0, {2032, -16}, {125, 125, 125, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_2[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_2 + 0, 14, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_2[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_2 + 0, 14, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 2, 4, 0),
 	gsSP2Triangles(5, 4, 6, 0, 3, 6, 1, 0),
 	gsSP2Triangles(7, 8, 9, 0, 10, 9, 11, 0),
@@ -2605,7 +2566,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_2[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_3[30] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_3[30] = {
 	{{ {242, 48, 300}, 0, {1914, 1981}, {255, 255, 255, 255} }},
 	{{ {79, 230, 420}, 0, {-465, -2788}, {255, 255, 255, 255} }},
 	{{ {242, 48, 420}, 0, {-465, 1981}, {255, 255, 255, 255} }},
@@ -2638,8 +2599,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_3[30] = {
 	{{ {-84, 48, 420}, 0, {3660, 1974}, {255, 255, 255, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_3[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_3 + 0, 30, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_3[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_3 + 0, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(5, 6, 3, 0, 6, 7, 3, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 11, 9, 0),
@@ -2652,7 +2613,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_3[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4[48] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4[48] = {
 	{{ {228, -77, 405}, 0, {6730, 1005}, {255, 255, 255, 255} }},
 	{{ {228, -120, 405}, 0, {6730, -13}, {128, 128, 128, 255} }},
 	{{ {226, -120, 308}, 0, {4433, -13}, {128, 128, 128, 255} }},
@@ -2703,8 +2664,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4[48] = {
 	{{ {23, 23, 375}, 0, {15051, 1005}, {0, 0, 0, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_4[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_4[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 7, 5, 0),
 	gsSP2Triangles(7, 4, 8, 0, 8, 9, 7, 0),
@@ -2717,7 +2678,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_4[] = {
 	gsSP2Triangles(24, 25, 26, 0, 24, 27, 25, 0),
 	gsSP2Triangles(28, 27, 24, 0, 28, 29, 27, 0),
 	gsSP1Triangle(30, 31, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4 + 32, 16, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_4 + 32, 16, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 2, 1, 0),
 	gsSP2Triangles(3, 4, 2, 0, 5, 4, 3, 0),
 	gsSP2Triangles(5, 6, 4, 0, 7, 8, 9, 0),
@@ -2726,7 +2687,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_4[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_5[15] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_5[15] = {
 	{{ {0, -77, 0}, 0, {564, 1008}, {163, 163, 163, 255} }},
 	{{ {100, -77, 0}, 0, {564, -693}, {152, 152, 152, 255} }},
 	{{ {100, -77, -50}, 0, {-287, -693}, {154, 154, 154, 255} }},
@@ -2744,8 +2705,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_5[15] = {
 	{{ {-135, -77, 362}, 0, {769, 2969}, {253, 253, 253, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_5[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_5 + 0, 15, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_5[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_5 + 0, 15, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 0, 3, 0, 4, 3, 5, 0),
 	gsSP2Triangles(5, 6, 4, 0, 6, 7, 4, 0),
@@ -2755,7 +2716,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_5[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_6[8] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_6[8] = {
 	{{ {0, -77, -50}, 0, {-16, -16}, {163, 163, 163, 255} }},
 	{{ {-60, -120, -130}, 0, {2032, 3051}, {255, 255, 255, 255} }},
 	{{ {-60, -77, -50}, 0, {2032, -16}, {154, 154, 154, 255} }},
@@ -2766,14 +2727,14 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_6[8] = {
 	{{ {-135, -77, 362}, 0, {2032, -16}, {255, 255, 255, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_6[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_6 + 0, 8, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_6[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_6 + 0, 8, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7[46] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7[46] = {
 	{{ {100, -77, 0}, 0, {1012, 1720}, {152, 152, 152, 255} }},
 	{{ {142, -77, -50}, 0, {-17, 2943}, {154, 154, 154, 255} }},
 	{{ {100, -77, -50}, 0, {1012, 2943}, {154, 154, 154, 255} }},
@@ -2822,8 +2783,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7[46] = {
 	{{ {-200, -79, 73}, 0, {-17, 1294}, {148, 148, 148, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_7[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_7[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 6, 9, 7, 0),
 	gsSP2Triangles(10, 9, 6, 0, 10, 11, 9, 0),
@@ -2834,7 +2795,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_7[] = {
 	gsSP2Triangles(23, 24, 21, 0, 23, 25, 24, 0),
 	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
 	gsSP2Triangles(28, 29, 30, 0, 28, 31, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7 + 32, 14, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_7 + 32, 14, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(0, 3, 4, 0, 0, 4, 5, 0),
 	gsSP2Triangles(4, 6, 5, 0, 7, 6, 4, 0),
@@ -2843,7 +2804,7 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_7[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_8[14] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_8[14] = {
 	{{ {-200, -120, 285}, 0, {-510, 1367}, {127, 127, 127, 255} }},
 	{{ {-200, -120, 115}, 0, {-2073, 1367}, {127, 127, 127, 255} }},
 	{{ {-263, -120, 115}, 0, {-2073, 1944}, {255, 255, 255, 255} }},
@@ -2860,8 +2821,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_8[14] = {
 	{{ {-135, -120, 362}, 0, {192, 768}, {127, 127, 127, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_8[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_8 + 0, 14, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_8[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_8 + 0, 14, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(3, 4, 0, 0, 3, 5, 4, 0),
 	gsSP2Triangles(0, 4, 6, 0, 7, 8, 9, 0),
@@ -2871,33 +2832,33 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_8[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_9[4] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_9[4] = {
 	{{ {-69, -77, 375}, 0, {1511, 1341}, {135, 135, 135, 255} }},
 	{{ {23, -77, 315}, 0, {17, -953}, {1, 1, 1, 255} }},
 	{{ {-69, -77, 315}, 0, {17, 1341}, {135, 135, 135, 255} }},
 	{{ {23, -77, 375}, 0, {1511, -953}, {0, 0, 0, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_9[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_9 + 0, 4, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_9[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_9 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_10[4] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_10[4] = {
 	{{ {-60, -77, 102}, 0, {2077, 2029}, {0, 0, 0, 255} }},
 	{{ {0, -77, 0}, 0, {564, 1008}, {163, 163, 163, 255} }},
 	{{ {-60, -77, 0}, 0, {564, 2029}, {154, 154, 154, 255} }},
 	{{ {0, -77, 102}, 0, {2077, 1008}, {0, 0, 0, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_10[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_10 + 0, 4, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_10[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_10 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11[41] = {
+Vtx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11[41] = {
 	{{ {228, 50, 308}, 0, {-1193, 323}, {83, 83, 83, 255} }},
 	{{ {224, 28, 308}, 0, {-1265, 819}, {129, 129, 129, 255} }},
 	{{ {250, 50, 308}, 0, {-712, 323}, {141, 141, 141, 255} }},
@@ -2941,8 +2902,8 @@ Vtx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11[41] = {
 	{{ {250, 158, 280}, 0, {-803, 2009}, {141, 141, 141, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_11[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_11[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 1, 6, 9, 0),
 	gsSP2Triangles(1, 9, 10, 0, 10, 9, 11, 0),
@@ -2954,14 +2915,14 @@ Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_11[] = {
 	gsSP2Triangles(18, 19, 22, 0, 23, 2, 24, 0),
 	gsSP2Triangles(23, 24, 25, 0, 26, 24, 27, 0),
 	gsSP2Triangles(26, 27, 28, 0, 29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11 + 32, 9, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_11 + 32, 9, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 0, 2, 0),
 	gsSP2Triangles(3, 2, 4, 0, 5, 6, 7, 0),
 	gsSP1Triangle(5, 7, 8, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_cull[8] = {
 	{{ {-1174, -120, -245}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-1174, 531, -245}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-1174, 531, -2740}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -2972,7 +2933,7 @@ Vtx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_cull[8] = {
 	{{ {465, -120, -2740}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0[80] = {
+Vtx overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0[80] = {
 	{{ {-223, -57, -475}, 0, {-13, 27263}, {255, 255, 255, 255} }},
 	{{ {-159, -57, -543}, 0, {2034, 25337}, {255, 255, 255, 255} }},
 	{{ {-236, -57, -557}, 0, {-13, 25337}, {255, 255, 255, 255} }},
@@ -3055,8 +3016,8 @@ Vtx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0[80] = {
 	{{ {-471, 531, -2535}, 0, {2034, -27038}, {250, 250, 250, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0 + 0, 32, 0),
+Gfx overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 3, 0, 0, 4, 5, 3, 0),
 	gsSP2Triangles(6, 7, 8, 0, 6, 9, 7, 0),
@@ -3070,7 +3031,7 @@ Gfx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0[] = {
 	gsSP2Triangles(25, 26, 24, 0, 25, 27, 26, 0),
 	gsSP2Triangles(26, 27, 28, 0, 26, 28, 29, 0),
 	gsSP2Triangles(29, 28, 30, 0, 29, 30, 31, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0 + 32, 32, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 7, 5, 0),
 	gsSP2Triangles(8, 7, 4, 0, 8, 9, 7, 0),
@@ -3081,7 +3042,7 @@ Gfx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0[] = {
 	gsSP2Triangles(25, 20, 26, 0, 26, 27, 25, 0),
 	gsSP2Triangles(26, 22, 27, 0, 28, 29, 30, 0),
 	gsSP1Triangle(28, 31, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0 + 64, 16, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_0 + 64, 16, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 7, 5, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 11, 9, 0),
@@ -3089,7 +3050,7 @@ Gfx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-3450, -311, 5487}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-3450, 1406, 5487}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-3450, 1406, -4546}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -3100,7 +3061,7 @@ Vtx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {3407, -311, -4546}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0[34] = {
+Vtx overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0[34] = {
 	{{ {186, 146, 1808}, 0, {-642, 614}, {0, 0, 0, 255} }},
 	{{ {-2014, 171, 2103}, 0, {-642, 3819}, {21, 21, 21, 255} }},
 	{{ {-988, 698, 2948}, 0, {913, 2469}, {255, 255, 255, 255} }},
@@ -3137,8 +3098,8 @@ Vtx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0[34] = {
 	{{ {2724, 774, -2345}, 0, {3724, -2678}, {255, 255, 255, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0 + 0, 30, 0),
+Gfx overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0 + 0, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(0, 3, 4, 0, 0, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 6, 8, 9, 0),
@@ -3149,12 +3110,12 @@ Gfx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(18, 21, 22, 0, 18, 22, 23, 0),
 	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
 	gsSP2Triangles(24, 27, 28, 0, 24, 28, 29, 0),
-	gsSPVertex(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0 + 30, 4, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_0 + 30, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_1[16] = {
+Vtx overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_1[16] = {
 	{{ {2904, 218, 2234}, 0, {-1186, 2035}, {132, 132, 132, 255} }},
 	{{ {2786, 680, 1764}, 0, {-2892, -9}, {255, 255, 255, 255} }},
 	{{ {2714, 218, 1764}, 0, {-2892, 2035}, {132, 132, 132, 255} }},
@@ -3173,8 +3134,8 @@ Vtx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_1[16] = {
 	{{ {-2032, 130, 2649}, 0, {-1118, 2030}, {132, 132, 132, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_tri_1[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_1 + 0, 16, 0),
+Gfx overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_1 + 0, 16, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
 	gsSP2Triangles(4, 3, 0, 0, 4, 5, 3, 0),
 	gsSP2Triangles(5, 4, 6, 0, 5, 6, 7, 0),
@@ -3184,7 +3145,7 @@ Gfx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_cull[8] = {
+Vtx overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-569, -120, -375}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-569, -9, -375}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-569, -9, -828}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -3195,7 +3156,7 @@ Vtx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {693, -120, -828}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_0[20] = {
+Vtx overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_0[20] = {
 	{{ {-236, -57, -557}, 0, {6975, 2027}, {255, 255, 255, 255} }},
 	{{ {-236, -22, -557}, 0, {6975, -11}, {255, 255, 255, 255} }},
 	{{ {-569, -92, -375}, 0, {-13730, -3}, {255, 255, 255, 255} }},
@@ -3218,8 +3179,8 @@ Vtx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_0[20] = {
 	{{ {-159, -57, -543}, 0, {-21658, 2027}, {255, 255, 255, 255} }},
 };
 
-Gfx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_0 + 0, 20, 0),
+Gfx overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_0 + 0, 20, 0),
 	gsSP2Triangles(0, 1, 2, 0, 1, 0, 3, 0),
 	gsSP2Triangles(0, 4, 3, 0, 0, 5, 4, 0),
 	gsSP2Triangles(0, 2, 5, 0, 5, 2, 6, 0),
@@ -3239,7 +3200,7 @@ Gfx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Fence_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Fence_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3247,10 +3208,10 @@ Gfx mat_overworld_one_room_0_dl_Fence_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_TEX_EDGE2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 212, 176, 143, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_wood_fence_ClampY_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_wood_fence_ClampY_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_wood_fence_ClampY_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_wood_fence_ClampY_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3258,7 +3219,7 @@ Gfx mat_overworld_one_room_0_dl_Fence_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Bone_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Bone_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3266,10 +3227,10 @@ Gfx mat_overworld_one_room_0_dl_Bone_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 224, 213, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_smooth_11_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_smooth_11_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 12),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_smooth_11_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_smooth_11_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3277,7 +3238,7 @@ Gfx mat_overworld_one_room_0_dl_Bone_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Bone_001_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Bone_001_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3285,10 +3246,10 @@ Gfx mat_overworld_one_room_0_dl_Bone_001_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 224, 213, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_smooth_11_pal_rgba16_copy),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_smooth_11_pal_rgba16_copy),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 12),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_smooth_11_ci4_copy),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_smooth_11_ci4_copy),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3296,7 +3257,7 @@ Gfx mat_overworld_one_room_0_dl_Bone_001_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Foundation_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Foundation_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3304,10 +3265,10 @@ Gfx mat_overworld_one_room_0_dl_Foundation_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 158, 158, 158, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_slate_2_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_slate_2_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 183),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_one_room_0_dl_stone_slate_2_ci8),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_intro_room_0_dl_stone_slate_2_ci8),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 256),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3315,7 +3276,7 @@ Gfx mat_overworld_one_room_0_dl_Foundation_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Grass_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Grass_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3323,10 +3284,10 @@ Gfx mat_overworld_one_room_0_dl_Grass_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_ext_grass_dark_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_ext_grass_dark_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_ext_grass_dark_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_ext_grass_dark_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3334,7 +3295,7 @@ Gfx mat_overworld_one_room_0_dl_Grass_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Cliff1_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Cliff1_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3342,10 +3303,10 @@ Gfx mat_overworld_one_room_0_dl_Cliff1_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_ext_rock_wall_grassy_dark_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_ext_rock_wall_grassy_dark_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 14),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_ext_rock_wall_grassy_dark_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_ext_rock_wall_grassy_dark_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3353,7 +3314,7 @@ Gfx mat_overworld_one_room_0_dl_Cliff1_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Exit_toVillage_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Exit_toVillage_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3361,10 +3322,10 @@ Gfx mat_overworld_one_room_0_dl_Exit_toVillage_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_ext_grass_dark_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_ext_grass_dark_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_ext_grass_dark_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_ext_grass_dark_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3372,7 +3333,7 @@ Gfx mat_overworld_one_room_0_dl_Exit_toVillage_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Bricks_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Bricks_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3380,10 +3341,10 @@ Gfx mat_overworld_one_room_0_dl_Bricks_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stonewall_red1_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stonewall_red1_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stonewall_red1_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stonewall_red1_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3391,7 +3352,7 @@ Gfx mat_overworld_one_room_0_dl_Bricks_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Wall2_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Wall2_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3399,10 +3360,10 @@ Gfx mat_overworld_one_room_0_dl_Wall2_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_Stone_WallHouse03_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_Stone_WallHouse03_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_Stone_WallHouse03_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_Stone_WallHouse03_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_MIRROR, 6, 0),
@@ -3410,7 +3371,7 @@ Gfx mat_overworld_one_room_0_dl_Wall2_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Window_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Window_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3418,10 +3379,10 @@ Gfx mat_overworld_one_room_0_dl_Window_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_window_1_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_window_1_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_window_1_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_window_1_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3429,7 +3390,7 @@ Gfx mat_overworld_one_room_0_dl_Window_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Roof_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Roof_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3437,10 +3398,10 @@ Gfx mat_overworld_one_room_0_dl_Roof_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 171, 129, 114, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_roof_old_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_roof_old_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 228),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_one_room_0_dl_stone_roof_old_ci8),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_intro_room_0_dl_stone_roof_old_ci8),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
@@ -3448,7 +3409,7 @@ Gfx mat_overworld_one_room_0_dl_Roof_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Concrete_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Concrete_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3456,10 +3417,10 @@ Gfx mat_overworld_one_room_0_dl_Concrete_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 12),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_dirty_crackled_2_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3467,7 +3428,7 @@ Gfx mat_overworld_one_room_0_dl_Concrete_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Stairs_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Stairs_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3475,7 +3436,7 @@ Gfx mat_overworld_one_room_0_dl_Stairs_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 199, 214, 159, 255),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_Stone_Stairs02_MirrorX_i4),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_Stone_Stairs02_MirrorX_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 2047, 512),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3483,7 +3444,7 @@ Gfx mat_overworld_one_room_0_dl_Stairs_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Bush_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Bush_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3491,10 +3452,10 @@ Gfx mat_overworld_one_room_0_dl_Bush_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_TEX_EDGE2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl__00006390_32x64_rgba16_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl__00006390_32x64_rgba16_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 234),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_one_room_0_dl__00006390_32x64_rgba16_ci8),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_intro_room_0_dl__00006390_32x64_rgba16_ci8),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
@@ -3502,7 +3463,7 @@ Gfx mat_overworld_one_room_0_dl_Bush_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Farmland_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Farmland_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3510,10 +3471,10 @@ Gfx mat_overworld_one_room_0_dl_Farmland_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 68, 68, 68, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl__00016CB8_16x32_rgba16_nograss_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl__00016CB8_16x32_rgba16_nograss_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl__00016CB8_16x32_rgba16_nograss_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl__00016CB8_16x32_rgba16_nograss_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 127, 2048),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0),
@@ -3521,7 +3482,7 @@ Gfx mat_overworld_one_room_0_dl_Farmland_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Exit_toBackDoor_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Exit_toBackDoor_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3529,10 +3490,10 @@ Gfx mat_overworld_one_room_0_dl_Exit_toBackDoor_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 12),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_dirty_crackled_2_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3540,7 +3501,7 @@ Gfx mat_overworld_one_room_0_dl_Exit_toBackDoor_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Exit_toFrontDoor_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Exit_toFrontDoor_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3548,10 +3509,10 @@ Gfx mat_overworld_one_room_0_dl_Exit_toFrontDoor_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 12),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_stone_floor_dirty_crackled_2_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_stone_floor_dirty_crackled_2_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3559,7 +3520,7 @@ Gfx mat_overworld_one_room_0_dl_Exit_toFrontDoor_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Chimney_layerOpaque[] = {
+Gfx mat_overworld_intro_room_0_dl_Chimney_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
@@ -3567,10 +3528,10 @@ Gfx mat_overworld_one_room_0_dl_Chimney_layerOpaque[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 151, 151, 151, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_Stone_Bricks15_pal_rgba16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_Stone_Bricks15_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 15),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_one_room_0_dl_Stone_Bricks15_ci4),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, overworld_intro_room_0_dl_Stone_Bricks15_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
@@ -3578,7 +3539,7 @@ Gfx mat_overworld_one_room_0_dl_Chimney_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_overworld_one_room_0_dl_Path_layerTransparent[] = {
+Gfx mat_overworld_intro_room_0_dl_Path_layerTransparent[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0),
@@ -3586,7 +3547,7 @@ Gfx mat_overworld_one_room_0_dl_Path_layerTransparent[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_ZB_XLU_DECAL2),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 201, 158, 114, 128),
-	gsDPSetTextureImage(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_one_room_0_dl_ext_dust_path_ClampX_ia8),
+	gsDPSetTextureImage(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 1, overworld_intro_room_0_dl_ext_dust_path_ClampX_ia8),
 	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 2047, 256),
 	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_CLAMP | G_TX_NOMIRROR, 6, 0),
@@ -3594,115 +3555,115 @@ Gfx mat_overworld_one_room_0_dl_Path_layerTransparent[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Fence_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Fence_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Fence_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fence_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Fence_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Fence_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Fence_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Fence_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Fene_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Fene_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Fene_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fene_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Fence_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Fene_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Fence_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Fene_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Bone_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Bone_001_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Bone_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Bone_001_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Fingers_001_mesh_layer_Opaque_tri_1),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Floor_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Floor_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Foundation_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_0),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Grass_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_1),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Cliff1_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_2),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Exit_toVillage_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_mesh_layer_Opaque_tri_3),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Foundation_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Grass_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_1),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Cliff1_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_2),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Exit_toVillage_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_mesh_layer_Opaque_tri_3),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Bricks_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Wall2_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Window_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_2),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Roof_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_3),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Foundation_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_4),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Concrete_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_5),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Stairs_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_6),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Bush_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Farmland_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_8),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Exit_toBackDoor_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_9),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Exit_toFrontDoor_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_10),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Chimney_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_001_mesh_layer_Opaque_tri_11),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Bricks_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Wall2_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_1),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Window_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_2),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Roof_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_3),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Foundation_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_4),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Concrete_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_5),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Stairs_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_6),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Bush_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_7),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Farmland_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_8),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Exit_toBackDoor_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_9),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Exit_toFrontDoor_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_10),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Chimney_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_001_mesh_layer_Opaque_tri_11),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent[] = {
+Gfx overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Path_layerTransparent),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Path_layerTransparent),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_002_mesh_layer_Transparent_tri_0),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Grass_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_tri_0),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Cliff1_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_003_mesh_layer_Opaque_tri_1),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Grass_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Cliff1_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_003_mesh_layer_Opaque_tri_1),
 	gsSPEndDisplayList(),
 };
 
-Gfx overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque[] = {
+Gfx overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPVertex(overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_overworld_one_room_0_dl_Fence_layerOpaque),
-	gsSPDisplayList(overworld_one_room_0_dl_Floor_004_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_overworld_intro_room_0_dl_Fence_layerOpaque),
+	gsSPDisplayList(overworld_intro_room_0_dl_Floor_004_mesh_layer_Opaque_tri_0),
 	gsSPEndDisplayList(),
 };
 

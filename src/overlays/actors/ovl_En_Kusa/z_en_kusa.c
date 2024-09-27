@@ -124,26 +124,32 @@ s32 EnKusa_SnapToFloor(EnKusa* this, PlayState* play, f32 yOffset) {
 }
 
 void EnKusa_DropCollectible(EnKusa* this, PlayState* play) {
-    s16 dropParams;
+    //s16 dropParams;
 
-    switch (this->actor.params & 3) {
-        case ENKUSA_TYPE_0:
-        case ENKUSA_TYPE_2:
-            dropParams = (this->actor.params >> 8) & 0xF;
+    //switch (this->actor.params & 3) {
+        //case ENKUSA_TYPE_0:
+        //case ENKUSA_TYPE_2:
+            /*dropParams = (this->actor.params >> 8) & 0xF;
 
             if (dropParams >= 0xD) {
                 dropParams = 0;
             }
             Item_DropCollectibleRandom(play, NULL, &this->actor.world.pos, dropParams << 4);
-            break;
-        case ENKUSA_TYPE_1:
+            */
             if (Rand_ZeroOne() < 0.5f) {
                 Item_DropCollectible(play, &this->actor.world.pos, ITEM00_SEEDS);
             } else {
                 Item_DropCollectible(play, &this->actor.world.pos, ITEM00_RECOVERY_HEART);
             }
-            break;
-    }
+            //break;
+        //case ENKUSA_TYPE_1:
+            //if (Rand_ZeroOne() < 0.5f) {
+                //Item_DropCollectible(play, &this->actor.world.pos, ITEM00_SEEDS);
+            //} else {
+                //Item_DropCollectible(play, &this->actor.world.pos, ITEM00_RECOVERY_HEART);
+            //}
+            //break;
+   //}
 }
 
 void EnKusa_UpdateVelY(EnKusa* this) {
@@ -435,7 +441,7 @@ void EnKusa_SetupCut(EnKusa* this) {
 }
 
 void EnKusa_CutWaitRegrow(EnKusa* this, PlayState* play) {
-    if (this->timer >= 120) {
+    if (this->timer >= 240) { //120
         EnKusa_SetupRegrow(this);
     }
 }

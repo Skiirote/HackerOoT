@@ -161,13 +161,13 @@ void EnItem00_Init(Actor* thisx, PlayState* play) {
     this->unk_158 = 1;
 
     switch (this->actor.params) {
-        case ITEM00_RUPEE_GREEN:
-        case ITEM00_RUPEE_BLUE:
-        case ITEM00_RUPEE_RED:
-            Actor_SetScale(&this->actor, 0.015f);
-            this->scale = 0.015f;
-            yOffset = 750.0f;
-            break;
+        //case ITEM00_RUPEE_GREEN:
+        //case ITEM00_RUPEE_BLUE:
+        //case ITEM00_RUPEE_RED:
+            //Actor_SetScale(&this->actor, 0.015f);
+           // this->scale = 0.015f;
+            //yOffset = 750.0f;
+            //break;
         case ITEM00_SMALL_KEY:
             this->unk_158 = 0;
             Actor_SetScale(&this->actor, 0.03f);
@@ -220,16 +220,16 @@ void EnItem00_Init(Actor* thisx, PlayState* play) {
             this->scale = 0.045 - 1e-10;
             yOffset = 320.0f;
             break;
-        case ITEM00_RUPEE_ORANGE:
-            Actor_SetScale(&this->actor, 0.045 - 1e-10);
-            this->scale = 0.045 - 1e-10;
-            yOffset = 750.0f;
-            break;
-        case ITEM00_RUPEE_PURPLE:
-            Actor_SetScale(&this->actor, 0.03f);
-            this->scale = 0.03f;
-            yOffset = 750.0f;
-            break;
+        //case ITEM00_RUPEE_ORANGE:
+            //Actor_SetScale(&this->actor, 0.045 - 1e-10);
+            //this->scale = 0.045 - 1e-10;
+            //yOffset = 750.0f;
+            //break;
+        //case ITEM00_RUPEE_PURPLE:
+            //Actor_SetScale(&this->actor, 0.03f);
+            //this->scale = 0.03f;
+            //yOffset = 750.0f;
+            //break;
         case ITEM00_FLEXIBLE:
             yOffset = 500.0f;
             Actor_SetScale(&this->actor, 0.01f);
@@ -285,7 +285,7 @@ void EnItem00_Init(Actor* thisx, PlayState* play) {
     this->actor.gravity = 0.0f;
 
     switch (this->actor.params) {
-        case ITEM00_RUPEE_GREEN:
+        /*case ITEM00_RUPEE_GREEN:
             Item_Give(play, ITEM_RUPEE_GREEN);
             break;
         case ITEM00_RUPEE_BLUE:
@@ -300,6 +300,7 @@ void EnItem00_Init(Actor* thisx, PlayState* play) {
         case ITEM00_RUPEE_ORANGE:
             Item_Give(play, ITEM_RUPEE_GOLD);
             break;
+            */
         case ITEM00_RECOVERY_HEART:
             Item_Give(play, ITEM_RECOVERY_HEART);
             break;
@@ -616,7 +617,7 @@ void EnItem00_Update(Actor* thisx, PlayState* play) {
     }
 
     switch (this->actor.params) {
-        case ITEM00_RUPEE_GREEN:
+        /*case ITEM00_RUPEE_GREEN:
             Item_Give(play, ITEM_RUPEE_GREEN);
             break;
         case ITEM00_RUPEE_BLUE:
@@ -631,6 +632,7 @@ void EnItem00_Update(Actor* thisx, PlayState* play) {
         case ITEM00_RUPEE_ORANGE:
             Item_Give(play, ITEM_RUPEE_GOLD);
             break;
+            */
         case ITEM00_STICK:
             getItemId = GI_DEKU_STICKS_1;
             break;
@@ -749,13 +751,13 @@ void EnItem00_Draw(Actor* thisx, PlayState* play) {
 
     if (!(this->unk_156 & this->unk_158)) {
         switch (this->actor.params) {
-            case ITEM00_RUPEE_GREEN:
-            case ITEM00_RUPEE_BLUE:
-            case ITEM00_RUPEE_RED:
-            case ITEM00_RUPEE_ORANGE:
-            case ITEM00_RUPEE_PURPLE:
-                EnItem00_DrawRupee(this, play);
-                break;
+            //case ITEM00_RUPEE_GREEN:
+            //case ITEM00_RUPEE_BLUE:
+            //case ITEM00_RUPEE_RED:
+            //case ITEM00_RUPEE_ORANGE:
+            //case ITEM00_RUPEE_PURPLE:
+                //EnItem00_DrawRupee(this, play);
+                //break;
             case ITEM00_HEART_PIECE:
                 EnItem00_DrawHeartPiece(this, play);
                 break;
@@ -915,9 +917,9 @@ s16 func_8001F404(s16 dropId) {
     if (LINK_IS_ADULT) {
         if (dropId == ITEM00_SEEDS) {
             dropId = ITEM00_ARROWS_SMALL;
-        } else if (dropId == ITEM00_STICK) {
-            dropId = ITEM00_RUPEE_GREEN;
-        }
+        } //else if (dropId == ITEM00_STICK) {
+            //dropId = ITEM00_RUPEE_GREEN;
+        //}
     } else {
         if (dropId == ITEM00_ARROWS_SMALL || dropId == ITEM00_ARROWS_MEDIUM || dropId == ITEM00_ARROWS_LARGE) {
             dropId = ITEM00_SEEDS;
@@ -937,7 +939,7 @@ s16 func_8001F404(s16 dropId) {
 
     if (dropId == ITEM00_RECOVERY_HEART &&
         gSaveContext.save.info.playerData.healthCapacity == gSaveContext.save.info.playerData.health) {
-        return ITEM00_RUPEE_GREEN;
+        return ITEM00_NONE;
     }
 
     return dropId;
