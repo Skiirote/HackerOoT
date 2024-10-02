@@ -230,7 +230,7 @@ void EnMk_SpotPlayer(EnMk* this, PlayState* play){
 void EnMk_CheckDistance(EnMk* this, PlayState* play){
     Player* player = GET_PLAYER(play);
     //f32 xyzDistanceFromLink = sqrtf(SQ(this->actor.xzDistToPlayer) + SQ(this->actor.yDistToPlayer));
-    if (this->actor.xzDistToPlayer > 1750.0f && Inventory_HasEmptyBottle() == 0){
+    if (this->actor.xzDistToPlayer > 4000.0f && !Inventory_HasEmptyBottle()){
         this->actionFunc = EnMk_SpotPlayer;
     }
 }
@@ -255,7 +255,7 @@ void EnMk_Wait(EnMk* this, PlayState* play) {
     s32 swimFlag;
     Player* player = GET_PLAYER(play);
     s32 playerExchangeItem;
-    if (Inventory_HasEmptyBottle() == 0 && this->actor.xzDistToPlayer > 1300.0f){
+    if (Inventory_HasEmptyBottle() == 0 && this->actor.xzDistToPlayer > 2000.0f){
          this->actionFunc = EnMk_SpotPlayer;
     }
     if (Actor_TalkOfferAccepted(&this->actor, play)) {

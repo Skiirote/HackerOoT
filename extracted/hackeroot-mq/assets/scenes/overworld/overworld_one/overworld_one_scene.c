@@ -1,6 +1,4 @@
 #include "overworld_one_scene.h"
-#include "z64cutscene.h"
-#include "z64cutscene_commands.h"
 
 
 /**
@@ -18,7 +16,6 @@ SceneCmd overworld_one_scene_header00[] = {
     SCENE_CMD_ENTRANCE_LIST(overworld_one_scene_header00_entranceList),
     SCENE_CMD_SPAWN_LIST(6, overworld_one_scene_header00_playerEntryList),
     SCENE_CMD_EXIT_LIST(overworld_one_scene_header00_exitList),
-    SCENE_CMD_CUTSCENE_DATA(GameIntro),
     SCENE_CMD_END(),
 };
 
@@ -53,7 +50,7 @@ ActorEntry overworld_one_scene_header00_playerEntryList[] = {
         /* Actor ID   */ ACTOR_PLAYER,
         /* Position   */ { -206, -120, 513 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0FFF
+        /* Parameters */ 0x0D00
     },
     // Link / Spawn point
     {

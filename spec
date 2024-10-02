@@ -4108,6 +4108,13 @@ beginseg
 endseg
 
 beginseg
+    name "ovl_distcheck"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_distcheck/z_distcheck.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_distcheck/ovl_distcheck_reloc.o"
+endseg
+
+beginseg
     name "gameplay_keep"
     compress
     romalign 0x1000
@@ -12239,6 +12246,22 @@ beginseg
     number 3
 endseg
 
+beginseg
+    name "guardtower_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/indoors/guardtower/guardtower_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "guardtower_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/indoors/guardtower/guardtower_room_0.o"
+    number 3
+endseg
+
 #if CAN_INCLUDE_TEST_SCENES
 beginseg
     name "besitu_scene"
@@ -12450,3 +12473,20 @@ beginseg
     number 3
 endseg
 #endif
+
+beginseg
+    name "guardtower_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/indoors/guardtower/guardtower_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "guardtower_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/indoors/guardtower/guardtower_room_0.o"
+    number 3
+endseg
+

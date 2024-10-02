@@ -9,7 +9,7 @@
 SceneCmd village_scene_header00[] = {
     SCENE_CMD_COL_HEADER(&village_scene_collisionHeader),
     SCENE_CMD_ROOM_LIST(1, village_scene_roomList),
-    SCENE_CMD_SOUND_SETTINGS(0x00, 0x12, NA_BGM_KAKARIKO_ADULT),
+    SCENE_CMD_SOUND_SETTINGS(0x00, 0x12, NA_BGM_NATURE_SFX_RAIN),
     SCENE_CMD_MISC_SETTINGS(0x00, 0x00),
     SCENE_CMD_SPECIAL_FILES(0x00, OBJECT_GAMEPLAY_DANGEON_KEEP),
     SCENE_CMD_SKYBOX_SETTINGS(0x01, 0x01, LIGHT_MODE_TIME),
@@ -97,7 +97,7 @@ TransitionActorEntry village_scene_header00_transitionActors[] = {
 };
 
 u16 village_scene_header00_exitList[2] = {
-    ENTR_OVERWORLD_ONE_2,
+    ENTR_OVERWORLD_ONE_0,
     ENTR_RIVER_0,
 };
 
@@ -200,9 +200,9 @@ CollisionHeader village_scene_collisionHeader = {
 };
 
 SurfaceType village_scene_polygonTypes[3] = {
-    { SURFACETYPE0(0, 0, 0, 0, 0, 0, 0, 0), SURFACETYPE1(0, 0, 0, 0, 0, 0, 0, 0) },
-    { SURFACETYPE0(0, 1, 0, 0, 0, 0, 0, 0), SURFACETYPE1(8, 0, 0, 0, 0, 0, 0, 0) },
-    { SURFACETYPE0(0, 2, 0, 0, 0, 0, 0, 0), SURFACETYPE1(0, 0, 0, 0, 0, 0, 0, 0) },
+    { SURFACETYPE0(0, 0, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x00, 0x00, 0, 0, 0, 0, 0, 0) },
+    { SURFACETYPE0(0, 1, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x08, 0x00, 0, 0, 0, 0, 0, 0) },
+    { SURFACETYPE0(0, 2, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x00, 0x00, 0, 0, 0, 0, 0, 0) },
 };
 
 Vec3s village_scene_vertices[1295] = {

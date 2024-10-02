@@ -71,7 +71,7 @@ static SceneSelectEntry sScenes[] = {
     { "River", MapSelect_LoadGame, ENTR_RIVER_0 },
     { "Cave", MapSelect_LoadGame, ENTR_CAVE_0 },
     { "Meat Dungeon", MapSelect_LoadGame, ENTR_MEATDUNGEON_0 },
-    { "Lake Hylia", MapSelect_LoadGame, ENTR_LAKE_HYLIA_0 },
+    { "Guard Tower", MapSelect_LoadGame, ENTR_GUARDTOWER_0 },
     { "Zora's Domain", MapSelect_LoadGame, ENTR_ZORAS_DOMAIN_0 },
     { "Zora's Fountain", MapSelect_LoadGame, ENTR_ZORAS_FOUNTAIN_0 },
     { "Gerudo Valley", MapSelect_LoadGame, ENTR_GERUDO_VALLEY_0 },

@@ -15,7 +15,6 @@ extern Spawn overworld_one_scene_header00_entranceList[];
 extern TransitionActorEntry overworld_one_scene_header00_transitionActors[];
 extern u16 overworld_one_scene_header00_exitList[3];
 extern EnvLightSettings overworld_one_scene_header00_lightSettings[4];
-extern CutsceneData GameIntro[];
 extern CollisionHeader overworld_one_scene_collisionHeader;
 extern SurfaceType overworld_one_scene_polygonTypes[7];
 extern Vec3s overworld_one_scene_vertices[795];

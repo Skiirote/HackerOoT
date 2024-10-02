@@ -8,13 +8,15 @@
 #include "terminal.h"
 #include "assets/objects/object_hs/object_hs.h"
 
-#define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_3)
+#define FLAGS (ACTOR_FLAG_0 | ACTOR_FLAG_3 | ACTOR_FLAG_5)
 
 void EnHs2_Init(Actor* thisx, PlayState* play);
 void EnHs2_Destroy(Actor* thisx, PlayState* play);
 void EnHs2_Update(Actor* thisx, PlayState* play);
 void EnHs2_Draw(Actor* thisx, PlayState* play);
 void func_80A6F1A4(EnHs2* this, PlayState* play);
+
+void EnHs2_Wait(EnHs2* this, PlayState* play);
 
 ActorInit En_Hs2_InitVars = {
     /**/ ACTOR_EN_HS2,
@@ -51,7 +53,6 @@ static ColliderCylinderInit sCylinderInit = {
 void EnHs2_Init(Actor* thisx, PlayState* play) {
     EnHs2* this = (EnHs2*)thisx;
     s32 pad;
-
     ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawCircle, 36.0f);
     SkelAnime_InitFlex(play, &this->skelAnime, &object_hs_Skel_006260, &object_hs_Anim_0005C0, this->jointTable,
                        this->morphTable, 16);
@@ -78,17 +79,47 @@ void EnHs2_GiveSword(EnHs2* this, PlayState* play){
     }
 }
 
-s32 func_80A6F0B4(EnHs2* this, PlayState* play, u16 textId, EnHs2ActionFunc actionFunc) {
+void EnHs2_KickPlayer(EnHs2* this, PlayState* play) {
+    //this->flags |= HS2_STATE_TALKING;
+
+    if (this->timer > 0) {
+        this->timer--;
+    } else {
+        play->nextEntranceIndex = ENTR_RIVER_1;
+
+        play->transitionType = TRANS_TYPE_CIRCLE(TCA_STARBURST, TCC_BLACK, TCS_FAST);
+        play->transitionTrigger = TRANS_TRIGGER_START;
+    }
+}
+
+void EnHs2_SpotPlayer(EnHs2* this, PlayState* play){
+    this->timer = 30;
+    this->actionFunc = EnHs2_KickPlayer;
+    Player_SetCsActionWithHaltedActors(play, &this->actor, PLAYER_CSACTION_95);
+    //Sfx_PlaySfxCentered(NA_SE_SY_FOUND);
+    Message_StartTextbox(play, 0x506A, &this->actor);
+}
+
+void EnHs2_Wait(EnHs2* this, PlayState* play){
+    if (!CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI && this->actor.xzDistToPlayer > 1500.0f){
+         this->actionFunc = EnHs2_SpotPlayer;
+    }
+    Debug_Print(1, "Distance: %d", this->actor.xzDistToPlayer);
+}
+
+s32 func_80A6F0B4(EnHs2* this, PlayState* play, u16 textId) {
+    
     if (Actor_TalkOfferAccepted(&this->actor, play)) {
-        this->actionFunc = actionFunc;
-        if (!(CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI)){
-            this->actionFunc = EnHs2_GiveSword;
-        }
+        //this->actionFunc = func_80A6F164;
+        if (!(CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI)){       
         return 1;
+        }else{
+        return 0;
+        }
     }
 
     this->actor.textId = textId;
-    if (ABS((s16)(this->actor.yawTowardsPlayer - this->actor.shape.rot.y)) < 0x2151 &&
+    if (ABS((s16)(this->actor.yawTowardsPlayer - this->actor.shape.rot.y)) < 0x2EE0 &&
         this->actor.xzDistToPlayer < 100.0f) {
         this->unk_2A8 |= 0x1;
         Actor_OfferTalk(&this->actor, play, 100.0f);
@@ -105,12 +136,14 @@ void func_80A6F164(EnHs2* this, PlayState* play) {
 
 void func_80A6F1A4(EnHs2* this, PlayState* play) {
     u16 textId = MaskReaction_GetTextId(play, MASK_REACTION_SET_CARPENTERS_SON);
-
     if (textId == 0) {
         textId = 0x5069;
+    } else {
+        textId = 0x506B;
     }
+    
 
-    func_80A6F0B4(this, play, textId, func_80A6F164);
+    func_80A6F0B4(this, play, textId);
 }
 
 void EnHs2_Update(Actor* thisx, PlayState* play) {
@@ -134,6 +167,7 @@ void EnHs2_Update(Actor* thisx, PlayState* play) {
         Math_SmoothStepToS(&this->unk_2A2.x, 0, 6, 6200, 100);
         Math_SmoothStepToS(&this->unk_2A2.y, 0, 6, 6200, 100);
     }
+    
 }
 
 s32 EnHs2_OverrideLimbDraw(PlayState* play, s32 limbIndex, Gfx** dList, Vec3f* pos, Vec3s* rot, void* thisx) {

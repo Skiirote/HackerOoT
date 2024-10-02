@@ -32,8 +32,7 @@
 
 #include "assets/scenes/misc/hakaana_ouke/hakaana_ouke_scene.h"
 
-#include "assets/scenes/overworld/overworld_one/overworld_one_scene.h"
-//#include "assets/scenes/overworld/overworld_one/overworld_intro_scene.h"
+#include "assets/scenes/overworld/overworld_intro/overworld_intro_scene.h"
 #include "assets/scenes/overworld/village/village_scene.h"
 #include "assets/scenes/indoors/house/house_scene.h"
 
@@ -116,7 +115,7 @@ EntranceCutscene sEntranceCutsceneTable[] = {
     { ENTR_DEATH_MOUNTAIN_CRATER_1, 2, EVENTCHKINF_B9, gDeathMountainCraterIntroCs },
     { ENTR_KOKIRI_FOREST_12, 2, EVENTCHKINF_C6, gKokiriForestDekuSproutCs },
     { ENTR_OVERWORLD_INTRO_0, 2, EVENTCHKINF_A0, GameIntro},
-    { ENTR_VILLAGE_0, 2, EVENTCHKINF_A0, Vilintro},
+    { ENTR_VILLAGE_1, 2, EVENTCHKINF_A0, Vilintro},
     { ENTR_HOUSE_0, 2, EVENTCHKINF_A0, Something},
 
 };

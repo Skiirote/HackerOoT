@@ -44919,15 +44919,11 @@ MSG(
 )
 ,
 MSG(
-"Ein komischer Typ lebt in der \n"
-"Windmühle. Warst Du schon bei\n"
-"ihm, großer Held?"
+
 )
 ,
 MSG(
-"Un type louche vit dans le moulin.\n"
-"Il chante toute la sainte journée \n"
-"et sa voix me tape sur les nerfs..."
+
 )
 )
 
@@ -44956,15 +44952,11 @@ BOX_BREAK
 )
 ,
 MSG(
-"Menschen sind widerlich. \n"
-"Meine Eltern sind widerlich.\n"
-"Du bist bestimmt auch widerlich!"
+
 )
 ,
 MSG(
-"Les gens me dégoûtent.\n"
-"Mes parents me dégoûtent.\n"
-"Ta p'tite tête me dégoûte."
+
 )
 )
 
@@ -44972,35 +44964,15 @@ DEFINE_MESSAGE(0x506A, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 MSG(/* MISSING */)
 ,
 MSG(
-"All day long, we are working on \n"
-"many construction projects in the\n"
-"village. It's going to take awhile\n"
-"before everything is done."
-BOX_BREAK
-
-"Our boss works us very hard!"
+UNSKIPPABLE "Hey kid! Come here a sec!"
 )
 ,
 MSG(
-"Wir arbeiten den ganzen Tag lang\n"
-"auf verschiedenen Baustellen hier\n"
-"im Dorf. Es dauert wohl noch eine\n"
-"Weile, bis alles fertig ist."
-BOX_BREAK
 
-"Unser Chef ist ein ziemlicher\n"
-"Sklaventreiber!"
 )
 ,
 MSG(
-"Toute la journée, nous travaillons\n"
-"sur les chantiers... Cela va \n"
-"prendre du temps avant que tout \n"
-"soit terminé."
-BOX_BREAK
 
-"Notre chef nous fait travailler \n"
-"dur!"
 )
 )
 
@@ -45008,19 +44980,19 @@ DEFINE_MESSAGE(0x506B, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-"I'm starving!\n"
-"Let's eat dinner, right now!"
+"Make sure you equip that sword\n"
+"before you head into that cave!\n"
+BOX_BREAK
+"There's no telling what you'll\n"
+"find in there..."
 )
 ,
 MSG(
-"Ich komme um vor Hunger!\n"
-"Laß uns sofort etwas essen!"
+
 )
 ,
 MSG(
-"J'ai faim! On passe à table tout \n"
-"de suite? Et après ça une bonne \n"
-"sieste et...hop! Au lit!"
+
 )
 )
 

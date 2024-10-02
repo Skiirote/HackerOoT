@@ -117,20 +117,20 @@
 /* 0x69 */ DEFINE_SCENE(cave_scene, none, SCENE_CAVE, SDC_ZORAS_RIVER, 0, 0)
 /* 0x6A */ DEFINE_SCENE(meatdungeon_scene, none, SCENE_MEATDUNGEON, SDC_JABU_JABU, 0, 0)
 /* 0x6B */ DEFINE_SCENE(overworld_intro_scene, none, SCENE_OVERWORLD_INTRO, SDC_JABU_JABU, 0, 0)
-
+/* 0x6C */ DEFINE_SCENE(guardtower_scene, none, SCENE_GUARDTOWER, SDC_CALM_WATER, 0, 0)
 
 #if CAN_INCLUDE_TEST_SCENES
-/* 0x65 */ DEFINE_SCENE(test01_scene, none, SCENE_TEST01, SDC_CALM_WATER, 0, 0)
-/* 0x66 */ DEFINE_SCENE(besitu_scene, none, SCENE_BESITU, SDC_BESITU, 0, 0)
-/* 0x67 */ DEFINE_SCENE(depth_test_scene, none, SCENE_DEPTH_TEST, SDC_DEFAULT, 0, 0)
-/* 0x68 */ DEFINE_SCENE(syotes_scene, none, SCENE_SYOTES, SDC_DEFAULT, 0, 0)
-/* 0x69 */ DEFINE_SCENE(syotes2_scene, none, SCENE_SYOTES2, SDC_DEFAULT, 0, 0)
-/* 0x6A */ DEFINE_SCENE(sutaru_scene, none, SCENE_SUTARU, SDC_DEFAULT, 0, 0)
-/* 0x6B */ DEFINE_SCENE(hairal_niwa2_scene, g_pn_12, SCENE_HAIRAL_NIWA2, SDC_CASTLE_COURTYARD_GUARDS, 0, 0)
-/* 0x6C */ DEFINE_SCENE(sasatest_scene, none, SCENE_SASATEST, SDC_DEFAULT, 0, 0)
-/* 0x6D */ DEFINE_SCENE(testroom_scene, none, SCENE_TESTROOM, SDC_DEFAULT, 0, 0)
+/* 0x6C */ DEFINE_SCENE(test01_scene, none, SCENE_TEST01, SDC_CALM_WATER, 0, 0)
+/* 0x6D */ DEFINE_SCENE(besitu_scene, none, SCENE_BESITU, SDC_BESITU, 0, 0)
+/* 0x6E */ DEFINE_SCENE(depth_test_scene, none, SCENE_DEPTH_TEST, SDC_DEFAULT, 0, 0)
+/* 0x6F */ DEFINE_SCENE(syotes_scene, none, SCENE_SYOTES, SDC_DEFAULT, 0, 0)
+/* 0x70 */ DEFINE_SCENE(syotes2_scene, none, SCENE_SYOTES2, SDC_DEFAULT, 0, 0)
+/* 0x71 */ DEFINE_SCENE(sutaru_scene, none, SCENE_SUTARU, SDC_DEFAULT, 0, 0)
+/* 0x72 */ DEFINE_SCENE(hairal_niwa2_scene, g_pn_12, SCENE_HAIRAL_NIWA2, SDC_CASTLE_COURTYARD_GUARDS, 0, 0)
+/* 0x73 */ DEFINE_SCENE(sasatest_scene, none, SCENE_SASATEST, SDC_DEFAULT, 0, 0)
+/* 0x74 */ DEFINE_SCENE(testroom_scene, none, SCENE_TESTROOM, SDC_DEFAULT, 0, 0)
 #endif
 
 #if INCLUDE_EXAMPLE_SCENE
-/* 0x6C */ DEFINE_SCENE(example_scene, none, SCENE_EXAMPLE, SDC_HAUNTED_WASTELAND, 0, 0)
+/* 0x75 */ DEFINE_SCENE(example_scene, none, SCENE_EXAMPLE, SDC_HAUNTED_WASTELAND, 0, 0)
 #endif
