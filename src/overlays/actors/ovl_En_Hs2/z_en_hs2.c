@@ -107,14 +107,14 @@ void EnHs2_Wait(EnHs2* this, PlayState* play){
     Debug_Print(1, "Distance: %d", this->actor.xzDistToPlayer);
 }
 
-s32 func_80A6F0B4(EnHs2* this, PlayState* play, u16 textId) {
+void func_80A6F0B4(EnHs2* this, PlayState* play, u16 textId) {
     
     if (Actor_TalkOfferAccepted(&this->actor, play)) {
         //this->actionFunc = func_80A6F164;
-        if (!(CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI)){       
-        return 1;
+        if (CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI){       
+            this->hasSword = true;
         }else{
-        return 0;
+            this->hasSword = false;
         }
     }
 
@@ -135,15 +135,18 @@ void func_80A6F164(EnHs2* this, PlayState* play) {
 }
 
 void func_80A6F1A4(EnHs2* this, PlayState* play) {
-    u16 textId = MaskReaction_GetTextId(play, MASK_REACTION_SET_CARPENTERS_SON);
-    if (textId == 0) {
-        textId = 0x5069;
-    } else {
-        textId = 0x506B;
+    if (CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) != EQUIP_VALUE_SWORD_KOKIRI && !GET_EVENTCHKINF(EVENTCHKINF_02)) {
+        this->actor.textId = 0x506C;
+    } else if (CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI && !GET_EVENTCHKINF(EVENTCHKINF_02) ){
+        this->actor.textId = 0x506D;
+    } else if (CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) != EQUIP_VALUE_SWORD_KOKIRI && GET_EVENTCHKINF(EVENTCHKINF_02)){
+        this->actor.textId = 0x506B;
+    } else if (CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) == EQUIP_VALUE_SWORD_KOKIRI && GET_EVENTCHKINF(EVENTCHKINF_02)){
+        this->actor.textId = 0x5069;
     }
     
 
-    func_80A6F0B4(this, play, textId);
+    func_80A6F0B4(this, play, this->actor.textId);
 }
 
 void EnHs2_Update(Actor* thisx, PlayState* play) {

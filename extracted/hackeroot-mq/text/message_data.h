@@ -4573,10 +4573,10 @@ DEFINE_MESSAGE(0x00A4, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE ITEM_ICON(ITEM_SWORD_KOKIRI) QUICKTEXT_ENABLE "You got " COLOR(ADJUSTABLE) "the strange man's sword" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
-"He tried to find what was wrong\n"
-"with the water, but now he is\n"
-"trusting you to."
+UNSKIPPABLE ITEM_ICON(ITEM_SWORD_KOKIRI) QUICKTEXT_ENABLE "You got " COLOR(ADJUSTABLE) "a knight's short sword" COLOR(DEFAULT) "!" QUICKTEXT_DISABLE "\n"
+"It has been a long time since\n"
+"a sword was necessary around\n"
+"here, you were lucky to find one!"
 )
 ,
 MSG(
@@ -44931,24 +44931,21 @@ DEFINE_MESSAGE(0x5069, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_VARIABLE,
 MSG(/* MISSING */)
 ,
 MSG(
-"You come here for fish too? \n"
-"There's no use. They're all dead.\n"
-"The water's turned red and\n"
-"the fish have turned dead.\n"
+"I see you found a sword...\n"
 BOX_BREAK
-TEXT_SPEED(10)"The water's turned " COLOR(RED) "red " COLOR(DEFAULT) "and\n"
-"the " COLOR(BLUE) "fish " COLOR(DEFAULT) "have turned " COLOR(PURPLE) "dead" COLOR(DEFAULT) ".\n"
+"Honestly kid, I kinda hoped\n"
+"what I said earlier would deter\n"
+"you from continuing on towards\n"
+"that cave."
 BOX_BREAK
-"Anyways... the "COLOR(RED) "red " COLOR(DEFAULT) "is coming\n"
-"from that cave upstream.\n"
+"Haven't you seen" COLOR(RED) " the red?\n" COLOR(DEFAULT)
+"That can't be good, and it's\n"
+"all coming from the cave."
 BOX_BREAK
-"I tried to find the source\n"
-"of the "COLOR(RED) "red " COLOR(DEFAULT) "but I got startled\n"
-"and ran back..."
+"If i can't persuade you to\n"
+"stay away..."
 BOX_BREAK
-"If you want to take a look\n"
-"for yourself, I'll give you\n"
-"my sword. Here, take it."
+"Just... be careful."
 )
 ,
 MSG(
@@ -44980,11 +44977,12 @@ DEFINE_MESSAGE(0x506B, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-"Make sure you equip that sword\n"
+"Make sure you equip a sword\n"
 "before you head into that cave!\n"
 BOX_BREAK
 "There's no telling what you'll\n"
-"find in there..."
+"find in there...\n"
+"Ha ha ha!"
 )
 ,
 MSG(
@@ -45000,10 +44998,14 @@ DEFINE_MESSAGE(0x506C, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-"Those guys each do the work of \n"
-"half a man, but they still want a\n"
-"full man's portion!\n"
-"They're lazy slackers, I tell you!"
+"Did you come here for fish too?\n"
+"It's no use... they're all dead."
+BOX_BREAK
+"The water's turned"COLOR(RED) " red "COLOR(DEFAULT)"and\n"
+"the fish have turned dead."
+BOX_BREAK
+"You might as well just head\n"
+"on home."
 )
 ,
 MSG(
@@ -45025,10 +45027,17 @@ DEFINE_MESSAGE(0x506D, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-QUICKTEXT_ENABLE COLOR(RED) "Poe   30 Rupees\n"
-COLOR(DEFAULT) "This is a bottled ghost spirit. \n"
-"Sell it to someone who is crazy \n"
-"about weird things like this." QUICKTEXT_DISABLE PERSISTENT
+"I see you have a sword...\n"
+"Don't think that means you\n"
+"should start exploring any suspicious\n"
+"caves or anything."
+BOX_BREAK
+"You might as well just head home.\n"
+"The water's turned"COLOR(RED) " red "COLOR(DEFAULT)"and\n"
+"the fish have turned dead."
+BOX_BREAK
+"It's too dangerous here for\n"
+"someone your age..."
 )
 ,
 MSG(

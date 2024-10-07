@@ -116,8 +116,8 @@
 /* 0x68 */ DEFINE_SCENE(river_scene, none, SCENE_RIVER, SDC_ZORAS_RIVER, 0, 0)
 /* 0x69 */ DEFINE_SCENE(cave_scene, none, SCENE_CAVE, SDC_ZORAS_RIVER, 0, 0)
 /* 0x6A */ DEFINE_SCENE(meatdungeon_scene, none, SCENE_MEATDUNGEON, SDC_JABU_JABU, 0, 0)
-/* 0x6B */ DEFINE_SCENE(overworld_intro_scene, none, SCENE_OVERWORLD_INTRO, SDC_JABU_JABU, 0, 0)
-/* 0x6C */ DEFINE_SCENE(guardtower_scene, none, SCENE_GUARDTOWER, SDC_CALM_WATER, 0, 0)
+/* 0x6B */ DEFINE_SCENE(overworld_intro_scene, none, SCENE_OVERWORLD_INTRO, SDC_HYRULE_FIELD, 0, 0)
+/* 0x6C */ DEFINE_SCENE(guardtower_scene, none, SCENE_GUARDTOWER, SDC_HYRULE_FIELD, 0, 0)
 
 #if CAN_INCLUDE_TEST_SCENES
 /* 0x6C */ DEFINE_SCENE(test01_scene, none, SCENE_TEST01, SDC_CALM_WATER, 0, 0)
