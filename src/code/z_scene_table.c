@@ -1044,8 +1044,8 @@ void Scene_DrawConfigZorasRiver(PlayState* play) {
                                 (gameplayFrames * 6) % 128, 32, 32, 1, gameplayFrames % 128, (gameplayFrames * 6) % 128,
                                 32, 32));
     gSPSegment(POLY_XLU_DISP++, 0x09,
-               Gfx_TwoTexScroll(play->state.gfxCtx, G_TX_RENDERTILE, 127 - gameplayFrames % 128,
-                                (gameplayFrames * 3) % 128, 32, 32, 1, gameplayFrames % 128, (gameplayFrames * 3) % 128,
+               Gfx_TwoTexScroll(play->state.gfxCtx, G_TX_RENDERTILE, /*127 - gameplayFrames % 128*/0,
+                                (gameplayFrames * 3) % 128, 32, 32, 1, /*gameplayFrames % 128*/0, (gameplayFrames * 3) % 128,
                                 32, 32));
     gSPSegment(POLY_XLU_DISP++, 0x0A,
                Gfx_TwoTexScroll(play->state.gfxCtx, G_TX_RENDERTILE, 127 - gameplayFrames % 128,

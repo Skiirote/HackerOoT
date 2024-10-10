@@ -9,7 +9,7 @@ SceneCmd meatdungeon_room_3_header00[] = {
     SCENE_CMD_ECHO_SETTINGS(0x00),
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
     SCENE_CMD_SKYBOX_DISABLES(true, true),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
+    SCENE_CMD_TIME_SETTINGS(23, 0, 0),
     SCENE_CMD_END(),
 };
 

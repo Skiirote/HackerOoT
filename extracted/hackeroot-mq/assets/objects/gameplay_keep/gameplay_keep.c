@@ -5532,7 +5532,7 @@ u64 gMoonTex[] = {
 #include "assets/objects/gameplay_keep/moon.ia8.inc.c"
 };
 
-Gfx gMoonDL[] = {
+/*Gfx gMoonDL[] = {
     gsSPMatrix(0x01000000, G_MTX_NOPUSH | G_MTX_MUL | G_MTX_MODELVIEW),
     gsSPTexture(0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_ON),
     gsDPPipeSync(),
@@ -5543,7 +5543,9 @@ Gfx gMoonDL[] = {
     gsSPVertex(gameplay_keepVtx_038F70, 4, 0),
     gsSP2Triangles(0, 1, 2, 0, 1, 3, 2, 0),
     gsSPEndDisplayList(),
-};
+};*/
+
+#include "gMoonDL.h"
 
 Vtx gameplay_keepVtx_038F70[] = {
 #include "assets/objects/gameplay_keep/gameplay_keepVtx_038F70.vtx.inc"

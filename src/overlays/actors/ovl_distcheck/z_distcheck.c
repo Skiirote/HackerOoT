@@ -85,7 +85,7 @@ void distcheck_SetupSpotPlayer(distcheck* this, PlayState* play){
 
 void distcheck_WithinXZDistance(distcheck* thisx, PlayState* play) {
     distcheck* this = (distcheck*)thisx;
-    if (this->actor.xzDistToPlayer > 1900.0f){
+    if (CUR_EQUIP_VALUE(EQUIP_TYPE_SWORD) != EQUIP_VALUE_SWORD_KOKIRI && this->actor.xzDistToPlayer > 1900.0f){
          distcheck_SetupSpotPlayer(this, play);
          SET_EVENTCHKINF(EVENTCHKINF_02);
     }
