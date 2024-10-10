@@ -85,11 +85,6 @@ void Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, LightContext
         gSPDisplayList(POLY_OPA_DISP++, skyboxCtx->dListBuf[4]); // -x face
         gSPDisplayList(POLY_OPA_DISP++, skyboxCtx->dListBuf[6]); // +x face
         gSPDisplayList(POLY_OPA_DISP++, skyboxCtx->dListBuf[8]); // +y face
-        if (skyboxId != SKYBOX_CUTSCENE_MAP) {
-            // Render the bottom face black except in the cutscene map
-            gDPPipeSync(POLY_OPA_DISP++);
-            gDPSetCombineLERP(POLY_OPA_DISP++, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, COMBINED, 0, 0, 0, COMBINED);
-        }
         gSPDisplayList(POLY_OPA_DISP++, skyboxCtx->dListBuf[10]); // -y face
     }
 
