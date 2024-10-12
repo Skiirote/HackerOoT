@@ -6,4 +6,5 @@ extern u64 gNightSkybox2Tex[];
 extern u64 gNightSkybox3Tex[];
 extern u64 gNightSkybox4Tex[];
 extern u64 gNightSkybox5Tex[];
+extern u64 gNightSkybox6Tex[];
 #endif

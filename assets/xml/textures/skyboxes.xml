@@ -38,6 +38,7 @@
         <Texture Name="gNightSkybox3Tex" OutName="night_3" Format="ci8" Width="128" Height="64" Offset="0x4000" ExternalTlut="vr_fine3_pal_static" SplitTlut="false" ExternalTlutOffset="0x000"/>
         <Texture Name="gNightSkybox4Tex" OutName="night_4" Format="ci8" Width="128" Height="64" Offset="0x6000" ExternalTlut="vr_fine3_pal_static" SplitTlut="false" ExternalTlutOffset="0x000"/>
         <Texture Name="gNightSkybox5Tex" OutName="night_5" Format="ci8" Width="128" Height="128" Offset="0x8000" ExternalTlut="vr_fine3_pal_static" SplitTlut="false" ExternalTlutOffset="0x000"/>
+        <Texture Name="gNightSkybox6Tex" OutName="night_6" Format="ci8" Width="128" Height="128" Offset="0xC000" ExternalTlut="vr_fine3_pal_static" SplitTlut="false" ExternalTlutOffset="0x000"/>
     </File>
     <File Name="vr_fine3_pal_static">
         <Texture Name="gNightSkyboxTLUT" OutName="night_tlut" Format="rgba16" Width="16" Height="8" Offset="0x0"/>

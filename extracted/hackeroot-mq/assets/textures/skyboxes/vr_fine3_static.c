@@ -44,3 +44,7 @@ u64 gNightSkybox5Tex[] = {
 #include "assets/textures/skyboxes/night_5.ci8.inc.c"
 };
 
+u64 gNightSkybox6Tex[] = {
+#include "assets/textures/skyboxes/night_6.ci8.inc.c"
+};
+
