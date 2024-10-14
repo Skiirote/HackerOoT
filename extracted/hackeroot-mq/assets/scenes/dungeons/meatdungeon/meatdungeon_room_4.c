@@ -5,7 +5,7 @@
  * Header Child Day (Default)
 */
 #define LENGTH_MEATDUNGEON_ROOM_4_HEADER00_OBJECTLIST 1
-#define LENGTH_MEATDUNGEON_ROOM_4_HEADER00_ACTORLIST 2
+#define LENGTH_MEATDUNGEON_ROOM_4_HEADER00_ACTORLIST 5
 SceneCmd meatdungeon_room_4_header00[] = {
     SCENE_CMD_ROOM_SHAPE(&meatdungeon_room_4_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(0x00),
@@ -26,7 +26,7 @@ ActorEntry meatdungeon_room_4_header00_actorList[LENGTH_MEATDUNGEON_ROOM_4_HEADE
     {
         /* Actor ID   */ ACTOR_EN_BROB,
         /* Position   */ { -1824, -236, 34 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x00FF
     },
 
@@ -34,7 +34,31 @@ ActorEntry meatdungeon_room_4_header00_actorList[LENGTH_MEATDUNGEON_ROOM_4_HEADE
     {
         /* Actor ID   */ ACTOR_EN_BROB,
         /* Position   */ { -2059, -236, -61 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(329.420), DEG_TO_BINANG(0.000) },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(59.420), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x00FF
+    },
+
+    // Flobbery Muscle Block
+    {
+        /* Actor ID   */ ACTOR_EN_BROB,
+        /* Position   */ { -2429, -236, -520 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(50.817), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x00FF
+    },
+
+    // Flobbery Muscle Block
+    {
+        /* Actor ID   */ ACTOR_EN_BROB,
+        /* Position   */ { -2592, -236, -654 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(52.729), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x00FF
+    },
+
+    // Flobbery Muscle Block
+    {
+        /* Actor ID   */ ACTOR_EN_BROB,
+        /* Position   */ { -2500, -236, -878 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(52.729), DEG_TO_BINANG(0.000) },
         /* Parameters */ 0x00FF
     },
 };
@@ -47,11 +71,16 @@ RoomShapeNormal meatdungeon_room_4_shapeHeader = {
 };
 
 RoomShapeDListsEntry meatdungeon_room_4_shapeDListsEntry[1] = {
-    { meatdungeon_room_4_shapeHeader_entry_0_opaque, NULL }
+    { meatdungeon_room_4_shapeHeader_entry_0_opaque, meatdungeon_room_4_shapeHeader_entry_0_transparent }
 };
 
 Gfx meatdungeon_room_4_shapeHeader_entry_0_opaque[] = {
 	gsSPDisplayList(meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque),
+	gsSPEndDisplayList(),
+};
+
+Gfx meatdungeon_room_4_shapeHeader_entry_0_transparent[] = {
+	gsSPDisplayList(meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent),
 	gsSPEndDisplayList(),
 };
 
@@ -120,6 +149,55 @@ u64 meatdungeon_room_4_dl_bek_wht1_w03_1_i4[] = {
 	0xc97bccbbc77bbbcb, 0xc77bbcccbbcccccc, 0xb77bc99bcbbbcccc, 0xbccbbbbbbbbbbbbb, 0xcbbcb9cbbbbbbbbc, 0xc77bcbbb9bbbcbbc, 0xbbbbbbbbbbbcbccb, 0xccbcbbccb9bcb99b, 
 	0xbbbbccbbb9bbbccb, 0xbccbcbc9bbccbbbc, 0xc97bccbbbccbcbbb, 0xbbbbcbcbbccc9bcc, 0xcccbbbbcbbbbbcbc, 0xbcbbcbbbbbccbbbc, 0xb9bbbbbbbcbccbcb, 0xcbbcbbccc9bcbccb, 
 	0xcccccccccccccccc, 0xccbccccbcccccccc, 0xcccccccccccbcccc, 0xbccbbbcccccccccc, 0xcccbccbccccbbccb, 0xcccccbcbbcccbbbb, 0xbbcccccccccccccc, 0xbccbccccccbccccc, 
+	
+};
+
+u64 meatdungeon_room_4_dl__0000E160_32x32_rgba16_ci8[] = {
+	0x0001020301040005, 0x060708090a0b0c0d, 0x0e0f1004060c1112, 0x0c13130b0c141516, 0x1305010117100c0d, 0x18191a0002060d1b, 0x041c1d1e12001f20, 0x0b03120c05121221, 
+	0x000d12120d0d2223, 0x242526081a080827, 0x2829090d1213002a, 0x1212200005012b0b, 0x0d1410150d2c2d2e, 0x2f30310f3233340c, 0x1b0f29090c01050a, 0x3536120201010201, 
+	0x0d10373839243a0c, 0x0b003b210e0d0102, 0x000d000900131311, 0x0b3c123d3e010512, 0x3f40244142430e09, 0x120c350404000105, 0x120e0b050b002044, 0x1111453d46470505, 
+	0x481a0f0f494a4b04, 0x35120d0e1c001200, 0x4c12130146010505, 0x05060b0147124d17, 0x4e4d4d0d1f003009, 0x4f0e0e5030210404, 0x0700113e3d010101, 0x0551060112365216, 
+	0x120c4d1509130e04, 0x1053375416071b36, 0x551a0005013d5646, 0x510c570015100c13, 0x1f050b120d455827, 0x0f3b59161c0e0404, 0x5a5b5c0f13013d01, 0x175d3400095e0145, 
+	0x06131313065f4a00, 0x600c0009140e2004, 0x61551d624c0c0c0d, 0x634a64650a010301, 0x010544060e041f51, 0x120d0c600d120e10, 0x660c050e07522d67, 0x1a1538686005013d, 
+	0x6901454b04050c12, 0x0d0d1b55556a6b2e, 0x6c350101051f4a32, 0x0c6d6e200e0d0602, 0x0452231b0501122a, 0x21090c0707094c07, 0x30210e134d50321b, 0x046f520012361515, 
+	0x580f3551054d1504, 0x041c090960356000, 0x134504212a60344b, 0x632e4b4e44121f1d, 0x354412134d361500, 0x0e041b60600c6000, 0x0d4d1670211b0771, 0x724a520e0c0b1f0c, 
+	0x350c001200000004, 0x214a545909363155, 0x73742d7010212926, 0x750f76100900121f, 0x1b770c13121f0427, 0x2f78797a387b7c27, 0x1853726327587d7e, 0x5c22040e0d0c0b0d, 
+	0x00577f0680668182, 0x83848507662e6a09, 0x8687882789538a6b, 0x0e8b0e121f0b5109, 0x1e333b268c6b6a04, 0x320c05061f120e00, 0x3b4b248d8e877d33, 0x4d150e0b05064d21, 
+	0x540a8f9060124c4e, 0x8f020101050a0009, 0x154b91920e80631b, 0x1b0d04000606275c, 0x0b0b0b060c040a05, 0x930211020205131c, 0x500e4d9422959697, 0x72085904526c987f, 
+	0x051f0b130e1b990c, 0x033d020203030612, 0x0e0e0e719a9b9c9d, 0x9e407e9fa01a0ea1, 0x093511020c003460, 0x02010601020c0c0d, 0x3610a2a3a463a58e, 0x874a10a6a7622912, 
+	0x0a4435120b0d0c0b, 0xa10505050c0e0d80, 0x4b5da863520e1552, 0x275858236f371a32, 0xa90c1f1f0c0d6013, 0x0c01130c0d000e1e, 0x89aa63211e0d0d15, 0x2127312363214b7d, 
+	0x08a91f1c07270e0d, 0x601205062a176d66, 0xab275d0d1f200e0c, 0x1c275255880f0910, 0xac8a7279ad071430, 0x000005064dae6c6b, 0x210415141f200e6d, 0xafb0b1b2b3091eb4, 
+	0x3131a4688f0b0c12, 0x4d830971385c090e, 0x1c4c000e0005b57d, 0x5c3bb62759595363, 0x1b2a1d121c011214, 0x35155db7b84d4d45, 0x26b9ba0d366d5ca1, 0x010d09042a4c626c, 
+	0x4e040913131f1311, 0x202a732f4d12124d, 0x7bbbbc8abd8ca13d, 0x050c20120006524a, 0x120206013e094401, 0x05be89521513120d, 0x5dae664aba4e050b, 0x0c120c0b1f124b58, 
+	
+};
+
+u64 meatdungeon_room_4_dl__0000E160_32x32_rgba16_x__0000E160_32x32_rgba16_pal_rgba16[] = {
+	0x2a4f114911891147, 0x3ad3118b11cb4313, 0x641932912a0d19cb, 0x220d224f2a914b55, 0x3b15198b220f19cd, 0x329332d353572ad5, 0x649f9d5f5b953ad1, 0x2a8f32d543551a0d, 
+	0x2a51431533156c9f, 0x8d657459749f5bd9, 0x4b953b133ad51105, 0x22d57ce1745d63db, 0x42d353db42d1328f, 0x2a4d2a0f2a936c5d, 0x6ca15c636bd74b15, 0x21cf110710c73b59, 
+	0x95a58e2db6696353, 0x21cd1a0f1109114b, 0x745b7c5b53974357, 0x3a912251324f3251, 0x32d111cd4b57645d, 0x5b975355108121c9, 0x53d953953b198cdf, 0x63d94b992a0b32d7, 
+	0x21cb4bdb5bd7641b, 0x4b594b975bdb8521, 0x6c1910c54b1363d7, 0x6c1b3b17741b6c5b, 0x539b43597c9d439b, 0x6c5f851f3b55224d, 0x745f9d63849d9567, 0x9d656c9d9da519c9, 
+	0x2291952163975399, 0x5b53424f6c595c1b, 0x749d641d85232ad3, 0x7c9b94df5c1d3a8f, 0x428f64a36b95220b, 0x1a514c21a5e7951f, 0x3a8d324d5c6185a9, 0xae2b8da99e2d9de9, 
+	0xae2919894b9b7ca1, 0x74e14399541d8d1f, 0x84e142cf8d637c9f, 0x541f7c175c5f541b, 0x8d67a5a99d1f5bd5, 0x3b57229353597d23, 0x5b557cdd53138565, 0x9563c66d1a110000
+};
+
+u64 meatdungeon_room_4_dl__0000E160_32x32_rgba16_ci8_copy[] = {
+	0x0001020301040005, 0x060708090a0b0c0d, 0x0e0f1004060c1112, 0x0c13130b0c141516, 0x1305010117100c0d, 0x18191a0002060d1b, 0x041c1d1e12001f20, 0x0b03120c05121221, 
+	0x000d12120d0d2223, 0x242526081a080827, 0x2829090d1213002a, 0x1212200005012b0b, 0x0d1410150d2c2d2e, 0x2f30310f3233340c, 0x1b0f29090c01050a, 0x3536120201010201, 
+	0x0d10373839243a0c, 0x0b003b210e0d0102, 0x000d000900131311, 0x0b3c123d3e010512, 0x3f40244142430e09, 0x120c350404000105, 0x120e0b050b002044, 0x1111453d46470505, 
+	0x481a0f0f494a4b04, 0x35120d0e1c001200, 0x4c12130146010505, 0x05060b0147124d17, 0x4e4d4d0d1f003009, 0x4f0e0e5030210404, 0x0700113e3d010101, 0x0551060112365216, 
+	0x120c4d1509130e04, 0x1053375416071b36, 0x551a0005013d5646, 0x510c570015100c13, 0x1f050b120d455827, 0x0f3b59161c0e0404, 0x5a5b5c0f13013d01, 0x175d3400095e0145, 
+	0x06131313065f4a00, 0x600c0009140e2004, 0x61551d624c0c0c0d, 0x634a64650a010301, 0x010544060e041f51, 0x120d0c600d120e10, 0x660c050e07522d67, 0x1a1538686005013d, 
+	0x6901454b04050c12, 0x0d0d1b55556a6b2e, 0x6c350101051f4a32, 0x0c6d6e200e0d0602, 0x0452231b0501122a, 0x21090c0707094c07, 0x30210e134d50321b, 0x046f520012361515, 
+	0x580f3551054d1504, 0x041c090960356000, 0x134504212a60344b, 0x632e4b4e44121f1d, 0x354412134d361500, 0x0e041b60600c6000, 0x0d4d1670211b0771, 0x724a520e0c0b1f0c, 
+	0x350c001200000004, 0x214a545909363155, 0x73742d7010212926, 0x750f76100900121f, 0x1b770c13121f0427, 0x2f78797a387b7c27, 0x1853726327587d7e, 0x5c22040e0d0c0b0d, 
+	0x00577f0680668182, 0x83848507662e6a09, 0x8687882789538a6b, 0x0e8b0e121f0b5109, 0x1e333b268c6b6a04, 0x320c05061f120e00, 0x3b4b248d8e877d33, 0x4d150e0b05064d21, 
+	0x540a8f9060124c4e, 0x8f020101050a0009, 0x154b91920e80631b, 0x1b0d04000606275c, 0x0b0b0b060c040a05, 0x930211020205131c, 0x500e4d9422959697, 0x72085904526c987f, 
+	0x051f0b130e1b990c, 0x033d020203030612, 0x0e0e0e719a9b9c9d, 0x9e407e9fa01a0ea1, 0x093511020c003460, 0x02010601020c0c0d, 0x3610a2a3a463a58e, 0x874a10a6a7622912, 
+	0x0a4435120b0d0c0b, 0xa10505050c0e0d80, 0x4b5da863520e1552, 0x275858236f371a32, 0xa90c1f1f0c0d6013, 0x0c01130c0d000e1e, 0x89aa63211e0d0d15, 0x2127312363214b7d, 
+	0x08a91f1c07270e0d, 0x601205062a176d66, 0xab275d0d1f200e0c, 0x1c275255880f0910, 0xac8a7279ad071430, 0x000005064dae6c6b, 0x210415141f200e6d, 0xafb0b1b2b3091eb4, 
+	0x3131a4688f0b0c12, 0x4d830971385c090e, 0x1c4c000e0005b57d, 0x5c3bb62759595363, 0x1b2a1d121c011214, 0x35155db7b84d4d45, 0x26b9ba0d366d5ca1, 0x010d09042a4c626c, 
+	0x4e040913131f1311, 0x202a732f4d12124d, 0x7bbbbc8abd8ca13d, 0x050c20120006524a, 0x120206013e094401, 0x05be89521513120d, 0x5dae664aba4e050b, 0x0c120c0b1f124b58, 
 	
 };
 
@@ -452,14 +530,14 @@ Gfx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_1[] = {
 
 Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_2[40] = {
 	{{ {-2664, 125, -429}, 0, {1008, -16}, {61, 45, 58, 255} }},
-	{{ {-2593, 175, -656}, 0, {-16, 1008}, {61, 45, 58, 255} }},
+	{{ {-2593, 175, -656}, 0, {-16, 1008}, {72, 39, 37, 255} }},
 	{{ {-2517, 175, -490}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2752, 125, -624}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2758, 125, -1095}, 0, {-16, -16}, {36, 26, 34, 255} }},
 	{{ {-2594, 175, -876}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2755, 125, -860}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2596, 175, -1095}, 0, {-16, 1008}, {36, 26, 34, 255} }},
-	{{ {-2117, 125, 109}, 0, {1008, -16}, {61, 45, 58, 255} }},
+	{{ {-2117, 125, 109}, 0, {1008, -16}, {25, 19, 72, 255} }},
 	{{ {-2218, 175, -87}, 0, {-16, 1008}, {61, 45, 58, 255} }},
 	{{ {-2066, 175, -43}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2294, 125, 57}, 0, {-16, -16}, {61, 45, 58, 255} }},
@@ -468,8 +546,8 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_2[40] = {
 	{{ {-1741, 175, 1}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-1940, 125, 161}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2435, 125, -88}, 0, {1008, -16}, {61, 45, 58, 255} }},
-	{{ {-2440, 175, -324}, 0, {-16, 1008}, {61, 45, 58, 255} }},
-	{{ {-2329, 175, -205}, 0, {1008, 1008}, {61, 45, 58, 255} }},
+	{{ {-2440, 175, -324}, 0, {-16, 1008}, {53, 62, 51, 255} }},
+	{{ {-2329, 175, -205}, 0, {1008, 1008}, {34, 72, 36, 255} }},
 	{{ {-2575, 125, -233}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2118, 75, -439}, 0, {1008, 1008}, {36, 26, 34, 255} }},
 	{{ {-2305, 125, -414}, 0, {-16, -16}, {61, 45, 58, 255} }},
@@ -517,7 +595,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_3[40] = {
 	{{ {-2435, 125, -88}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2218, 175, -87}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2294, 125, 57}, 0, {1008, -16}, {61, 45, 58, 255} }},
-	{{ {-2329, 175, -205}, 0, {-16, 1008}, {61, 45, 58, 255} }},
+	{{ {-2329, 175, -205}, 0, {-16, 1008}, {34, 72, 36, 255} }},
 	{{ {-2170, 75, -505}, 0, {1008, 1008}, {36, 26, 34, 255} }},
 	{{ {-2369, 125, -552}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2222, 75, -613}, 0, {-16, 1008}, {36, 26, 34, 255} }},
@@ -530,7 +608,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_3[40] = {
 	{{ {-2433, 125, -892}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2272, 75, -908}, 0, {-16, 1008}, {36, 26, 34, 255} }},
 	{{ {-2433, 125, -689}, 0, {1008, -16}, {61, 45, 58, 255} }},
-	{{ {-2117, 125, 109}, 0, {-16, -16}, {61, 45, 58, 255} }},
+	{{ {-2117, 125, 109}, 0, {-16, -16}, {25, 19, 72, 255} }},
 	{{ {-1914, 175, 1}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-1940, 125, 161}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2066, 175, -43}, 0, {-16, 1008}, {61, 45, 58, 255} }},
@@ -539,7 +617,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_3[40] = {
 	{{ {-1965, 75, -347}, 0, {-16, 1008}, {36, 26, 34, 255} }},
 	{{ {-1889, 125, -160}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2755, 125, -860}, 0, {-16, -16}, {61, 45, 58, 255} }},
-	{{ {-2593, 175, -656}, 0, {1008, 1008}, {61, 45, 58, 255} }},
+	{{ {-2593, 175, -656}, 0, {1008, 1008}, {72, 39, 37, 255} }},
 	{{ {-2752, 125, -624}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2594, 175, -876}, 0, {-16, 1008}, {61, 45, 58, 255} }},
 	{{ {-1715, 75, -323}, 0, {-16, 1008}, {36, 26, 34, 255} }},
@@ -547,7 +625,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_3[40] = {
 	{{ {-1728, 125, -161}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-1567, 75, -325}, 0, {1008, 1008}, {36, 26, 34, 255} }},
 	{{ {-2664, 125, -429}, 0, {-16, -16}, {61, 45, 58, 255} }},
-	{{ {-2440, 175, -324}, 0, {1008, 1008}, {61, 45, 58, 255} }},
+	{{ {-2440, 175, -324}, 0, {1008, 1008}, {53, 62, 51, 255} }},
 	{{ {-2575, 125, -233}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2517, 175, -490}, 0, {-16, 1008}, {61, 45, 58, 255} }},
 };
@@ -570,8 +648,8 @@ Gfx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_3[] = {
 
 Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_4[40] = {
 	{{ {-2305, 125, -414}, 0, {-16, 1008}, {61, 45, 58, 255} }},
-	{{ {-2329, 175, -205}, 0, {1008, -16}, {61, 45, 58, 255} }},
-	{{ {-2440, 175, -324}, 0, {-16, -16}, {61, 45, 58, 255} }},
+	{{ {-2329, 175, -205}, 0, {1008, -16}, {34, 72, 36, 255} }},
+	{{ {-2440, 175, -324}, 0, {-16, -16}, {53, 62, 51, 255} }},
 	{{ {-2223, 125, -322}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2540, 75, 29}, 0, {1008, -16}, {36, 26, 34, 255} }},
 	{{ {-2575, 125, -233}, 0, {-16, 1008}, {61, 45, 58, 255} }},
@@ -579,7 +657,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_4[40] = {
 	{{ {-2710, 75, -143}, 0, {-16, -16}, {36, 26, 34, 255} }},
 	{{ {-2433, 125, -689}, 0, {-16, 1008}, {61, 45, 58, 255} }},
 	{{ {-2517, 175, -490}, 0, {1008, -16}, {61, 45, 58, 255} }},
-	{{ {-2593, 175, -656}, 0, {-16, -16}, {61, 45, 58, 255} }},
+	{{ {-2593, 175, -656}, 0, {-16, -16}, {72, 39, 37, 255} }},
 	{{ {-2369, 125, -552}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-1766, 75, 324}, 0, {1008, -16}, {51, 37, 48, 255} }},
 	{{ {-1940, 125, 161}, 0, {-16, 1008}, {61, 45, 58, 255} }},
@@ -591,7 +669,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_4[40] = {
 	{{ {-2594, 175, -876}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2168, 75, 261}, 0, {1008, -16}, {36, 26, 34, 255} }},
 	{{ {-2294, 125, 57}, 0, {-16, 1008}, {61, 45, 58, 255} }},
-	{{ {-2117, 125, 109}, 0, {1008, 1008}, {61, 45, 58, 255} }},
+	{{ {-2117, 125, 109}, 0, {1008, 1008}, {25, 19, 72, 255} }},
 	{{ {-2370, 75, 201}, 0, {-16, -16}, {36, 26, 34, 255} }},
 	{{ {-2142, 125, -230}, 0, {-16, 1008}, {61, 45, 58, 255} }},
 	{{ {-2066, 175, -43}, 0, {1008, -16}, {61, 45, 58, 255} }},
@@ -639,13 +717,13 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_5[40] = {
 	{{ {-2433, 125, -689}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2594, 175, -876}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2433, 125, -892}, 0, {-16, 1008}, {61, 45, 58, 255} }},
-	{{ {-2593, 175, -656}, 0, {1008, -16}, {61, 45, 58, 255} }},
+	{{ {-2593, 175, -656}, 0, {1008, -16}, {72, 39, 37, 255} }},
 	{{ {-2305, 125, -414}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2517, 175, -490}, 0, {-16, -16}, {61, 45, 58, 255} }},
 	{{ {-2369, 125, -552}, 0, {-16, 1008}, {61, 45, 58, 255} }},
-	{{ {-2440, 175, -324}, 0, {1008, -16}, {61, 45, 58, 255} }},
+	{{ {-2440, 175, -324}, 0, {1008, -16}, {53, 62, 51, 255} }},
 	{{ {-2142, 125, -230}, 0, {1008, 1008}, {61, 45, 58, 255} }},
-	{{ {-2329, 175, -205}, 0, {-16, -16}, {61, 45, 58, 255} }},
+	{{ {-2329, 175, -205}, 0, {-16, -16}, {34, 72, 36, 255} }},
 	{{ {-2223, 125, -322}, 0, {-16, 1008}, {61, 45, 58, 255} }},
 	{{ {-2218, 175, -87}, 0, {1008, -16}, {61, 45, 58, 255} }},
 	{{ {-2540, 75, 29}, 0, {-16, -16}, {36, 26, 34, 255} }},
@@ -659,7 +737,7 @@ Vtx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_vtx_5[40] = {
 	{{ {-2168, 75, 261}, 0, {-16, -16}, {36, 26, 34, 255} }},
 	{{ {-1940, 125, 161}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-1965, 75, 322}, 0, {1008, -16}, {36, 26, 34, 255} }},
-	{{ {-2117, 125, 109}, 0, {-16, 1008}, {61, 45, 58, 255} }},
+	{{ {-2117, 125, 109}, 0, {-16, 1008}, {25, 19, 72, 255} }},
 	{{ {-2916, 75, -844}, 0, {-16, -16}, {36, 26, 34, 255} }},
 	{{ {-2752, 125, -624}, 0, {1008, 1008}, {61, 45, 58, 255} }},
 	{{ {-2911, 75, -592}, 0, {1008, -16}, {36, 26, 34, 255} }},
@@ -771,6 +849,36 @@ Gfx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_7[] = {
 	gsSPEndDisplayList(),
 };
 
+Vtx meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent_vtx_cull[8] = {
+	{{ {-3123, -224, 384}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-3123, -224, 384}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-3123, -224, -1323}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-3123, -224, -1323}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1291, -224, 384}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1291, -224, 384}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1291, -224, -1323}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1291, -224, -1323}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent_vtx_0[8] = {
+	{{ {-3123, -224, -470}, 0, {253, 2699}, {0, 127, 0, 255} }},
+	{{ {-2039, -224, -1323}, 0, {-2061, 91}, {0, 127, 0, 255} }},
+	{{ {-3123, -224, -1323}, 0, {-2061, 2699}, {0, 127, 0, 255} }},
+	{{ {-2039, -224, -570}, 0, {-21, 91}, {0, 127, 0, 255} }},
+	{{ {-3123, -224, 384}, 0, {2567, 2699}, {0, 127, 0, 255} }},
+	{{ {-2161, -224, 384}, 0, {2567, 385}, {0, 127, 0, 255} }},
+	{{ {-1291, -224, 384}, 0, {2567, -1707}, {0, 127, 0, 255} }},
+	{{ {-1291, -224, -570}, 0, {-21, -1707}, {0, 127, 0, 255} }},
+};
+
+Gfx meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent_tri_0[] = {
+	gsSPVertex(meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent_vtx_0 + 0, 8, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
+	gsSP2Triangles(4, 3, 0, 0, 4, 5, 3, 0),
+	gsSP2Triangles(3, 5, 6, 0, 3, 6, 7, 0),
+	gsSPEndDisplayList(),
+};
+
 Gfx mat_meatdungeon_room_4_dl_ClimbWall_layerOpaque[] = {
 	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
 	gsDPPipeSync(),
@@ -784,6 +892,29 @@ Gfx mat_meatdungeon_room_4_dl_ClimbWall_layerOpaque[] = {
 	gsDPLoadBlock(7, 0, 0, 2047, 256),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_4b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 7, 0),
 	gsDPSetTileSize(0, 0, 0, 508, 252),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_meatdungeon_room_4_dl_oot_water_mat_layerTransparent[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL1, TEXEL0, ENV_ALPHA, TEXEL0, 0, 0, 0, 1, COMBINED, 0, SHADE, 0, COMBINED, 0, PRIMITIVE, 0),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_RGBA16 | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_XLU_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 255, 255, 128),
+	gsDPSetEnvColor(255, 255, 255, 128),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, meatdungeon_room_4_dl__0000E160_32x32_rgba16_x__0000E160_32x32_rgba16_pal_rgba16),
+	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadTLUTCmd(5, 190),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, meatdungeon_room_4_dl__0000E160_32x32_rgba16_ci8),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 511, 512),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
+	gsDPSetTileSize(0, 0, 0, 124, 124),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 4, 0, 1, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 15, G_TX_WRAP | G_TX_NOMIRROR, 5, 15),
+	gsDPSetTileSize(1, 0, 0, 124, 124),
+	gsSPDisplayList(0x9000000),
 	gsSPEndDisplayList(),
 };
 
@@ -808,6 +939,16 @@ Gfx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque[] = {
 	gsSPDisplayList(meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_6),
 	gsSPDisplayList(mat_meatdungeon_room_2_dl_MeatFloor_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_7),
+	gsSPEndDisplayList(),
+};
+
+Gfx meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_meatdungeon_room_4_dl_oot_water_mat_layerTransparent),
+	gsSPDisplayList(meatdungeon_room_4_dl_Water_Box_Mesh_mesh_layer_Transparent_tri_0),
 	gsSPEndDisplayList(),
 };
 

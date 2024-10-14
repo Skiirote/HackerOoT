@@ -115,7 +115,7 @@
 /* 0x67 */ DEFINE_SCENE(village_scene, none, SCENE_VILLAGE, SDC_KAKARIKO_VILLAGE, 0, 0)
 /* 0x68 */ DEFINE_SCENE(river_scene, none, SCENE_RIVER, SDC_ZORAS_RIVER, 0, 0)
 /* 0x69 */ DEFINE_SCENE(cave_scene, none, SCENE_CAVE, SDC_ZORAS_RIVER, 0, 0)
-/* 0x6A */ DEFINE_SCENE(meatdungeon_scene, none, SCENE_MEATDUNGEON, SDC_JABU_JABU, 0, 0)
+/* 0x6A */ DEFINE_SCENE(meatdungeon_scene, none, SCENE_MEATDUNGEON, SDC_HYRULE_FIELD, 0, 0)
 /* 0x6B */ DEFINE_SCENE(overworld_intro_scene, none, SCENE_OVERWORLD_INTRO, SDC_HYRULE_FIELD, 0, 0)
 /* 0x6C */ DEFINE_SCENE(guardtower_scene, none, SCENE_GUARDTOWER, SDC_HYRULE_FIELD, 0, 0)
 

@@ -978,8 +978,8 @@ void Scene_DrawConfigHyruleField(PlayState* play) {
                                 32, 32));
     gSPSegment(POLY_XLU_DISP++, 0x09,
                Gfx_TwoTexScroll(play->state.gfxCtx, G_TX_RENDERTILE, 127 - gameplayFrames % 128,
-                                (gameplayFrames * 10) % 128, 32, 32, 1, gameplayFrames % 128,
-                                (gameplayFrames * 10) % 128, 32, 32));
+                                (gameplayFrames * 1) % 128, 32, 32, 1, gameplayFrames % 128,
+                                (gameplayFrames * 1) % 128, 32, 32));
 
     gDPPipeSync(POLY_OPA_DISP++);
     gDPSetEnvColor(POLY_OPA_DISP++, 128, 128, 128, 128);
@@ -1486,7 +1486,7 @@ void Scene_DrawConfigJabuJabu(PlayState* play) {
     OPEN_DISPS(play->state.gfxCtx, "../z_scene_table.c", 7712);
 
     gameplayFrames = play->gameplayFrames;
-    if (play->sceneId == SCENE_JABU_JABU) {
+    if (play->sceneId == SCENE_JABU_JABU || play->sceneId == SCENE_MEATDUNGEON) {
         gSPSegment(POLY_OPA_DISP++, 0x08,
                    Gfx_TwoTexScroll(play->state.gfxCtx, G_TX_RENDERTILE, gameplayFrames % 128,
                                     (gameplayFrames * 2) % 128, 32, 32, 1, 127 - gameplayFrames % 128,
