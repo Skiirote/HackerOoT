@@ -8,7 +8,7 @@
 #include "assets/objects/object_deatheye/gDeatheyeDL.h"
 #include "assets/objects/object_deatheye/gDeatheyeDL_collision.h"
 
-#define FLAGS (ACTOR_FLAG_4 | ACTOR_FLAG_5)
+#define FLAGS (ACTOR_FLAG_3 | ACTOR_FLAG_4 | ACTOR_FLAG_5)
 
 void deatheye_Init(Actor* thisx, PlayState* play);
 void deatheye_Destroy(Actor* thisx, PlayState* play);
@@ -125,9 +125,9 @@ void deatheye_Draw(Actor* thisx, PlayState* play){
     //OPEN_DISPS(play->state.gfxCtx, "../z_deatheye.c", 1046);
     //gSPDisplayList(POLY_OPA_DISP++, gDeatheyeDL);
     Gfx_DrawDListOpa(play, gDeatheyeDL);
-    this->dyna.actor.scale.x = .1;
-    this->dyna.actor.scale.y = .1;
-    this->dyna.actor.scale.z = .1;
+    this->dyna.actor.scale.x = .5;
+    this->dyna.actor.scale.y = .5;
+    this->dyna.actor.scale.z = .5;
     //CLOSE_DISPS(play->state.gfxCtx, "../z_deatheye.c", 1101);
 }
 

@@ -1,0 +1,10 @@
+extern u64 gMeatPlatDL_bek_wht1_w12_1_i4[];
+extern u64 gMeatPlatDL_Meat0017_350_i8[];
+extern Vtx gMeatPlatDL_gMeatPlatDL_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx gMeatPlatDL_gMeatPlatDL_mesh_layer_Opaque_vtx_0[10];
+extern Gfx gMeatPlatDL_gMeatPlatDL_mesh_layer_Opaque_tri_0[];
+extern Vtx gMeatPlatDL_gMeatPlatDL_mesh_layer_Opaque_vtx_1[5];
+extern Gfx gMeatPlatDL_gMeatPlatDL_mesh_layer_Opaque_tri_1[];
+extern Gfx mat_gMeatPlatDL_MeatPlatSide_layerOpaque[];
+extern Gfx mat_gMeatPlatDL_MeatPlatTop_layerOpaque[];
+extern Gfx gMeatPlatDL[];

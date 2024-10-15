@@ -4115,6 +4115,13 @@ beginseg
 endseg
 
 beginseg
+    name "ovl_meatplat"
+    compress
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_meatplat/z_meatplat.o"
+    include "$(BUILD_DIR)/src/overlays/actors/ovl_meatplat/ovl_meatplat_reloc.o"
+endseg
+
+beginseg
     name "gameplay_keep"
     compress
     romalign 0x1000
@@ -7212,6 +7219,15 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/assets/objects/object_meat_platform/gMeatPlatformDL.o"
     include "$(BUILD_DIR)/assets/objects/object_meat_platform/gMeatPlatformDL_collision.o"
+    number 6
+endseg
+
+beginseg
+    name "object_meatplat"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/objects/object_meatplat/gMeatPlatDL.o"
+    include "$(BUILD_DIR)/assets/objects/object_meatplat/gMeatPlatDL_collision.o"
     number 6
 endseg
 
@@ -12235,6 +12251,22 @@ beginseg
     compress
     romalign 0x1000
     include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_5.o"
+    number 3
+endseg
+
+beginseg
+    name "meatdungeon_room_6"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_6.o"
+    number 3
+endseg
+
+beginseg
+    name "meatdungeon_room_7"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_7.o"
     number 3
 endseg
 

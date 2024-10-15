@@ -486,3 +486,4 @@
              DEFINE_ACTOR(deatheye, ACTOR_DEATHEYE, ACTOROVL_ALLOC_NORMAL, "deatheye")
              DEFINE_ACTOR(Meat_Platform, ACTOR_MEAT_PLATFORM, ACTOROVL_ALLOC_NORMAL, "Meat_Platform")
              DEFINE_ACTOR(distcheck, ACTOR_DISTCHECK, ACTOROVL_ALLOC_NORMAL, "distcheck")
+             DEFINE_ACTOR(meatplat, ACTOR_MEATPLAT, ACTOROVL_ALLOC_NORMAL, "meatplat")
