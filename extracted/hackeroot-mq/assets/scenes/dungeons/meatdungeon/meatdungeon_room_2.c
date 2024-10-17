@@ -29,7 +29,7 @@ ActorEntry meatdungeon_room_2_header00_actorList[LENGTH_MEATDUNGEON_ROOM_2_HEADE
         /* Actor ID   */ ACTOR_EN_BOX,
         /* Position   */ { -153, -115, 1390 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x70C0
+        /* Parameters */ 0x10C0
     },
 
     // Grass Clump, doesn't regrow
@@ -1868,7 +1868,7 @@ Gfx meatdungeon_room_2_dl_Floor_001_mesh_layer_Opaque[] = {
 	gsSPDisplayList(meatdungeon_room_2_dl_Floor_001_mesh_layer_Opaque_tri_0),
 	gsSPDisplayList(mat_meatdungeon_room_6_dl_Wall_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_2_dl_Floor_001_mesh_layer_Opaque_tri_1),
-	gsSPDisplayList(mat_meatdungeon_room_7_dl_MeatFloor_layerOpaque),
+	gsSPDisplayList(mat_meatdungeon_room_8_dl_MeatFloor_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_2_dl_Floor_001_mesh_layer_Opaque_tri_2),
 	gsSPDisplayList(mat_meatdungeon_room_6_dl_Web1_1_1_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_2_dl_Floor_001_mesh_layer_Opaque_tri_3),

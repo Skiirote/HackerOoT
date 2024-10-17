@@ -12271,6 +12271,14 @@ beginseg
 endseg
 
 beginseg
+    name "meatdungeon_room_8"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/scenes/dungeons/meatdungeon/meatdungeon_room_8.o"
+    number 3
+endseg
+
+beginseg
     name "overworld_intro_scene"
     compress
     romalign 0x1000

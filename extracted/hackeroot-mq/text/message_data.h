@@ -6954,14 +6954,12 @@ DEFINE_MESSAGE(0x0103, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE COLOR(LIGHTBLUE) "You can open a " COLOR(DEFAULT) "door" COLOR(LIGHTBLUE) " by standing\n"
-"in front of it and pressing " COLOR(BLUE) "[A]" COLOR(LIGHTBLUE) "." COLOR(DEFAULT)
+"I stumbled across a woman with eyes\n"
+"like sapphires and hair like fire.\n"
+"She led me across two fields of wheat."
 BOX_BREAK
-
-UNSKIPPABLE COLOR(LIGHTBLUE) "Pay attention to what the\n"
-COLOR(BLUE) "Action" COLOR(LIGHTBLUE) " " COLOR(BLUE) "Icon" COLOR(LIGHTBLUE) " says.\n"
-"That's the " COLOR(BLUE) "blue icon" COLOR(LIGHTBLUE) " at the top of\n"
-"the screen!" COLOR(DEFAULT)
+"We passed through a rose bush and\n"
+"it led me back to my pasture."
 )
 ,
 MSG(
@@ -6990,8 +6988,10 @@ DEFINE_MESSAGE(0x0104, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE COLOR(LIGHTBLUE) "Look! Something is hanging up\n"
-"there! It looks like an old " COLOR(DEFAULT) "ladder" COLOR(LIGHTBLUE) "!" COLOR(DEFAULT)
+"One of the pastures had a flowing\n"
+"river. The river turned red. I was\n"
+"too scared to follow it so I\n"
+"turned east."
 )
 ,
 MSG(
@@ -7009,9 +7009,8 @@ DEFINE_MESSAGE(0x0105, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-UNSKIPPABLE COLOR(LIGHTBLUE) "Hey...\n"
-"Isn't that the same design that's\n"
-"on the " COLOR(DEFAULT) "Door of Time" COLOR(LIGHTBLUE) "?" COLOR(DEFAULT)
+"I took some gold to buy two\n"
+"green pastures."
 )
 ,
 MSG(
@@ -10624,13 +10623,19 @@ SHIFT(52) "--Le propriétaire" QUICKTEXT_DISABLE
 )
 )
 
-DEFINE_MESSAGE(0x0208, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_MIDDLE,
+DEFINE_MESSAGE(0x0208, TEXTBOX_TYPE_BLACK, TEXTBOX_POS_BOTTOM,
 MSG(/* MISSING */)
 ,
 MSG(
-"Shadow Temple...\n"
-"Here is gathered Hyrule's bloody \n"
-"history of greed and hatred..." EVENT
+"Go away!\n"
+"I can feel you watching me!"
+BOX_BREAK
+"He who has eyes to see,\n"
+"let him see...\n"
+"but not me, please!"
+BOX_BREAK
+"It never closes its eyes, not even\n"
+"to blink!"
 )
 ,
 MSG(
@@ -10652,9 +10657,12 @@ DEFINE_MESSAGE(0x0209, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_MIDDLE,
 MSG(/* MISSING */)
 ,
 MSG(
-"What is hidden in the darkness...\n"
-"Tricks full of ill will...\n"
-"You can't see the way forward..." EVENT
+"Everything...\n"
+"Everything is falling...\n"
+"Breaking..."
+BOX_BREAK
+"I can feel the ground\n"
+"crumbling at my feet..."
 )
 ,
 MSG(
@@ -10674,9 +10682,11 @@ DEFINE_MESSAGE(0x020A, TEXTBOX_TYPE_BLUE, TEXTBOX_POS_MIDDLE,
 MSG(/* MISSING */)
 ,
 MSG(
-"One who gains the " COLOR(RED) "eye of truth\n"
-COLOR(DEFAULT) "will be able to see what is hidden\n"
-"in the darkness." EVENT
+"Is this real?"
+BOX_BREAK
+"Are you real??"
+BOX_BREAK
+"Hello?!"
 )
 ,
 MSG(

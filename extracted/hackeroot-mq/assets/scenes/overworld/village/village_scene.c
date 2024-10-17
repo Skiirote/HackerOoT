@@ -74,7 +74,7 @@ TransitionActorEntry village_scene_header00_transitionActors[] = {
         /* Actor ID                       */ ACTOR_EN_DOOR,
         /* Position                       */ { -1403, 39, 762 },
         /* Rotation Y                     */ DEG_TO_BINANG(180.000),
-        /* Parameters                     */ 0x0280
+        /* Parameters                     */ 0x0289
     },
 
     // Wooden Door
@@ -83,7 +83,7 @@ TransitionActorEntry village_scene_header00_transitionActors[] = {
         /* Actor ID                       */ ACTOR_EN_DOOR,
         /* Position                       */ { -1058, 99, 762 },
         /* Rotation Y                     */ DEG_TO_BINANG(180.000),
-        /* Parameters                     */ 0x0280
+        /* Parameters                     */ 0x0288
     },
 
     // Wooden Door
@@ -92,7 +92,7 @@ TransitionActorEntry village_scene_header00_transitionActors[] = {
         /* Actor ID                       */ ACTOR_EN_DOOR,
         /* Position                       */ { -714, 160, 762 },
         /* Rotation Y                     */ DEG_TO_BINANG(180.000),
-        /* Parameters                     */ 0x0280
+        /* Parameters                     */ 0x028A
     },
 };
 
