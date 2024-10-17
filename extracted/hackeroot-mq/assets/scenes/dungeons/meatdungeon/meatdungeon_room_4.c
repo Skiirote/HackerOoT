@@ -853,7 +853,7 @@ Gfx meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque[] = {
 	gsSPDisplayList(meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_5),
 	gsSPDisplayList(mat_meatdungeon_room_8_dl_ClimbWall_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_6),
-	gsSPDisplayList(mat_meatdungeon_room_8_dl_MeatFloor_layerOpaque),
+	gsSPDisplayList(mat_meatdungeon_room_0_dl_MeatFloor_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_4_dl_Floor_003_mesh_layer_Opaque_tri_7),
 	gsSPEndDisplayList(),
 };

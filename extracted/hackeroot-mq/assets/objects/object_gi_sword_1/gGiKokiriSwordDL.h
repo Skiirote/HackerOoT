@@ -7,7 +7,7 @@ extern u64 gGiKokiriSwordDL_swordhilt_pal_rgba16[];
 extern Vtx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_vtx_cull[8];
 extern Vtx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_vtx_0[30];
 extern Gfx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_tri_0[];
-extern Vtx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_vtx_1[36];
+extern Vtx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_vtx_1[28];
 extern Gfx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_tri_1[];
 extern Vtx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_vtx_2[20];
 extern Gfx gGiKokiriSwordDL_gGiKokiriSwordDL_mesh_layer_Opaque_tri_2[];

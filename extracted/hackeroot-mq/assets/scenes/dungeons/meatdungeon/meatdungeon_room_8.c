@@ -4,6 +4,7 @@
 /**
  * Header Child Day (Default)
 */
+#define LENGTH_MEATDUNGEON_ROOM_8_HEADER00_OBJECTLIST 1
 #define LENGTH_MEATDUNGEON_ROOM_8_HEADER00_ACTORLIST 3
 SceneCmd meatdungeon_room_8_header00[] = {
     SCENE_CMD_ROOM_SHAPE(&meatdungeon_room_8_shapeHeader),
@@ -11,33 +12,38 @@ SceneCmd meatdungeon_room_8_header00[] = {
     SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x00, false, false),
     SCENE_CMD_SKYBOX_DISABLES(true, true),
     SCENE_CMD_TIME_SETTINGS(255, 255, 0),
+    SCENE_CMD_OBJECT_LIST(LENGTH_MEATDUNGEON_ROOM_8_HEADER00_OBJECTLIST, meatdungeon_room_8_header00_objectList),
     SCENE_CMD_ACTOR_LIST(LENGTH_MEATDUNGEON_ROOM_8_HEADER00_ACTORLIST, meatdungeon_room_8_header00_actorList),
     SCENE_CMD_END(),
 };
 
+s16 meatdungeon_room_8_header00_objectList[LENGTH_MEATDUNGEON_ROOM_8_HEADER00_OBJECTLIST] = {
+    OBJECT_KANBAN,
+};
+
 ActorEntry meatdungeon_room_8_header00_actorList[LENGTH_MEATDUNGEON_ROOM_8_HEADER00_ACTORLIST] = {
-    // Targetable Navi Spot
+    // Square Signpost
     {
-        /* Actor ID   */ ACTOR_ELF_MSG2,
-        /* Position   */ { -1346, 766, 459 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x8005
+        /* Actor ID   */ ACTOR_EN_KANBAN,
+        /* Position   */ { -1346, 702, 481 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(180.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0001
     },
 
-    // Targetable Navi Spot
+    // Square Signpost
     {
-        /* Actor ID   */ ACTOR_ELF_MSG2,
-        /* Position   */ { -1609, 766, 721 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x8004
+        /* Actor ID   */ ACTOR_EN_KANBAN,
+        /* Position   */ { -1589, 702, 721 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(270.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0002
     },
 
-    // Targetable Navi Spot
+    // Square Signpost
     {
-        /* Actor ID   */ ACTOR_ELF_MSG2,
-        /* Position   */ { -2201, 766, 81 },
-        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x8003
+        /* Actor ID   */ ACTOR_EN_KANBAN,
+        /* Position   */ { -2221, 702, 81 },
+        /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(90.000), DEG_TO_BINANG(0.000) },
+        /* Parameters */ 0x0003
     },
 };
 
@@ -196,13 +202,7 @@ Gfx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_2[26] = {
-	{{ {-1588, 702, 481}, 0, {5823, -732}, {61, 45, 58, 255} }},
-	{{ {-1427, 702, 481}, 0, {4632, -1924}, {61, 45, 58, 255} }},
-	{{ {-1402, 702, 447}, 0, {4192, -1853}, {61, 45, 58, 255} }},
-	{{ {-1266, 702, 481}, 0, {3440, -3116}, {61, 45, 58, 255} }},
-	{{ {-1105, 702, 481}, 0, {2248, -4308}, {61, 45, 58, 255} }},
-	{{ {-1291, 702, 447}, 0, {3369, -2677}, {61, 45, 58, 255} }},
+Vtx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_2[15] = {
 	{{ {-978, 880, 288}, 0, {1176, 5668}, {17, 13, 16, 255} }},
 	{{ {-1196, 880, 0}, 0, {-1713, 774}, {164, 120, 157, 255} }},
 	{{ {-1105, 880, 481}, 0, {-1160, 8458}, {61, 45, 58, 255} }},
@@ -212,31 +212,22 @@ Vtx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_2[26] = {
 	{{ {-948, 880, -29}, 0, {2222, 780}, {0, 0, 0, 255} }},
 	{{ {-978, 880, -286}, 0, {2222, -3282}, {29, 21, 27, 255} }},
 	{{ {-1104, 880, -473}, 0, {591, -6442}, {61, 45, 58, 255} }},
-	{{ {-1588, 702, -473}, 0, {-3199, 5669}, {61, 45, 58, 255} }},
-	{{ {-1588, 272, -473}, 0, {776, 9645}, {61, 45, 58, 255} }},
-	{{ {-1588, 272, 0}, 0, {5150, 5271}, {164, 120, 157, 255} }},
 	{{ {-1588, 702, 0}, 0, {1175, 1296}, {164, 120, 157, 255} }},
 	{{ {-1588, 272, 481}, 0, {9602, 819}, {61, 45, 58, 255} }},
 	{{ {-1588, 702, 481}, 0, {5627, -3156}, {61, 45, 58, 255} }},
-	{{ {-1402, 702, 447}, 0, {3588, -4557}, {61, 45, 58, 255} }},
-	{{ {-1291, 702, 447}, 0, {2559, -5587}, {61, 45, 58, 255} }},
-	{{ {-1105, 702, 481}, 0, {1158, -7625}, {61, 45, 58, 255} }},
-	{{ {-1196, 702, 0}, 0, {-2446, -2325}, {42, 30, 42, 255} }},
-	{{ {-1104, 702, -473}, 0, {-7673, 1195}, {61, 45, 58, 255} }},
+	{{ {-1588, 272, 0}, 0, {5150, 5271}, {164, 120, 157, 255} }},
+	{{ {-1588, 702, -473}, 0, {-3199, 5669}, {61, 45, 58, 255} }},
+	{{ {-1588, 272, -473}, 0, {776, 9645}, {61, 45, 58, 255} }},
 };
 
 Gfx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_2[] = {
-	gsSPVertex(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_2 + 0, 26, 0),
-	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
-	gsSP2Triangles(6, 7, 8, 0, 6, 9, 7, 0),
-	gsSP2Triangles(10, 7, 9, 0, 11, 10, 9, 0),
-	gsSP2Triangles(12, 10, 11, 0, 13, 7, 10, 0),
-	gsSP2Triangles(13, 14, 7, 0, 15, 16, 17, 0),
-	gsSP2Triangles(15, 17, 18, 0, 18, 17, 19, 0),
-	gsSP2Triangles(18, 19, 20, 0, 18, 20, 21, 0),
-	gsSP2Triangles(18, 21, 22, 0, 23, 18, 22, 0),
-	gsSP2Triangles(23, 24, 18, 0, 18, 24, 25, 0),
-	gsSP1Triangle(15, 18, 25, 0),
+	gsSPVertex(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_2 + 0, 15, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
+	gsSP2Triangles(4, 1, 3, 0, 5, 4, 3, 0),
+	gsSP2Triangles(6, 4, 5, 0, 7, 1, 4, 0),
+	gsSP2Triangles(7, 8, 1, 0, 9, 10, 11, 0),
+	gsSP2Triangles(9, 12, 10, 0, 13, 12, 9, 0),
+	gsSP1Triangle(13, 14, 12, 0),
 	gsSPEndDisplayList(),
 };
 
@@ -253,18 +244,32 @@ Gfx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_3[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_4[6] = {
+Vtx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_4[16] = {
 	{{ {-1291, 702, 447}, 0, {-26, 2041}, {61, 45, 58, 255} }},
 	{{ {-1291, 829, 481}, 0, {2022, 2041}, {196, 196, 196, 255} }},
 	{{ {-1266, 702, 481}, 0, {114, 1397}, {61, 45, 58, 255} }},
 	{{ {-1402, 702, 447}, 0, {-26, 2041}, {61, 45, 58, 255} }},
 	{{ {-1427, 702, 481}, 0, {114, 1397}, {61, 45, 58, 255} }},
 	{{ {-1402, 829, 481}, 0, {2022, 2041}, {196, 196, 196, 255} }},
+	{{ {-1588, 702, -473}, 0, {4080, 3982}, {74, 74, 74, 255} }},
+	{{ {-1588, 702, 0}, 0, {4080, -2042}, {190, 190, 190, 255} }},
+	{{ {-1104, 702, -473}, 0, {-2082, 3982}, {74, 74, 74, 255} }},
+	{{ {-1196, 702, 0}, 0, {-907, -2042}, {74, 74, 74, 255} }},
+	{{ {-1105, 702, 481}, 0, {-2074, -8174}, {74, 74, 74, 255} }},
+	{{ {-1291, 702, 447}, 0, {294, -7735}, {74, 74, 74, 255} }},
+	{{ {-1402, 702, 447}, 0, {1712, -7735}, {74, 74, 74, 255} }},
+	{{ {-1588, 702, 481}, 0, {4080, -8174}, {74, 74, 74, 255} }},
+	{{ {-1427, 702, 481}, 0, {2029, -8174}, {74, 74, 74, 255} }},
+	{{ {-1266, 702, 481}, 0, {-23, -8174}, {74, 74, 74, 255} }},
 };
 
 Gfx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_4[] = {
-	gsSPVertex(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_4 + 0, 6, 0),
+	gsSPVertex(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_vtx_4 + 0, 16, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
+	gsSP2Triangles(6, 7, 8, 0, 7, 9, 8, 0),
+	gsSP2Triangles(10, 9, 7, 0, 10, 7, 11, 0),
+	gsSP2Triangles(7, 12, 11, 0, 7, 13, 12, 0),
+	gsSP2Triangles(13, 14, 12, 0, 15, 10, 11, 0),
 	gsSPEndDisplayList(),
 };
 
@@ -360,10 +365,10 @@ Vtx meatdungeon_room_8_dl_Floor_012_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-2537, 829, 802}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2537, 829, -475}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2537, 272, -475}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1589, 272, 802}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1589, 829, 802}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1589, 829, -475}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1589, 272, -475}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1588, 272, 802}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1588, 829, 802}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1588, 829, -475}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1588, 272, -475}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
 Vtx meatdungeon_room_8_dl_Floor_012_mesh_layer_Opaque_vtx_0[17] = {
@@ -408,7 +413,7 @@ Vtx meatdungeon_room_8_dl_Floor_012_mesh_layer_Opaque_vtx_1[19] = {
 	{{ {-1905, 272, 161}, 0, {-16, -16}, {0, 0, 0, 255} }},
 	{{ {-1589, 272, 161}, 0, {2032, 2032}, {4, 4, 4, 255} }},
 	{{ {-1747, 702, 161}, 0, {2032, -16}, {255, 255, 255, 255} }},
-	{{ {-1589, 702, 161}, 0, {2032, 2032}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 161}, 0, {2032, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 481}, 0, {2032, -16}, {66, 66, 66, 255} }},
 	{{ {-1747, 272, 481}, 0, {2032, -16}, {10, 10, 10, 255} }},
 	{{ {-1747, 272, 321}, 0, {-16, -16}, {0, 0, 0, 255} }},
@@ -458,8 +463,8 @@ Vtx meatdungeon_room_8_dl_Floor_012_mesh_layer_Opaque_vtx_3[27] = {
 	{{ {-1747, 702, 321}, 0, {-16, -16}, {255, 255, 255, 255} }},
 	{{ {-1747, 272, 321}, 0, {-16, -16}, {0, 0, 0, 255} }},
 	{{ {-1589, 272, 321}, 0, {-16, 2032}, {0, 0, 0, 255} }},
-	{{ {-1589, 702, 321}, 0, {-16, 2032}, {255, 255, 255, 255} }},
-	{{ {-1589, 702, 161}, 0, {2032, 2032}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 321}, 0, {-16, 2032}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 161}, 0, {2032, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 161}, 0, {2032, -16}, {255, 255, 255, 255} }},
 	{{ {-1905, 272, 1}, 0, {-16, 2032}, {1, 1, 1, 255} }},
 	{{ {-1904, 272, -474}, 0, {2032, 2032}, {0, 0, 0, 255} }},
@@ -595,10 +600,10 @@ Vtx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_vtx_cull[8] = {
 	{{ {-2379, 702, 481}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2379, 702, -474}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-2379, 702, -474}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1588, 702, 481}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1588, 702, 481}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1588, 702, -474}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-1588, 702, -474}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1587, 702, 481}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1587, 702, 481}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1587, 702, -474}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-1587, 702, -474}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
 Vtx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_vtx_0[14] = {
@@ -606,11 +611,11 @@ Vtx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_vtx_0[14] = {
 	{{ {-1905, 702, 1}, 0, {-16, 2032}, {255, 255, 255, 255} }},
 	{{ {-1905, 702, 161}, 0, {2032, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 161}, 0, {2032, -16}, {255, 255, 255, 255} }},
-	{{ {-1589, 702, 321}, 0, {-16, 2032}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 321}, 0, {-16, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 321}, 0, {2032, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 481}, 0, {2032, -16}, {65, 65, 65, 255} }},
-	{{ {-1589, 702, 481}, 0, {-16, -16}, {66, 66, 66, 255} }},
-	{{ {-1588, 702, -473}, 0, {4080, -4112}, {65, 65, 65, 255} }},
+	{{ {-1588, 702, 481}, 0, {-16, -16}, {66, 66, 66, 255} }},
+	{{ {-1587, 702, -473}, 0, {4080, -4112}, {65, 65, 65, 255} }},
 	{{ {-1746, 702, -473}, 0, {2032, -4112}, {81, 81, 81, 255} }},
 	{{ {-1746, 702, -315}, 0, {2032, -2064}, {255, 255, 255, 255} }},
 	{{ {-1588, 702, -157}, 0, {4080, -16}, {255, 255, 255, 255} }},
@@ -629,7 +634,7 @@ Gfx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_tri_0[] = {
 
 Vtx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_vtx_1[16] = {
 	{{ {-1747, 702, 1}, 0, {-16, -16}, {255, 255, 255, 255} }},
-	{{ {-1589, 702, 1}, 0, {-16, 2032}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 1}, 0, {-16, 2032}, {255, 255, 255, 255} }},
 	{{ {-1588, 702, -157}, 0, {2032, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, -157}, 0, {2032, -16}, {255, 255, 255, 255} }},
 	{{ {-2221, 702, -158}, 0, {2032, 2032}, {255, 255, 255, 255} }},
@@ -656,10 +661,10 @@ Gfx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_tri_1[] = {
 };
 
 Vtx meatdungeon_room_8_dl_Floor_013_mesh_layer_Opaque_vtx_2[23] = {
-	{{ {-1589, 702, 1}, 0, {-16, 2032}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 1}, 0, {-16, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 1}, 0, {2032, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, 161}, 0, {2032, -16}, {255, 255, 255, 255} }},
-	{{ {-1589, 702, 161}, 0, {-16, -16}, {255, 255, 255, 255} }},
+	{{ {-1588, 702, 161}, 0, {-16, -16}, {255, 255, 255, 255} }},
 	{{ {-1905, 702, 1}, 0, {-16, 2032}, {255, 255, 255, 255} }},
 	{{ {-1747, 702, -157}, 0, {2032, -16}, {255, 255, 255, 255} }},
 	{{ {-1905, 702, -157}, 0, {-16, -16}, {255, 255, 255, 255} }},
@@ -743,7 +748,7 @@ Gfx mat_meatdungeon_room_8_dl_Tile_layerOpaque[] = {
 	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, meatdungeon_room_8_dl_Stone_Tile09_MirrorX_MirrorY_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 1023, 512),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_MIRROR, 6, 0, G_TX_WRAP | G_TX_MIRROR, 6, 0),
 	gsDPSetTileSize(0, 0, 0, 252, 252),
 	gsSPEndDisplayList(),
 };
@@ -833,7 +838,7 @@ Gfx meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque[] = {
 	gsSPDisplayList(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_0),
 	gsSPDisplayList(mat_meatdungeon_room_8_dl_ClimbWall_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_1),
-	gsSPDisplayList(mat_meatdungeon_room_8_dl_MeatFloor_layerOpaque),
+	gsSPDisplayList(mat_meatdungeon_room_0_dl_MeatFloor_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_2),
 	gsSPDisplayList(mat_meatdungeon_room_8_dl_IdEatHerAss_layerOpaque),
 	gsSPDisplayList(meatdungeon_room_8_dl_Floor_011_mesh_layer_Opaque_tri_3),
