@@ -451,6 +451,7 @@ f32 Math_SmoothStepToF(f32* pValue, f32 target, f32 fraction, f32 step, f32 minS
     return fabsf(target - *pValue);
 }
 
+
 /**
  * Changes pValue by step towards target. If step is more than fraction of the remaining distance, step by that instead.
  */

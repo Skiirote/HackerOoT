@@ -12,6 +12,7 @@
         "*.h": "c",
         "*.inc": "c",
         "*.inc.c": "c",
+        "string": "c"
     },
     "editor.rulers": [
         120

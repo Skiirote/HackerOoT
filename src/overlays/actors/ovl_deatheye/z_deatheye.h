@@ -12,5 +12,8 @@ typedef struct deatheye {
     deatheyeActionFunc actionFunc;
     s16 eyeRotX;
     ColliderCylinder colliders[2];
+    Vec3f playerInitPos;
+    s16 timer;
+    char* actionFuncName;
 } deatheye;
 #endif
