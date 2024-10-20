@@ -132,9 +132,7 @@ void deatheye_Scan(deatheye* this, PlayState* play) {
     Player* player = GET_PLAYER(play);
     s16 angleDiff = (this->dyna.actor.yawTowardsPlayer) - (this->dyna.actor.shape.rot.y);
     s16 angleDiffConverted = angleDiff/182.0416;
-
     Debug_Print(6, "%d", angleDiffConverted);
-           
     this->dyna.actor.world.rot.y = this->dyna.actor.shape.rot.y += 800.0f;
     this->dyna.actor.world.rot.x = this->dyna.actor.shape.rot.x = 0.0f;
 
@@ -150,30 +148,7 @@ void deatheye_Scan(deatheye* this, PlayState* play) {
         if (ABS(angleDiff) <= 0x1FFF){
             deatheye_SetupDetect(this);
         }
-    }
-
-
-
-
-    /*Player* player = GET_PLAYER(play);
-    
-    // Current position of the player
-    Vec3f currentPlayerPos = player->actor.world.pos;
-    
-    // Calculate difference in position
-    float deltaX = this->playerInitPos.x - currentPlayerPos.x;
-    float deltaY = this->playerInitPos.y - currentPlayerPos.y;
-    float deltaZ = this->playerInitPos.z - currentPlayerPos.z;
-
-    // Check if the player has moved beyond a threshold (you can fine-tune this)
-    if (fabsf(deltaX) > 0.1f || fabsf(deltaY) > 0.1f || fabsf(deltaZ) > 0.1f) {
-        Debug_Print(1, "Player moved!");
-        deatheye_SetupDetect(this); // Trigger detection if player has moved significantly
-    } else {
-        Debug_Print(1, "Player is stationary.");
-    }*/
-
- 
+    } 
 }
 
 void deatheye_SetupDetect(deatheye* this){
@@ -185,7 +160,11 @@ void deatheye_Detect(deatheye* this, PlayState* play){
     Player* player = GET_PLAYER(play);
     s16 roty = this->dyna.actor.world.rot.y = Math_Vec3f_Yaw(&this->dyna.actor.world.pos, &player->actor.world.pos);
     s16 rotx = this->dyna.actor.world.rot.x = Math_Vec3f_Pitch(&this->dyna.actor.world.pos, &player->actor.world.pos);
-    
+
+    Camera_SetViewParam(play->cameraPtrs[CAM_ID_MAIN], CAM_VIEW_TARGET, &this->dyna.actor);    
+    Camera_RequestSetting(play->cameraPtrs[CAM_ID_MAIN], CAM_SET_TURN_AROUND);
+    Camera_SetCameraData(play->cameraPtrs[CAM_ID_MAIN], 4, NULL, NULL, 0x51, 0, 0);
+
     Math_SmoothStepToS(&this->dyna.actor.shape.rot.y, roty, 6, 4000, 100);
     Math_SmoothStepToS(&this->dyna.actor.shape.rot.x, rotx, 6, 4000, 100);
     Math_ApproachS(&this->dyna.actor.shape.rot.z, 800.0f, 0.5f, 100.0f);
@@ -203,4 +182,3 @@ void deatheye_Draw(Actor* thisx, PlayState* play){
     this->dyna.actor.scale.z = .5;
     //CLOSE_DISPS(play->state.gfxCtx, "../z_deatheye.c", 1101);
 }
-
